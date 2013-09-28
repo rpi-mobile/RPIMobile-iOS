@@ -1,0 +1,92 @@
+
+// To check if a library is compiled with CocoaPods you
+// can use the `COCOAPODS` macro definition which is
+// defined in the xcconfigs so it is available in
+// headers also when they are imported in the client
+// project.
+
+
+// AFNetworking
+#define COCOAPODS_POD_AVAILABLE_AFNetworking
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking 0
+
+// AFNetworking/NSURLConnection
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLConnection
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLConnection 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_NSURLConnection 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLConnection 0
+
+// AFNetworking/Reachability
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Reachability
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Reachability 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Reachability 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Reachability 0
+
+// AFNetworking/Security
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Security
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Security 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Security 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Security 0
+
+// AFNetworking/Serialization
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Serialization
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Serialization 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Serialization 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 0
+
+// AFNetworking/UIKit
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_UIKit
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
+
+// ISRefreshControl
+#define COCOAPODS_POD_AVAILABLE_ISRefreshControl
+#define COCOAPODS_VERSION_MAJOR_ISRefreshControl 1
+#define COCOAPODS_VERSION_MINOR_ISRefreshControl 0
+#define COCOAPODS_VERSION_PATCH_ISRefreshControl 2
+
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
+// MKHorizMenu
+#define COCOAPODS_POD_AVAILABLE_MKHorizMenu
+#define COCOAPODS_VERSION_MAJOR_MKHorizMenu 0
+#define COCOAPODS_VERSION_MINOR_MKHorizMenu 0
+#define COCOAPODS_VERSION_PATCH_MKHorizMenu 1
+
+// MMDrawerController
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController 0
+
+// MMDrawerController/Core
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Core
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Core 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Core 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Core 0
+
+// MMDrawerController/MMDrawerBarButtonItem
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_MMDrawerBarButtonItem
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_MMDrawerBarButtonItem 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_MMDrawerBarButtonItem 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_MMDrawerBarButtonItem 0
+
+// MMDrawerController/MMDrawerVisualStates
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_MMDrawerVisualStates
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_MMDrawerVisualStates 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_MMDrawerVisualStates 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_MMDrawerVisualStates 0
+
+// MMDrawerController/Subclass
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Subclass
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Subclass 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Subclass 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Subclass 0
+

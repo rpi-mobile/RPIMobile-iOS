@@ -7,7 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "MMDrawerController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "MMDrawerVisualState.h"
+#import "MMDrawerBarButtonItem.h"
+#import "SideMenuViewController.h"
+#import "UIViewController+MMDrawerController.h"
+#import "CRNavigationController.h"
 
+#import "NewsFeedViewController.h"
+#import "SideMenuViewController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -16,10 +25,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NewsFeedViewController *mainView = [[NewsFeedViewController alloc] init];
+    _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
+    
+    SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
+    
+    MMDrawerController * drawerController = [[MMDrawerController alloc]
+                                             initWithCenterViewController:_navController
+                                             leftDrawerViewController:leftDrawer
+                                             rightDrawerViewController:nil];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:2.5]];
+    
+    //Set Cache
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
+                                                         diskCapacity:20 * 1024 * 1024
+                                                             diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

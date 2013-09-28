@@ -1,0 +1,48 @@
+PODS:
+  - AFNetworking (2.0.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.0.0)
+  - AFNetworking/Security (2.0.0)
+  - AFNetworking/Serialization (2.0.0)
+  - AFNetworking/UIKit (2.0.0):
+    - AFNetworking/NSURLConnection
+  - ISRefreshControl (1.0.2)
+  - MBProgressHUD (0.8)
+  - MKHorizMenu (0.0.1)
+  - MMDrawerController (0.4.0):
+    - MMDrawerController/Core
+    - MMDrawerController/MMDrawerBarButtonItem
+    - MMDrawerController/MMDrawerVisualStates
+    - MMDrawerController/Subclass
+  - MMDrawerController/Core (0.4.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.4.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.4.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.4.0):
+    - MMDrawerController/Core
+
+DEPENDENCIES:
+  - AFNetworking
+  - ISRefreshControl (~> 1.0.2)
+  - MBProgressHUD
+  - MKHorizMenu
+  - MMDrawerController (~> 0.4.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: 3fa983b1beaba69566a3374612511e2a6e3fe845
+  ISRefreshControl: 38b6073a026117ad8fcbe33853b36bee4e39bf4c
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  MKHorizMenu: 6c15fe2e8a35f90e613c63c5b111be45364c39b7
+  MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
+
+COCOAPODS: 0.22.1
