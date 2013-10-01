@@ -33,9 +33,6 @@ install_resource()
 }
 install_resource 'ISRefreshControl/ISRefreshControl/Images/ISRefresgControlIcon.png'
 install_resource 'ISRefreshControl/ISRefreshControl/Images/ISRefresgControlIcon@2x.png'
-install_resource 'MKHorizMenu/MKHorizMenu/ButtonSelected.png'
-install_resource 'MKHorizMenu/MKHorizMenu/MenuBar.png'
-install_resource 'MKHorizMenu/MKHorizMenu/MenuBar@2x.png'
 
 rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rm "$RESOURCES_TO_COPY"

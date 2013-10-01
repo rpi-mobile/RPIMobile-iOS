@@ -16,8 +16,16 @@ PODS:
   - AFNetworking/UIKit (2.0.0):
     - AFNetworking/NSURLConnection
   - ISRefreshControl (1.0.2)
+  - libwebp (0.3.0-rc7):
+    - libwebp/dec
+    - libwebp/dsp
+    - libwebp/utils
+    - libwebp/webp
+  - libwebp/dec (0.3.0-rc7)
+  - libwebp/dsp (0.3.0-rc7)
+  - libwebp/utils (0.3.0-rc7)
+  - libwebp/webp (0.3.0-rc7)
   - MBProgressHUD (0.8)
-  - MKHorizMenu (0.0.1)
   - MMDrawerController (0.4.0):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
@@ -30,19 +38,39 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.4.0):
     - MMDrawerController/Core
+  - MWFeedParser (0.0.1):
+    - MWFeedParser/Feed
+    - MWFeedParser/NSDate+InternetDateTime
+    - MWFeedParser/NSString+HTML
+    - MWFeedParser/NSString+XMLEntities
+  - MWFeedParser/Feed (0.0.1)
+  - MWFeedParser/NSDate+InternetDateTime (0.0.1)
+  - MWFeedParser/NSString+HTML (0.0.1)
+  - MWFeedParser/NSString+XMLEntities (0.0.1)
+  - REMenu (1.5)
+  - SDWebImage (3.4):
+    - libwebp
+    - SDWebImage/MapKit
+  - SDWebImage/MapKit (3.4):
+    - libwebp
 
 DEPENDENCIES:
   - AFNetworking
   - ISRefreshControl (~> 1.0.2)
   - MBProgressHUD
-  - MKHorizMenu
   - MMDrawerController (~> 0.4.0)
+  - MWFeedParser (~> 0.0.1)
+  - REMenu (~> 1.5)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 3fa983b1beaba69566a3374612511e2a6e3fe845
   ISRefreshControl: 38b6073a026117ad8fcbe33853b36bee4e39bf4c
+  libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  MKHorizMenu: 6c15fe2e8a35f90e613c63c5b111be45364c39b7
   MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
+  MWFeedParser: 2ca0852fac352f8333d5f46fdd4b583b921e0c4e
+  REMenu: 6b0583aea38a1eae802d56ec9a0202dacbed3f88
+  SDWebImage: f13f791e411c632489824aa7f129e230b52bf5c4
 
 COCOAPODS: 0.22.1

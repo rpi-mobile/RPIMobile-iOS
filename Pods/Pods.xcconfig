@@ -1,9 +1,12 @@
 #include "Pods-AFNetworking.xcconfig"
 #include "Pods-ISRefreshControl.xcconfig"
 #include "Pods-MBProgressHUD.xcconfig"
-#include "Pods-MKHorizMenu.xcconfig"
 #include "Pods-MMDrawerController.xcconfig"
+#include "Pods-MWFeedParser.xcconfig"
+#include "Pods-REMenu.xcconfig"
+#include "Pods-SDWebImage.xcconfig"
+#include "Pods-libwebp.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/ISRefreshControl" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MKHorizMenu" "${PODS_ROOT}/Headers/MMDrawerController"
-OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ISREFRESHCONTROL_OTHER_LDFLAGS} ${PODS_MBPROGRESSHUD_OTHER_LDFLAGS} ${PODS_MKHORIZMENU_OTHER_LDFLAGS} ${PODS_MMDRAWERCONTROLLER_OTHER_LDFLAGS}
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/ISRefreshControl" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MMDrawerController" "${PODS_ROOT}/Headers/MWFeedParser" "${PODS_ROOT}/Headers/REMenu" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/libwebp" "${PODS_ROOT}/Headers/libwebp/webp"
+OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ISREFRESHCONTROL_OTHER_LDFLAGS} ${PODS_MBPROGRESSHUD_OTHER_LDFLAGS} ${PODS_MMDRAWERCONTROLLER_OTHER_LDFLAGS} ${PODS_MWFEEDPARSER_OTHER_LDFLAGS} ${PODS_REMENU_OTHER_LDFLAGS} ${PODS_SDWEBIMAGE_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods

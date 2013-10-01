@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWFeedParser.h"
 
-@interface NewsFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface NewsFeedViewController : UITableViewController <MWFeedParserDelegate>
 
 @end

@@ -16,7 +16,9 @@
 #import "CRNavigationController.h"
 
 #import "NewsFeedViewController.h"
+#import "AthleticsMainViewController.h"
 #import "SideMenuViewController.h"
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -25,11 +27,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NewsFeedViewController *mainView = [[NewsFeedViewController alloc] init];
+    AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
+    SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
     _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
     
-    SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
-    
+    // Initialize the side drawer for menu and navigation
     MMDrawerController * drawerController = [[MMDrawerController alloc]
                                              initWithCenterViewController:_navController
                                              leftDrawerViewController:leftDrawer
@@ -38,7 +40,7 @@
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:2.5]];
     
-    //Set Cache
+    //Set disk cache
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
                                                          diskCapacity:20 * 1024 * 1024
                                                              diskPath:nil];
@@ -46,6 +48,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = drawerController;
+    self.window.tintColor = [UIColor whiteColor]; // Changes the uinavigationbar button colors (back button)
+
     [self.window makeKeyAndVisible];
     
     return YES;

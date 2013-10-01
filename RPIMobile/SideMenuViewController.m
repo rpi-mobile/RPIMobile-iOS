@@ -13,6 +13,7 @@
 #import "SideMenuViewController.h"
 #import "UIViewController+MMDrawerController.h"
 
+#import "AthleticsMainViewController.h"
 
 @interface SideMenuViewController ()
     @property (strong) NSArray *menuItems;
@@ -31,8 +32,8 @@
 }
 
 -(void)setupLeftMenuButton{
-//    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-//    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
 }
 
 
@@ -45,6 +46,7 @@
     [self.view addSubview:self.tableView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self setupLeftMenuButton];
+
     
     _menuItems = [[NSArray alloc] initWithObjects: @"News Feed", @"Athletics", @"Social Feed", @"Transportation", nil];
 
@@ -103,7 +105,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    [self.mm_drawerController setCenterViewController:nil withCloseAnimation:YES completion:nil];
+    AthleticsMainViewController *athleticsView = [[AthleticsMainViewController alloc] init];
+    [self.navigationController pushViewController:athleticsView animated:YES];
 }
 
 
