@@ -32,4 +32,18 @@
     return self;
 }
 
+- (void) setTitleLabel:(NSString *) text color:(UIColor *) color {
+    // this will appear as the title in the navigation bar
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:20.0];
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    // ^-Use UITextAlignmentCenter for older SDKs.
+    label.textColor = color;
+    self.navigationItem.titleView = label;
+    label.text = text;
+    [label sizeToFit];
+}
+
 @end

@@ -27,4 +27,6 @@
 
 @interface CRNavigationController : UINavigationController
 
+- (void) setTitleLabel:(NSString *) text color:(UIColor *) color;
+
 @end

@@ -221,15 +221,20 @@
     return cell;
 }
 
+- (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:text];
+    CGSize size = [calculationView sizeThatFits:CGSizeMake(width, FLT_MAX)];
+    return size.height;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-		// Get height of summary
-    NSString *summary = [[_feedItems objectAtIndex:indexPath.row] summary];
-    summary = summary ? [summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
-		CGSize s = [summary sizeWithFont:[UIFont systemFontOfSize:15]
-					   constrainedToSize:CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT)  // - 40 For cell padding
-						   lineBreakMode:UILineBreakModeWordWrap];
-		return s.height + 16; // Add padding
+    NSString *rawSummary = [[[_feedItems objectAtIndex:indexPath.row] summary] stringByConvertingHTMLToPlainText];
+    NSAttributedString *summary = [[NSAttributedString alloc] initWithString:rawSummary];
+
+    CGFloat cellHeight = [self textViewHeightForAttributedText:summary andWidth:tableView.frame.size.width];
+    return (cellHeight > 0) ? cellHeight : 100;
 }
 
 #pragma mark - Table view delegate

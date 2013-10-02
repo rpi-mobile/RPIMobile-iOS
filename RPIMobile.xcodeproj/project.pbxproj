@@ -15,6 +15,19 @@
 		DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E0217FA240300CEBC74 /* ViewPagerController.m */; };
 		DC5B9E0617FB709400CEBC74 /* AthleticsRosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E0517FB709400CEBC74 /* AthleticsRosterViewController.m */; };
 		DC5B9E0817FB713500CEBC74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5B9E0717FB713500CEBC74 /* QuartzCore.framework */; };
+		DC5B9E1217FB8CBA00CEBC74 /* AthleticsNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E1117FB8CBA00CEBC74 /* AthleticsNewsViewController.m */; };
+		DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E1417FB995500CEBC74 /* NewsFeedCell.m */; };
+		DC5B9E1717FB997300CEBC74 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E1617FB997300CEBC74 /* NewsFeedCell.xib */; };
+		DC5B9E1B17FBC2FF00CEBC74 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E1A17FBC2FF00CEBC74 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DC5B9E2217FBCEF000CEBC74 /* user_female.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2017FBCEF000CEBC74 /* user_female.png */; };
+		DC5B9E2317FBCEF000CEBC74 /* user_female@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2117FBCEF000CEBC74 /* user_female@2x.png */; };
+		DC5B9E2717FBD93F00CEBC74 /* user_male.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2517FBD93F00CEBC74 /* user_male.png */; };
+		DC5B9E2817FBD93F00CEBC74 /* user_male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2617FBD93F00CEBC74 /* user_male@2x.png */; };
+		DC5B9E2B17FBDB6400CEBC74 /* AthleticsScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E2A17FBDB6400CEBC74 /* AthleticsScheduleViewController.m */; };
+		DC5B9E2E17FBEBBD00CEBC74 /* date_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2C17FBEBBD00CEBC74 /* date_placeholder.png */; };
+		DC5B9E2F17FBEBBD00CEBC74 /* date_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2D17FBEBBD00CEBC74 /* date_placeholder@2x.png */; };
+		DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E3117FC673200CEBC74 /* WebViewController.m */; };
+		DC5B9E3417FC761100CEBC74 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E3317FC761100CEBC74 /* WebViewController.xib */; };
 		DC79404917F7687500A9D53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404817F7687500A9D53C /* Foundation.framework */; };
 		DC79404B17F7687500A9D53C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404A17F7687500A9D53C /* CoreGraphics.framework */; };
 		DC79404D17F7687500A9D53C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404C17F7687500A9D53C /* UIKit.framework */; };
@@ -64,6 +77,25 @@
 		DC5B9E0417FB709400CEBC74 /* AthleticsRosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AthleticsRosterViewController.h; path = Views/AthleticsRosterViewController.h; sourceTree = "<group>"; };
 		DC5B9E0517FB709400CEBC74 /* AthleticsRosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AthleticsRosterViewController.m; path = Views/AthleticsRosterViewController.m; sourceTree = "<group>"; };
 		DC5B9E0717FB713500CEBC74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DC5B9E0F17FB8C9300CEBC74 /* DataSources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSources.h; sourceTree = "<group>"; };
+		DC5B9E1017FB8CBA00CEBC74 /* AthleticsNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AthleticsNewsViewController.h; path = Views/AthleticsNewsViewController.h; sourceTree = "<group>"; };
+		DC5B9E1117FB8CBA00CEBC74 /* AthleticsNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AthleticsNewsViewController.m; path = Views/AthleticsNewsViewController.m; sourceTree = "<group>"; };
+		DC5B9E1317FB995500CEBC74 /* NewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsFeedCell.h; path = Views/NewsFeedCell.h; sourceTree = "<group>"; };
+		DC5B9E1417FB995500CEBC74 /* NewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsFeedCell.m; path = Views/NewsFeedCell.m; sourceTree = "<group>"; };
+		DC5B9E1617FB997300CEBC74 /* NewsFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsFeedCell.xib; path = Views/NewsFeedCell.xib; sourceTree = "<group>"; };
+		DC5B9E1917FBC2FF00CEBC74 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		DC5B9E1A17FBC2FF00CEBC74 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		DC5B9E2017FBCEF000CEBC74 /* user_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_female.png; path = Icons/user_female.png; sourceTree = "<group>"; };
+		DC5B9E2117FBCEF000CEBC74 /* user_female@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_female@2x.png"; path = "Icons/user_female@2x.png"; sourceTree = "<group>"; };
+		DC5B9E2517FBD93F00CEBC74 /* user_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_male.png; path = Icons/user_male.png; sourceTree = "<group>"; };
+		DC5B9E2617FBD93F00CEBC74 /* user_male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_male@2x.png"; path = "Icons/user_male@2x.png"; sourceTree = "<group>"; };
+		DC5B9E2917FBDB6400CEBC74 /* AthleticsScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AthleticsScheduleViewController.h; path = Views/AthleticsScheduleViewController.h; sourceTree = "<group>"; };
+		DC5B9E2A17FBDB6400CEBC74 /* AthleticsScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AthleticsScheduleViewController.m; path = Views/AthleticsScheduleViewController.m; sourceTree = "<group>"; };
+		DC5B9E2C17FBEBBD00CEBC74 /* date_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = date_placeholder.png; path = Icons/date_placeholder.png; sourceTree = "<group>"; };
+		DC5B9E2D17FBEBBD00CEBC74 /* date_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "date_placeholder@2x.png"; path = "Icons/date_placeholder@2x.png"; sourceTree = "<group>"; };
+		DC5B9E3017FC673200CEBC74 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Views/WebViewController.h; sourceTree = "<group>"; };
+		DC5B9E3117FC673200CEBC74 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Views/WebViewController.m; sourceTree = "<group>"; };
+		DC5B9E3317FC761100CEBC74 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController.xib; path = Views/WebViewController.xib; sourceTree = "<group>"; };
 		DC79404517F7687500A9D53C /* RPIMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPIMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC79404817F7687500A9D53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC79404A17F7687500A9D53C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +160,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC5B9E1817FB9BF800CEBC74 /* Athletics */ = {
+			isa = PBXGroup;
+			children = (
+				DC5B9DF717F7B96800CEBC74 /* AthleticsMainViewController.h */,
+				DC5B9DF817F7B96800CEBC74 /* AthleticsMainViewController.m */,
+				DC5B9DFE17FA1E4200CEBC74 /* AthleticsDetailViewController.h */,
+				DC5B9DFF17FA1E4200CEBC74 /* AthleticsDetailViewController.m */,
+				DC5B9E1017FB8CBA00CEBC74 /* AthleticsNewsViewController.h */,
+				DC5B9E1117FB8CBA00CEBC74 /* AthleticsNewsViewController.m */,
+				DC5B9E0417FB709400CEBC74 /* AthleticsRosterViewController.h */,
+				DC5B9E0517FB709400CEBC74 /* AthleticsRosterViewController.m */,
+				DC5B9E2917FBDB6400CEBC74 /* AthleticsScheduleViewController.h */,
+				DC5B9E2A17FBDB6400CEBC74 /* AthleticsScheduleViewController.m */,
+			);
+			name = Athletics;
+			sourceTree = "<group>";
+		};
+		DC5B9E2417FBCEF700CEBC74 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DC5B9E2017FBCEF000CEBC74 /* user_female.png */,
+				DC5B9E2117FBCEF000CEBC74 /* user_female@2x.png */,
+				DC5B9E2517FBD93F00CEBC74 /* user_male.png */,
+				DC5B9E2617FBD93F00CEBC74 /* user_male@2x.png */,
+				DC5B9E2C17FBEBBD00CEBC74 /* date_placeholder.png */,
+				DC5B9E2D17FBEBBD00CEBC74 /* date_placeholder@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		DC79403C17F7687500A9D53C = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +227,8 @@
 		DC79405017F7687500A9D53C /* RPIMobile */ = {
 			isa = PBXGroup;
 			children = (
+				DC5B9E2417FBCEF700CEBC74 /* Icons */,
+				DC5B9E1817FB9BF800CEBC74 /* Athletics */,
 				DC79409417F769D800A9D53C /* Third Party Libraries */,
 				DC79405917F7687500A9D53C /* AppDelegate.h */,
 				DC79405A17F7687500A9D53C /* AppDelegate.m */,
@@ -172,12 +236,9 @@
 				DC79408B17F7689800A9D53C /* SideMenuViewController.m */,
 				DC79409117F7698E00A9D53C /* NewsFeedViewController.h */,
 				DC79409217F7698E00A9D53C /* NewsFeedViewController.m */,
-				DC5B9DF717F7B96800CEBC74 /* AthleticsMainViewController.h */,
-				DC5B9DF817F7B96800CEBC74 /* AthleticsMainViewController.m */,
-				DC5B9DFE17FA1E4200CEBC74 /* AthleticsDetailViewController.h */,
-				DC5B9DFF17FA1E4200CEBC74 /* AthleticsDetailViewController.m */,
-				DC5B9E0417FB709400CEBC74 /* AthleticsRosterViewController.h */,
-				DC5B9E0517FB709400CEBC74 /* AthleticsRosterViewController.m */,
+				DC5B9E1317FB995500CEBC74 /* NewsFeedCell.h */,
+				DC5B9E1417FB995500CEBC74 /* NewsFeedCell.m */,
+				DC5B9E1617FB997300CEBC74 /* NewsFeedCell.xib */,
 				DC79405F17F7687500A9D53C /* Images.xcassets */,
 				DC79405C17F7687500A9D53C /* RPIMobile.xcdatamodeld */,
 				DC79405117F7687500A9D53C /* Supporting Files */,
@@ -194,6 +255,7 @@
 				DC79405317F7687500A9D53C /* InfoPlist.strings */,
 				DC79405617F7687500A9D53C /* main.m */,
 				DC79405817F7687500A9D53C /* RPIMobile-Prefix.pch */,
+				DC5B9E0F17FB8C9300CEBC74 /* DataSources.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +281,11 @@
 		DC79409417F769D800A9D53C /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DC5B9E3017FC673200CEBC74 /* WebViewController.h */,
+				DC5B9E3117FC673200CEBC74 /* WebViewController.m */,
+				DC5B9E3317FC761100CEBC74 /* WebViewController.xib */,
+				DC5B9E1917FBC2FF00CEBC74 /* JSONKit.h */,
+				DC5B9E1A17FBC2FF00CEBC74 /* JSONKit.m */,
 				DC79409517F76B4C00A9D53C /* MMTableViewCell.h */,
 				DC79409617F76B4C00A9D53C /* MMTableViewCell.m */,
 				DC79409717F76B4C00A9D53C /* MMSideDrawerTableViewCell.h */,
@@ -314,10 +381,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5B9E2217FBCEF000CEBC74 /* user_female.png in Resources */,
+				DC5B9E2817FBD93F00CEBC74 /* user_male@2x.png in Resources */,
 				DC5B9DFD17F7BE4D00CEBC74 /* womenSportsList.plist in Resources */,
+				DC5B9E3417FC761100CEBC74 /* WebViewController.xib in Resources */,
+				DC5B9E1717FB997300CEBC74 /* NewsFeedCell.xib in Resources */,
 				DC79405517F7687500A9D53C /* InfoPlist.strings in Resources */,
 				DC5B9DFC17F7BE4D00CEBC74 /* menSportsList.plist in Resources */,
+				DC5B9E2717FBD93F00CEBC74 /* user_male.png in Resources */,
+				DC5B9E2317FBCEF000CEBC74 /* user_female@2x.png in Resources */,
 				DC79406017F7687500A9D53C /* Images.xcassets in Resources */,
+				DC5B9E2F17FBEBBD00CEBC74 /* date_placeholder@2x.png in Resources */,
+				DC5B9E2E17FBEBBD00CEBC74 /* date_placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,12 +446,17 @@
 			files = (
 				DC79409F17F76B4C00A9D53C /* MMCenterTableViewCell.m in Sources */,
 				DC5B9E0017FA1E4200CEBC74 /* AthleticsDetailViewController.m in Sources */,
+				DC5B9E1B17FBC2FF00CEBC74 /* JSONKit.m in Sources */,
 				DC79405B17F7687500A9D53C /* AppDelegate.m in Sources */,
+				DC5B9E2B17FBDB6400CEBC74 /* AthleticsScheduleViewController.m in Sources */,
 				DC88EEC817F76F7A006AB482 /* CRNavigationBar.m in Sources */,
 				DC79409317F7698E00A9D53C /* NewsFeedViewController.m in Sources */,
+				DC5B9E1217FB8CBA00CEBC74 /* AthleticsNewsViewController.m in Sources */,
 				DC79408C17F7689800A9D53C /* SideMenuViewController.m in Sources */,
 				DC5B9DF917F7B96800CEBC74 /* AthleticsMainViewController.m in Sources */,
 				DC79409E17F76B4C00A9D53C /* MMSideDrawerTableViewCell.m in Sources */,
+				DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */,
+				DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */,
 				DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */,
 				DC79405E17F7687500A9D53C /* RPIMobile.xcdatamodeld in Sources */,
 				DC79405717F7687500A9D53C /* main.m in Sources */,
@@ -501,11 +581,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC3002859BFC491B8339B869 /* Pods/Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RPIMobile/RPIMobile-Prefix.pch";
 				INFOPLIST_FILE = "RPIMobile/RPIMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -515,11 +597,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC3002859BFC491B8339B869 /* Pods/Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RPIMobile/RPIMobile-Prefix.pch";
 				INFOPLIST_FILE = "RPIMobile/RPIMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

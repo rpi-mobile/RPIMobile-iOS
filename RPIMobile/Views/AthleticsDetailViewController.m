@@ -5,21 +5,27 @@
 //  Created by Stephen Silber on 9/30/13.
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
-
+#import "WebViewController.h"
 #import "ViewPagerController.h"
 #import "AthleticsDetailViewController.h"
 #import "AthleticsRosterViewController.h"
+#import "AthleticsNewsViewController.h"
+#import "AthleticsScheduleViewController.h"
 
 #define kMenuItems @[@"News", @"Roster", @"Schedule", @"Mobile Site"]
 
-@interface AthleticsDetailViewController () <ViewPagerDelegate, ViewPagerDataSource, UITableViewDataSource, UITableViewDelegate>
-    @property (strong) UITableView *tableView;
+@interface AthleticsDetailViewController () <ViewPagerDelegate, ViewPagerDataSource>
+    @property (strong) NSString *key, *sport, *gender;
 @end
 
 @implementation AthleticsDetailViewController
 
-- (id)initWithSport:(NSString *) sport gender:(NSString *) gender {
+- (id)initWithSport:(NSString *) sport gender:(NSString *) gender key:(NSString *)key {
     if (self = [super init]) {
+        _key = key;
+        _sport = sport;
+        _gender = gender;
+
         // this will appear as the title in the navigation bar
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
         label.backgroundColor = [UIColor clearColor];
@@ -31,25 +37,25 @@
         self.navigationItem.titleView = label;
         label.text = NSLocalizedString(sport, @"");
         [label sizeToFit];
+
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     self.dataSource = self;
     self.delegate = self;
-    
-    self.title = @"Athletic Details";
-    
+//    self.view.contentMode = UIEdgeInsetsMake(64,0,0,0);
+
     // Keeps tab bar below navigation bar on iOS 7.0+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    
-    [self.tableView reloadData];
 
+    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,59 +64,54 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return kMenuItems.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.textLabel.text = [kMenuItems objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    return 4;
+    return 3;
 }
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
-    
     UILabel *label = [UILabel new];
+    switch (index) {
+        case 0:
+            label.text = @"News";
+            break;
+        case 1:
+            label.text = @"Roster";
+            break;
+        case 2:
+            label.text = @"Schedule";
+            break;
+        default:
+            label.text = @"";
+            break;
+    }
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:13.0];
-    label.text = [NSString stringWithFormat:@"Content View #%i", index];
+    label.font = [UIFont boldSystemFontOfSize:13.0];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor blackColor];
     [label sizeToFit];
-    
     return label;
 }
 
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
-    AthleticsRosterViewController *rosterView = [[AthleticsRosterViewController alloc] init];
-    rosterView.view.backgroundColor = [UIColor redColor];
-    return rosterView;
+
+    UIViewController *nextView;
+    switch (index) {
+        case 0:
+            // News tab tapped
+            nextView = [[AthleticsNewsViewController alloc] initWithSport:_sport andKey:_key andViewController:self];
+            break;
+        case 1:
+            // Roster tab tapped
+            nextView = [[AthleticsRosterViewController alloc] initWithSport:_sport andKey:_key andGender:_gender andViewController:self];
+            break;
+        case 2:
+            // Schedule tab tapped
+            nextView = [[AthleticsScheduleViewController alloc] initWithSport:_sport andKey:_key andGender:_gender];
+            break;
+        default:
+            break;
+    }
+    return nextView;
 }
 
 #pragma mark - ViewPagerDelegate
@@ -118,7 +119,7 @@
     
     switch (option) {
         case ViewPagerOptionStartFromSecondTab:
-            return 1.0;
+            return 0.0;
             break;
         case ViewPagerOptionCenterCurrentTab:
             return 0.0;
@@ -136,7 +137,10 @@
     
     switch (component) {
         case ViewPagerIndicator:
-            return [[UIColor redColor] colorWithAlphaComponent:0.64];
+            return [UIColor redColor];
+            break;
+        case ViewPagerTabsView:
+            return [UIColor whiteColor];
             break;
         default:
             break;

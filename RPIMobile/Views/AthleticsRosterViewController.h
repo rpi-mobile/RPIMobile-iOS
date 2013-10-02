@@ -10,4 +10,7 @@
 
 @interface AthleticsRosterViewController : UIViewController
 
+// Custom initializer to pass information from parent view
+- (id) initWithSport:(NSString *)sport andKey:(NSString *)key andGender:(NSString *)gender andViewController:(UIViewController *) view;
+
 @end

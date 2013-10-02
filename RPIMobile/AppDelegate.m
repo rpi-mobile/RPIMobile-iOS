@@ -18,6 +18,8 @@
 #import "NewsFeedViewController.h"
 #import "AthleticsMainViewController.h"
 #import "SideMenuViewController.h"
+#import "WebViewController.h"
+
 
 @implementation AppDelegate
 
@@ -28,6 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
+//    WebViewController *mainView = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
+//    [mainView.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://github.com/stephensilber/RPIMobile/blob/master/RPIMobile/SportViewController.m"]]];
     SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
     _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
     
@@ -48,7 +52,11 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = drawerController;
-    self.window.tintColor = [UIColor whiteColor]; // Changes the uinavigationbar button colors (back button)
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.window.tintColor = [UIColor whiteColor]; // Changes the uinavigationbar button colors (back button)
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; // Changes status bar text color to white
+    }
+
 
     [self.window makeKeyAndVisible];
     

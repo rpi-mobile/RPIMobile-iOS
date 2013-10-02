@@ -13,6 +13,6 @@
 
 @interface AthleticsDetailViewController : ViewPagerController
 
-- (id)initWithSport:(NSString *) sport gender:(NSString *) gender;
+- (id)initWithSport:(NSString *) sport gender:(NSString *) gender key:(NSString *)key;
 
 @end

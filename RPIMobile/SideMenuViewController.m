@@ -30,22 +30,27 @@
     }
     return self;
 }
-
--(void)setupLeftMenuButton{
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
-}
+//
+//-(void)setupLeftMenuButton{
+//    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+//    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
+//}
 
 
 - (void)viewDidLoad
 {
+    // Keeps tab bar below navigation bar on iOS 7.0+
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     [super viewDidLoad];
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self setupLeftMenuButton];
+//    [self setupLeftMenuButton];
 
     
     _menuItems = [[NSArray alloc] initWithObjects: @"News Feed", @"Athletics", @"Social Feed", @"Transportation", nil];
