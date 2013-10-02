@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
 
+#import "UIViewController+MMDrawerController.h"
+#import "MMDrawerBarButtonItem.h"
 #import "AthleticsMainViewController.h"
 #import "AthleticsDetailViewController.h"
 
@@ -75,23 +77,16 @@
     [self.view addSubview:_tableView];
     [self.view addSubview:_genderControl];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000]];
+    
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
-//- (CGFloat)topOfViewOffset
-//{
-//    CGFloat top = 0;
-//    if ([self respondsToSelector:@selector(topLayoutGuide)])
-//    {
-//        top = self.topLayoutGuide.length;
-//    }
-//    return top;
-//}
-//
-//- (void)viewDidLayoutSubviews
-//{
-//    [super viewDidLayoutSubviews];
-//    self.genderControl.frame = CGRectMake(-10, self.topOfViewOffset, self.view.frame.size.width + 20, 35);
-//}
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
 
 - (void)viewDidLoad
 {

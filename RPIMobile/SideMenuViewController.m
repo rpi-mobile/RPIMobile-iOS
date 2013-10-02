@@ -37,6 +37,11 @@
 //}
 
 
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
+}
+
 - (void)viewDidLoad
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
@@ -45,6 +50,8 @@
     }
     
     [super viewDidLoad];
+    [self setupLeftMenuButton];
+
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];

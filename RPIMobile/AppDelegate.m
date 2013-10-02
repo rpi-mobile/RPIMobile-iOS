@@ -30,8 +30,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
-//    WebViewController *mainView = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
-//    [mainView.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://github.com/stephensilber/RPIMobile/blob/master/RPIMobile/SportViewController.m"]]];
     SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
     _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
     
@@ -43,6 +41,8 @@
     [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:2.5]];
+    [drawerController setMaximumLeftDrawerWidth:200.0f];
+
     
     //Set disk cache
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024

@@ -1,5 +1,5 @@
 platform :ios, '6.0'
-pod 'MMDrawerController', '~> 0.4.0'
+pod 'MMDrawerController', '~> 0.5.0'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'ISRefreshControl', '~> 1.0.2'
