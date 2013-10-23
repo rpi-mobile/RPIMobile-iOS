@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QN0-PM-PeD">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="0.0" blue="0.065008229039698051" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,14 +26,27 @@
                         <outlet property="delegate" destination="-1" id="WHn-EJ-nFQ"/>
                     </connections>
                 </webView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-vk-Z7R">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-vk-Z7R" customClass="CRToolBar">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem systemItem="rewind" id="mit-jZ-Ea0"/>
+                        <barButtonItem style="plain" systemItem="rewind" id="mit-jZ-Ea0">
+                            <connections>
+                                <action selector="goBack" destination="QN0-PM-PeD" id="cMZ-8U-kiD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="refresh" id="4Ky-up-Ytq">
+                            <connections>
+                                <action selector="reload" destination="QN0-PM-PeD" id="kaA-0j-cGl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="fastForward" id="Zsh-ds-gjg">
+                            <connections>
+                                <action selector="goForward" destination="QN0-PM-PeD" id="gDf-LY-NQG"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
-                    <color key="tintColor" red="1" green="0.98003084397992613" blue="0.94112479799153026" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                    <color key="barTintColor" red="1" green="0.011788656142404319" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -42,6 +42,7 @@
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Finished download of %i objects", [[responseObject objectForKey:@"players"] count]);
         _roster = [responseObject objectForKey:@"players"];

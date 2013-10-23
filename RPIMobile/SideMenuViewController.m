@@ -12,8 +12,10 @@
 #import "MMSideDrawerTableViewCell.h"
 #import "SideMenuViewController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "CRNavigationController.h"
 
 #import "AthleticsMainViewController.h"
+#import "LaundryViewController.h"
 
 @interface SideMenuViewController ()
     @property (strong) NSArray *menuItems;
@@ -86,6 +88,7 @@
     if (cell == nil) {
         cell = [[MMSideDrawerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+        cell.backgroundColor = [UIColor whiteColor];
     }
     
     cell.textLabel.text = [_menuItems objectAtIndex:indexPath.row];
@@ -117,8 +120,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    AthleticsMainViewController *athleticsView = [[AthleticsMainViewController alloc] init];
-    [self.navigationController pushViewController:athleticsView animated:YES];
+    UIViewController *nextView;
+
+    switch (indexPath.row) {
+        case 0:
+            nextView = [[AthleticsMainViewController alloc] init];
+            break;
+        case 1:
+            nextView = [[LaundryViewController alloc] init];
+        default:
+            break;
+    }
+    
+    CRNavigationController *nav = [[CRNavigationController alloc] initWithRootViewController:nextView];
+    [nav.navigationBar setBarTintColor:[UIColor redColor]];
+    
+    [self.mm_drawerController setCenterViewController:nav withFullCloseAnimation:YES completion:nil];
 }
 
 

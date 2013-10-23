@@ -10,7 +10,8 @@
 #define RPIMobile_DataSources_h
 
 #define kAthleticsFeedUrl @"http://rpiathletics.com/rss.aspx?path="
-#define kAthleticsRosterUrl @"http://192.168.0.10:8080/v1/roster/"
-#define kAthleticsScheduleUrl @"http://192.168.0.10:8080/v1/schedule/"
+#define kAthleticsRosterUrl @"http://localhost:8080/v1/roster/"
+#define kAthleticsScheduleUrl @"http://localhost:8080/v1/schedule/"
+#define kLaundryStatusFeedUrl @"http://localhost:8080/v1/laundry"
 
 #endif

@@ -6,11 +6,12 @@
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
 
+#import "CRToolBar.h"
 #import "WebViewController.h"
 
 @interface WebViewController () <UIWebViewDelegate>
 
-@property (strong) IBOutlet UIToolbar *toolBar;
+@property (strong) IBOutlet CRToolBar *toolBar;
 @property (strong) NSURLRequest *firstRequest;
 
 @end
@@ -44,8 +45,11 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     [self.webView loadRequest:_firstRequest];
+    self.webView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, _toolBar.frame.size.height, 0);
+    [_toolBar setBarTintColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.850]];
 
 }
 

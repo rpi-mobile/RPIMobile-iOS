@@ -28,6 +28,9 @@
 		DC5B9E2F17FBEBBD00CEBC74 /* date_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E2D17FBEBBD00CEBC74 /* date_placeholder@2x.png */; };
 		DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E3117FC673200CEBC74 /* WebViewController.m */; };
 		DC5B9E3417FC761100CEBC74 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E3317FC761100CEBC74 /* WebViewController.xib */; };
+		DC5B9E4B17FC8EE100CEBC74 /* CRToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E4A17FC8EE100CEBC74 /* CRToolBar.m */; };
+		DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E4D17FE2D1600CEBC74 /* LaundryTableViewCell.m */; };
+		DC5B9E5017FE2D2E00CEBC74 /* LaundryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9E4F17FE2D2E00CEBC74 /* LaundryTableViewCell.xib */; };
 		DC79404917F7687500A9D53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404817F7687500A9D53C /* Foundation.framework */; };
 		DC79404B17F7687500A9D53C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404A17F7687500A9D53C /* CoreGraphics.framework */; };
 		DC79404D17F7687500A9D53C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404C17F7687500A9D53C /* UIKit.framework */; };
@@ -51,6 +54,7 @@
 		DC7940A017F76B4C00A9D53C /* MMSideDrawerSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC79409C17F76B4C00A9D53C /* MMSideDrawerSectionHeaderView.m */; };
 		DC88EEC817F76F7A006AB482 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC88EEC517F76F7A006AB482 /* CRNavigationBar.m */; };
 		DC88EEC917F76F7A006AB482 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC88EEC717F76F7A006AB482 /* CRNavigationController.m */; };
+		DC9B6F0D1814CEE500274579 /* LaundryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B6F0C1814CEE500274579 /* LaundryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,11 @@
 		DC5B9E3017FC673200CEBC74 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Views/WebViewController.h; sourceTree = "<group>"; };
 		DC5B9E3117FC673200CEBC74 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Views/WebViewController.m; sourceTree = "<group>"; };
 		DC5B9E3317FC761100CEBC74 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController.xib; path = Views/WebViewController.xib; sourceTree = "<group>"; };
+		DC5B9E4917FC8EE100CEBC74 /* CRToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRToolBar.h; sourceTree = "<group>"; };
+		DC5B9E4A17FC8EE100CEBC74 /* CRToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRToolBar.m; sourceTree = "<group>"; };
+		DC5B9E4C17FE2D1600CEBC74 /* LaundryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaundryTableViewCell.h; path = Views/LaundryTableViewCell.h; sourceTree = "<group>"; };
+		DC5B9E4D17FE2D1600CEBC74 /* LaundryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaundryTableViewCell.m; path = Views/LaundryTableViewCell.m; sourceTree = "<group>"; };
+		DC5B9E4F17FE2D2E00CEBC74 /* LaundryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaundryTableViewCell.xib; path = Views/LaundryTableViewCell.xib; sourceTree = "<group>"; };
 		DC79404517F7687500A9D53C /* RPIMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPIMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC79404817F7687500A9D53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC79404A17F7687500A9D53C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +139,8 @@
 		DC88EEC517F76F7A006AB482 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
 		DC88EEC617F76F7A006AB482 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
 		DC88EEC717F76F7A006AB482 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
+		DC9B6F0B1814CEE400274579 /* LaundryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaundryViewController.h; path = Views/LaundryViewController.h; sourceTree = "<group>"; };
+		DC9B6F0C1814CEE500274579 /* LaundryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaundryViewController.m; path = Views/LaundryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +241,11 @@
 				DC5B9E2417FBCEF700CEBC74 /* Icons */,
 				DC5B9E1817FB9BF800CEBC74 /* Athletics */,
 				DC79409417F769D800A9D53C /* Third Party Libraries */,
+				DC5B9E4C17FE2D1600CEBC74 /* LaundryTableViewCell.h */,
+				DC5B9E4D17FE2D1600CEBC74 /* LaundryTableViewCell.m */,
+				DC5B9E4F17FE2D2E00CEBC74 /* LaundryTableViewCell.xib */,
+				DC9B6F0B1814CEE400274579 /* LaundryViewController.h */,
+				DC9B6F0C1814CEE500274579 /* LaundryViewController.m */,
 				DC79405917F7687500A9D53C /* AppDelegate.h */,
 				DC79405A17F7687500A9D53C /* AppDelegate.m */,
 				DC79408A17F7689800A9D53C /* SideMenuViewController.h */,
@@ -295,6 +311,8 @@
 				DC79409B17F76B4C00A9D53C /* MMSideDrawerSectionHeaderView.h */,
 				DC79409C17F76B4C00A9D53C /* MMSideDrawerSectionHeaderView.m */,
 				DC88EEC417F76F7A006AB482 /* CRNavigationBar.h */,
+				DC5B9E4917FC8EE100CEBC74 /* CRToolBar.h */,
+				DC5B9E4A17FC8EE100CEBC74 /* CRToolBar.m */,
 				DC88EEC517F76F7A006AB482 /* CRNavigationBar.m */,
 				DC88EEC617F76F7A006AB482 /* CRNavigationController.h */,
 				DC88EEC717F76F7A006AB482 /* CRNavigationController.m */,
@@ -391,6 +409,7 @@
 				DC5B9E2717FBD93F00CEBC74 /* user_male.png in Resources */,
 				DC5B9E2317FBCEF000CEBC74 /* user_female@2x.png in Resources */,
 				DC79406017F7687500A9D53C /* Images.xcassets in Resources */,
+				DC5B9E5017FE2D2E00CEBC74 /* LaundryTableViewCell.xib in Resources */,
 				DC5B9E2F17FBEBBD00CEBC74 /* date_placeholder@2x.png in Resources */,
 				DC5B9E2E17FBEBBD00CEBC74 /* date_placeholder.png in Resources */,
 			);
@@ -453,11 +472,14 @@
 				DC79409317F7698E00A9D53C /* NewsFeedViewController.m in Sources */,
 				DC5B9E1217FB8CBA00CEBC74 /* AthleticsNewsViewController.m in Sources */,
 				DC79408C17F7689800A9D53C /* SideMenuViewController.m in Sources */,
+				DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */,
 				DC5B9DF917F7B96800CEBC74 /* AthleticsMainViewController.m in Sources */,
 				DC79409E17F76B4C00A9D53C /* MMSideDrawerTableViewCell.m in Sources */,
 				DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */,
+				DC9B6F0D1814CEE500274579 /* LaundryViewController.m in Sources */,
 				DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */,
 				DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */,
+				DC5B9E4B17FC8EE100CEBC74 /* CRToolBar.m in Sources */,
 				DC79405E17F7687500A9D53C /* RPIMobile.xcdatamodeld in Sources */,
 				DC79405717F7687500A9D53C /* main.m in Sources */,
 				DC5B9E0617FB709400CEBC74 /* AthleticsRosterViewController.m in Sources */,

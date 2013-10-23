@@ -7,6 +7,8 @@
 //
 
 #import "CRNavigationController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 #import "CRNavigationBar.h"
 
 @interface CRNavigationController ()
@@ -18,15 +20,22 @@
 - (id)init {
     self = [super initWithNavigationBarClass:[CRNavigationBar class] toolbarClass:nil];
     if(self) {
-        // Custom initialization here, if needed.
+
     }
     return self;
+}
+
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (id)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super initWithNavigationBarClass:[CRNavigationBar class] toolbarClass:nil];
     if(self) {
         self.viewControllers = @[rootViewController];
+        MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+        [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
     }
     
     return self;
