@@ -21,6 +21,9 @@
 
 #import "MMSideDrawerTableViewCell.h"
 
+#define kDefaultBackground [UIColor whiteColor]
+#define kDefaultTextColor [UIColor darkGrayColor]
+
 @implementation MMSideDrawerTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -32,28 +35,13 @@
         UIView * backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         [backgroundView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
         UIColor * backgroundColor;
-        if(OSVersionIsAtLeastiOS7()){
-            backgroundColor = [UIColor colorWithRed:122.0/255.0
-                                              green:126.0/255.0
-                                               blue:128.0/255.0
-                                              alpha:1.0];
-        }
-        else {
-            backgroundColor = [UIColor colorWithRed:77.0/255.0
-                                              green:79.0/255.0
-                                               blue:80.0/255.0
-                                              alpha:1.0];
-        }
+        backgroundColor = (OSVersionIsAtLeastiOS7()) ? kDefaultBackground : kDefaultBackground;
         [backgroundView setBackgroundColor:backgroundColor];
 
         [self setBackgroundView:backgroundView];
         
         [self.textLabel setBackgroundColor:[UIColor clearColor]];
-        [self.textLabel setTextColor:[UIColor
-                                      colorWithRed:230.0/255.0
-                                      green:236.0/255.0
-                                      blue:242.0/255.0
-                                      alpha:1.0]];
+        [self.textLabel setTextColor:kDefaultTextColor];
         if(OSVersionIsAtLeastiOS7()== NO){
             [self.textLabel setShadowColor:[[UIColor blackColor] colorWithAlphaComponent:.5]];
             [self.textLabel setShadowOffset:CGSizeMake(0, 1)];

@@ -8,13 +8,13 @@
 #import "JSONKit.h"
 #import "DataSources.h"
 #import "MBProgressHUD.h"
-#import "CRToolBar.h"
 #import "UIImageView+WebCache.h"
+#import "UIViewController+MMDrawerController.h"
+#import "MMDrawerBarButtonItem.h"
 #import "LaundryTableViewCell.h"
 #import "AFHTTPRequestOperation.h"
 #import "LaundryViewController.h"
 
-#define kHeaderHeight 30
 
 @interface LaundryViewController ()
 @property (strong) NSArray *laundryMachines;
@@ -68,6 +68,12 @@
 }
 
 
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+
 - (void)viewDidLoad
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
@@ -75,19 +81,17 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000]];
     
-    CRToolBar *headerBar = [[CRToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderHeight)];
-    [headerBar setBarTintColor:[UIColor darkGrayColor]];
-    [headerBar setTranslucent:YES];
-    
-    
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"LaundryTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
 
     [super viewDidLoad];
-    [self.view addSubview:headerBar];
     [self.view addSubview:self.tableView];
     [self fetchLaundryStatus];
 }

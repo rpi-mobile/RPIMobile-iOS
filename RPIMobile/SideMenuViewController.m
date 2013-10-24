@@ -32,37 +32,27 @@
     }
     return self;
 }
-//
-//-(void)setupLeftMenuButton{
-//    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-//    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
-//}
-
-
--(void)setupLeftMenuButton{
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationController setToolbarItems:[NSArray arrayWithObject:leftDrawerButton]];
-}
 
 - (void)viewDidLoad
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.edgesForExtendedLayout = UIRectEdgeTop;
     }
     
     [super viewDidLoad];
-    [self setupLeftMenuButton];
 
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
     [self.view addSubview:self.tableView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-//    [self setupLeftMenuButton];
+    
 
     
-    _menuItems = [[NSArray alloc] initWithObjects: @"News Feed", @"Athletics", @"Social Feed", @"Transportation", nil];
+    _menuItems = [[NSArray alloc] initWithObjects: @"Athletics", @"Laundry", @"Social Feed", @"Transportation", nil];
 
 }
 
@@ -87,8 +77,8 @@
     UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[MMSideDrawerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
-        cell.backgroundColor = [UIColor whiteColor];
     }
     
     cell.textLabel.text = [_menuItems objectAtIndex:indexPath.row];
