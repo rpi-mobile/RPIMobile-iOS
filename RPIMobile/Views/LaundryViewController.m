@@ -19,6 +19,7 @@
 @interface LaundryViewController ()
 @property (strong) NSArray *laundryMachines;
 @property (strong) UITableView *tableView;
+@property (strong) UIBarButtonItem *refreshButton;
 @end
 
 @implementation LaundryViewController
@@ -43,7 +44,13 @@
 }
 
 - (void) fetchLaundryStatus {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    //Create an instance of Bar button item with custome view which is of activity indicator
+    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+    //Set the bar button the navigation bar
+    [self navigationItem].rightBarButtonItem = barButton;
+    
+    [activityIndicator startAnimating];
     NSURL *url = [NSURL URLWithString:kLaundryStatusFeedUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -54,17 +61,20 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response: %@", responseObject);
         _laundryMachines = [responseObject objectForKey:@"rooms"];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableView reloadData];
         
+        // Reset activity indicator to refresh button
+        [activityIndicator stopAnimating];
+        self.navigationItem.rightBarButtonItem = self.refreshButton;
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // Request raised an error
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        // Request raised an error and reset activity indicator to refresh button
+        [activityIndicator stopAnimating];
+        self.navigationItem.rightBarButtonItem = self.refreshButton;
         NSLog(@"Request to download laundry status1 failed: %@\n\n%@", error, [operation responseString]);
     }];
     
     [operation start];
-
 }
 
 
@@ -72,7 +82,6 @@
 -(void)leftDrawerButtonPress:(id)sender{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
-
 
 - (void)viewDidLoad
 {
@@ -90,6 +99,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"LaundryTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    // Create reload button
+    self.refreshButton = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                               target:self
+                               action:@selector(fetchLaundryStatus)];
+    self.navigationItem.rightBarButtonItem = self.refreshButton;
 
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
@@ -119,7 +135,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 67.0f;
+    return 70.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
