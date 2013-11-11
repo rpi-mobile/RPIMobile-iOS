@@ -8,6 +8,8 @@
 
 #import "MMTableViewCell.h"
 #import "MMDrawerBarButtonItem.h"
+#import "DataSources.h"
+#import "AFHTTPRequestOperation.h"
 #import "MMSideDrawerSectionHeaderView.h"
 #import "MMSideDrawerTableViewCell.h"
 #import "SideMenuViewController.h"
@@ -15,11 +17,17 @@
 #import "CRNavigationController.h"
 
 #import "AthleticsMainViewController.h"
+#import "TwitterFeedViewController.h"
 #import "LaundryViewController.h"
 
+#define kWeatherRefreshInterval 0 // In seconds (10 minutes)
+#define kWeatherBarHeight 44
+
 @interface SideMenuViewController ()
-    @property (strong) NSArray *menuItems;
-    @property (nonatomic, strong) UITableView * tableView;
+@property (strong) NSArray *menuItems;
+@property (nonatomic, strong) UITableView * tableView;
+@property (strong) NSMutableDictionary *weatherInfo;
+@property (strong) NSDate *weatherLastUpdated;
 @end
 
 @implementation SideMenuViewController
@@ -33,30 +41,75 @@
     return self;
 }
 
+- (NSString *) convertKelvinToFahrenheit:(CGFloat) kelvin {
+    return [NSString stringWithFormat:@"%0.1f", ((kelvin - 273) * 1.8 ) + 32];
+}
+
+// Using openweathermap API, fetches JSON object of troy, ny weather
+- (void) fetchWeatherStatus {
+    NSURL *url = [NSURL URLWithString:kWeatherStatusUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // Successfully downloaded updated weather information
+        self.weatherInfo = [NSMutableDictionary dictionaryWithDictionary:responseObject];
+        if([self.weatherInfo objectForKey:@"main"]) {
+            // Convert kelvin temp
+            CGFloat kelvin = [[[self.weatherInfo objectForKey:@"main"] objectForKey:@"temp"] floatValue];
+            NSString *fahrenheit = [self convertKelvinToFahrenheit:kelvin];
+            [self.weatherInfo setValue:fahrenheit forKey:@"current_temp"];
+
+            UIView *v = [[self tableView] tableHeaderView];
+            NSLog(@"%@", [v subviews]);
+            [[[v subviews] firstObject] setText: @"Test"];
+            
+        } else {
+            NSLog(@"Error: Invalid return object when fetching weather!");
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // Error downloading weather information
+        NSLog(@"Error downloading weather: %@", error);
+    }];
+    
+    [operation start];
+}
+
 - (void)viewDidLoad
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeTop;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        [self.tableView setContentInset:UIEdgeInsetsMake(20, self.tableView.contentInset.left, self.tableView.contentInset.bottom, self.tableView.contentInset.right)];
     }
     
     [super viewDidLoad];
-
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [self fetchWeatherStatus];
+    
+    _menuItems = [[NSArray alloc] initWithObjects: @"Athletics", @"Laundry", @"Social Feed", @"Transportation", nil];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     
     [self.view addSubview:self.tableView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-
-    
-    _menuItems = [[NSArray alloc] initWithObjects: @"Athletics", @"Laundry", @"Social Feed", @"Transportation", nil];
 
 }
 
-
+- (void) viewDidAppear:(BOOL)animated {
+    [self fetchWeatherStatus];
+    if(!self.weatherLastUpdated) self.weatherLastUpdated = [NSDate date];
+    if( ([self.weatherLastUpdated timeIntervalSinceNow]) > kWeatherRefreshInterval) {
+        // Need to update weather
+        NSLog(@"Weather needs to be udpated");
+        [self fetchWeatherStatus];
+    }
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -77,7 +130,6 @@
     UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[MMSideDrawerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     
@@ -86,23 +138,48 @@
     return cell;
 }
 
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"Main Menu";
+- (void) toggleWeatherView:(UITapGestureRecognizer *)gestureRecognizer {
+    UIView *weatherView = gestureRecognizer.view;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.25f];
+    
+    CGRect newHeaderFrame = weatherView.frame;
+    newHeaderFrame.size.height = (weatherView.frame.size.height > kWeatherBarHeight) ? newHeaderFrame.size.height - 100.0f : newHeaderFrame.size.height + 100.0f;
+    [weatherView setFrame:newHeaderFrame];
+    
+    [UIView commitAnimations];
+    
+
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    MMSideDrawerSectionHeaderView * headerView =  [[MMSideDrawerSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), 40.0f)];
-    [headerView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
-    [headerView setTitle:[tableView.dataSource tableView:tableView titleForHeaderInSection:section]];
-    return headerView;
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *weatherView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, CGRectGetWidth(tableView.bounds), kWeatherBarHeight)];
+    [weatherView setBackgroundColor:[UIColor colorWithWhite:0.333 alpha:0.900]];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleWeatherView:)];
+    [weatherView addGestureRecognizer:singleTap];
+    CGRect w = weatherView.frame;
+    w.origin.y = kWeatherBarHeight/2;
+    w.size.height = kWeatherBarHeight/2;
+    
+    
+    NSString *weatherString = ([self.weatherInfo objectForKey:@"current_temp"]) ? [NSString stringWithFormat:@"Current Weather: %@°F", [self.weatherInfo objectForKey:@"current_temp"]] : @"Main Menu";
+    UILabel *weatherLabel = [[UILabel alloc] initWithFrame:w];
+    [weatherLabel setText:weatherString];
+    [weatherLabel setTextColor:[UIColor whiteColor]];
+    [weatherLabel setFont:[UIFont systemFontOfSize:14]];
+    
+    [weatherView addSubview:weatherLabel];
+    [weatherView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+    return weatherView;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 23.0;
-}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40.0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return kWeatherBarHeight;
 }
 
 #pragma mark - Table view delegate
@@ -118,6 +195,10 @@
             break;
         case 1:
             nextView = [[LaundryViewController alloc] init];
+            break;
+        case 2:
+            nextView = [[TwitterFeedViewController alloc] init];
+            break;
         default:
             break;
     }

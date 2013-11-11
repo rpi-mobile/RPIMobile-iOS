@@ -16,15 +16,6 @@ PODS:
   - AFNetworking/UIKit (2.0.0):
     - AFNetworking/NSURLConnection
   - ISRefreshControl (1.0.2)
-  - libwebp (0.3.0-rc7):
-    - libwebp/dec
-    - libwebp/dsp
-    - libwebp/utils
-    - libwebp/webp
-  - libwebp/dec (0.3.0-rc7)
-  - libwebp/dsp (0.3.0-rc7)
-  - libwebp/utils (0.3.0-rc7)
-  - libwebp/webp (0.3.0-rc7)
   - MBProgressHUD (0.8)
   - MMDrawerController (0.5.1):
     - MMDrawerController/Core
@@ -49,10 +40,9 @@ PODS:
   - MWFeedParser/NSString+XMLEntities (0.0.1)
   - REMenu (1.5)
   - SDWebImage (3.4):
-    - libwebp
-    - SDWebImage/MapKit
-  - SDWebImage/MapKit (3.4):
-    - libwebp
+    - SDWebImage/Core
+  - SDWebImage/Core (3.4)
+  - STTwitter (0.0.6)
 
 DEPENDENCIES:
   - AFNetworking
@@ -62,15 +52,16 @@ DEPENDENCIES:
   - MWFeedParser (~> 0.0.1)
   - REMenu (~> 1.5)
   - SDWebImage
+  - STTwitter
 
 SPEC CHECKSUMS:
-  AFNetworking: 17de048dd0d74ea4b174e7827eb1102cb67d2aa4
+  AFNetworking: 3fa983b1beaba69566a3374612511e2a6e3fe845
   ISRefreshControl: 38b6073a026117ad8fcbe33853b36bee4e39bf4c
-  libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MMDrawerController: 3e22aec684dbee5307ff9d1e76523003a3303a2d
   MWFeedParser: 2ca0852fac352f8333d5f46fdd4b583b921e0c4e
   REMenu: 6b0583aea38a1eae802d56ec9a0202dacbed3f88
-  SDWebImage: f13f791e411c632489824aa7f129e230b52bf5c4
+  SDWebImage: 366188f04c019bfd712d45e3b36aa52070f4abd8
+  STTwitter: 0a2459e87d7655c6798d1c6dba48e393114649b7
 
 COCOAPODS: 0.22.1

@@ -59,7 +59,6 @@
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"response: %@", responseObject);
         _laundryMachines = [responseObject objectForKey:@"rooms"];
         [self.tableView reloadData];
         
@@ -87,7 +86,7 @@
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.edgesForExtendedLayout = UIRectEdgeTop;
     }
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000]];

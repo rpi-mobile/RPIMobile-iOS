@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LaundryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIToolbarDelegate>
+@interface LaundryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

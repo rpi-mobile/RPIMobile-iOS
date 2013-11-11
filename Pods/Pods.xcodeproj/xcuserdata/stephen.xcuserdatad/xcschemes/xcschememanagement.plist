@@ -44,6 +44,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>Pods-STTwitter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Pods-libwebp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -67,6 +72,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0C20041B8DEF4EB6AE70C879</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>168B23BC2A5A408C988E7093</key>
 		<dict>
 			<key>primary</key>
@@ -82,12 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>281FA8EDFE65440AA17501C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2BC6141F28914D55BAC1BA16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>32600020797646E0BD485450</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33F7B5D44D554E03953C61B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>5A1DA4B9CC9242AC9E3601F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B410B5C83AC432085D62430</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,6 +187,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>88608FA96ABE49A2B7A6E0AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8E43C4A3DBE34DE883550D58</key>
 		<dict>
 			<key>primary</key>
@@ -197,12 +227,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A6F853078064488F84588927</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A92E2A84834D41D2B9AF107A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>AC7EED76CB3C449F8FDCC4E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE15E2678574488F88F465D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -232,6 +272,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C0EB0EEEA9E1408CB2A8A3F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D0B19C05FAB749BD80700C52</key>
 		<dict>
 			<key>primary</key>
@@ -248,6 +293,11 @@
 			<true/>
 		</dict>
 		<key>E5B79F0115074EA1AFF734B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F63E774DA06944C6B27E7C17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
