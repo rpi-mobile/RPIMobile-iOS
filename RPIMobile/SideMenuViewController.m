@@ -16,7 +16,6 @@
 #import "UIViewController+MMDrawerController.h"
 #import "CRNavigationController.h"
 
-
 #import "AthleticsMainViewController.h"
 #import "TwitterFeedViewController.h"
 #import "LaundryViewController.h"
@@ -199,6 +198,9 @@
             break;
         case 2:
             nextView = [[TwitterFeedViewController alloc] init];
+            break;
+        case 3:
+            nextView = [[UIViewController alloc] init];
             break;
         default:
             break;
