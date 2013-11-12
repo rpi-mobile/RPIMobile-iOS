@@ -11,8 +11,11 @@
 #import "STTwitter.h"
 #import "TweetCell.h"
 #import "UIImageView+WebCache.h"
+#import "MMDrawerBarButtonItem.h"
 #import "TwitterFeedViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
+#define kLoadingCellTag 999
 #define kTwitterFeedListID @"75671359"
 #define kTwitterConsumerKey @"zCx2p9ktPO4r5jpLC0fyEw"
 #define kTwitterConsumerSecret @"jincrPpRGq6SHO85ZjW5OcMw75XsRnxRqaKYP1dBWR0"
@@ -21,7 +24,7 @@
 @interface TwitterFeedViewController ()
 @property (nonatomic, strong) STTwitterAPI *twitter;
 @property (nonatomic, strong) NSMutableArray *tweets;
-@property (nonatomic, strong) NSString *latestTweetID;
+@property (nonatomic, strong) NSString *latestTweetId, *oldestTweetId;
 @end
 
 @implementation TwitterFeedViewController
@@ -44,22 +47,45 @@
     }
     return self;
 }
+
+- (void) loadMoreTweets {
+    if(self.tweets && self.tweets.count > 0) {
+        double oldestId = [[[self.tweets lastObject] objectForKey:@"id"] doubleValue] - 5;
+        
+        self.oldestTweetId = [NSString stringWithFormat:@"%.0f", oldestId];
+        NSLog(@"Updating oldest tweet ID to %@ %.0f", self.oldestTweetId, oldestId);
+        
+        [self.twitter getListsStatusesForListID:kTwitterFeedListID sinceID:nil maxID:self.oldestTweetId count:@"50" includeEntities:nil includeRetweets:[NSNumber numberWithInt:1] successBlock:^(NSArray *statuses) {
+
+            [self.tweets addObjectsFromArray:statuses];
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            
+        } errorBlock:^(NSError *error) {
+            // ...
+            NSLog(@"ERROR: Failed to download tweets: %@", error);
+        }];
+
+    } else {
+        [self fetchTweets];
+    }
+}
+
 - (void)fetchTweets {
 
-    [self.twitter getListsStatusesForListID:kTwitterFeedListID sinceID:self.latestTweetID maxID:nil count:@"50" includeEntities:nil includeRetweets:[NSNumber numberWithInt:1] successBlock:^(NSArray *statuses) {
+    [self.twitter getListsStatusesForListID:kTwitterFeedListID sinceID:nil maxID:nil count:@"50" includeEntities:nil includeRetweets:[NSNumber numberWithInt:1] successBlock:^(NSArray *statuses) {
         // Downloaded tweets from RPIMobileApp list
         NSLog(@"Successfully downloaded %i tweets.", statuses.count);
         
         if (statuses && statuses.count > 0) {
-            self.latestTweetID = [[statuses firstObject] objectForKey:@"id"];
-            NSLog(@"Updating latest tweet ID to %@", self.latestTweetID);
-            NSLog(@"status: %@", [statuses firstObject]);
+            self.latestTweetId = [[statuses firstObject] objectForKey:@"id"];
+            NSLog(@"Updating newest tweet ID to %@", self.latestTweetId);
         }
         
         if (!self.tweets) {
             self.tweets = [NSMutableArray array];
         }
-
+        
         [self.tweets addObjectsFromArray:statuses];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
@@ -83,13 +109,21 @@
     }];
 }
 
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+
 - (void)viewDidLoad
 {
-    self.latestTweetID = nil;
+    [self authenticateTwitter];
     
     [super viewDidLoad];
-    [self authenticateTwitter];
     [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
     
     // Refresh controls for UITableView
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -105,9 +139,6 @@
 
 #pragma mark - Table view data source
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
-}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -117,7 +148,49 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.tweets.count;
+    return self.tweets.count + 1;
+}
+
+- (UITableViewCell *)loadingCell {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.center = cell.center;
+    [cell addSubview:activityIndicator];
+    
+    [activityIndicator startAnimating];
+    
+    cell.tag = kLoadingCellTag;
+    
+    return cell;
+}
+
+- (UITableViewCell *)tweetCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    TweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = (TweetCell *)[TweetCell cellFromNibNamed:@"TweetCell"];
+    }
+    
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+    cell.tweet.text = [tweet objectForKey:@"text"];
+    cell.username.text = [NSString stringWithFormat:@"@%@", [[tweet objectForKey:@"user"] objectForKey:@"screen_name" ]];
+    cell.date.text = [self timeSinceTweetTimestamp:[tweet objectForKey:@"created_at"]];
+    // Get the Layer of any view
+    CALayer * l = [cell.profileImage layer];
+    [l setMasksToBounds:YES];
+    [l setCornerRadius:30.0];
+    [l setBorderWidth:0.25f];
+    [l setBorderColor:[[UIColor grayColor] CGColor]];
+    
+    // Grab old profile image url and fetch higher quality image
+    NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+    imageUrl = [imageUrl stringByReplacingOccurrencesOfString:@"normal" withString:@"bigger"];
+    [cell.profileImage setImageWithURL:[NSURL URLWithString:imageUrl]];
+    
+    return cell;
+    
 }
 
 - (NSString *) timeSinceTweetTimestamp:(NSString *) timestamp {
@@ -162,33 +235,30 @@
     return formattedString;
 }
 
+#define PADDING 10.0f
 
+- (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < self.tweets.count) {
+        NSString *text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"text"];
+        CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(self.tableView.frame.size.width - 90, 1000.0f)];
+        return textSize.height + 50;
+    }
+
+    return 44.0f;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = (TweetCell *)[TweetCell cellFromNibNamed:@"TweetCell"];
-    }
-    
-    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
-    cell.tweet.text = [tweet objectForKey:@"text"];
-    cell.username.text = [NSString stringWithFormat:@"@%@", [[tweet objectForKey:@"user"] objectForKey:@"screen_name" ]];
-    cell.date.text = [self timeSinceTweetTimestamp:[tweet objectForKey:@"created_at"]];
-    // Get the Layer of any view
-    CALayer * l = [cell.profileImage layer];
-    [l setMasksToBounds:YES];
-    [l setCornerRadius:30.0];
-    [l setBorderWidth:0.25f];
-    [l setBorderColor:[[UIColor grayColor] CGColor]];
-    
-    // Grab old profile image url and fetch higher quality image
-    NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-    imageUrl = [imageUrl stringByReplacingOccurrencesOfString:@"normal" withString:@"bigger"];
-    [cell.profileImage setImageWithURL:[NSURL URLWithString:imageUrl]];
-    
-    return cell;
+    return (indexPath.row < self.tweets.count) ? [self tweetCellForRowAtIndexPath:indexPath] : [self loadingCell];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (cell.tag == kLoadingCellTag && self.tweets) {
+        [self loadMoreTweets];
+    }
+    
+    if(indexPath.row % 2 == 0) {
+        cell.backgroundColor = [UIColor clearColor];
+    }
+}
 
 @end

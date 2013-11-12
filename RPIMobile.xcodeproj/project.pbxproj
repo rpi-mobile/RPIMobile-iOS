@@ -660,7 +660,9 @@
 				GCC_PREFIX_HEADER = "RPIMobile/RPIMobile-Prefix.pch";
 				INFOPLIST_FILE = "RPIMobile/RPIMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -676,7 +678,9 @@
 				GCC_PREFIX_HEADER = "RPIMobile/RPIMobile-Prefix.pch";
 				INFOPLIST_FILE = "RPIMobile/RPIMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

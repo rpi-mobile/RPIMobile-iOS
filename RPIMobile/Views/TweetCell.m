@@ -8,6 +8,8 @@
 
 #import "TweetCell.h"
 
+
+
 @implementation TweetCell
 @synthesize date, username, tweet, profileImage;
 

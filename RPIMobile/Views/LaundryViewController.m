@@ -19,7 +19,7 @@
 @interface LaundryViewController ()
 @property (strong) NSArray *laundryMachines;
 @property (strong) UITableView *tableView;
-@property (strong) UIBarButtonItem *refreshButton;
+@property (strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation LaundryViewController
@@ -44,13 +44,6 @@
 }
 
 - (void) fetchLaundryStatus {
-    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    //Create an instance of Bar button item with custome view which is of activity indicator
-    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
-    //Set the bar button the navigation bar
-    [self navigationItem].rightBarButtonItem = barButton;
-    
-    [activityIndicator startAnimating];
     NSURL *url = [NSURL URLWithString:kLaundryStatusFeedUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -61,16 +54,14 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         _laundryMachines = [responseObject objectForKey:@"rooms"];
         [self.tableView reloadData];
-        
-        // Reset activity indicator to refresh button
-        [activityIndicator stopAnimating];
-        self.navigationItem.rightBarButtonItem = self.refreshButton;
+        [self.refreshControl endRefreshing];
+
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Request raised an error and reset activity indicator to refresh button
-        [activityIndicator stopAnimating];
-        self.navigationItem.rightBarButtonItem = self.refreshButton;
         NSLog(@"Request to download laundry status1 failed: %@\n\n%@", error, [operation responseString]);
+        [self.refreshControl endRefreshing];
+
     }];
     
     [operation start];
@@ -98,13 +89,19 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"LaundryTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+
+    // Refresh controls for UITableView
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchLaundryStatus) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+
     
-    // Create reload button
-    self.refreshButton = [[UIBarButtonItem alloc]
-                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                               target:self
-                               action:@selector(fetchLaundryStatus)];
-    self.navigationItem.rightBarButtonItem = self.refreshButton;
+//    // Create reload button
+//    self.refreshButton = [[UIBarButtonItem alloc]
+//                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+//                               target:self
+//                               action:@selector(fetchLaundryStatus)];
+//    self.navigationItem.rightBarButtonItem = self.refreshButton;
 
     [super viewDidLoad];
     [self.view addSubview:self.tableView];

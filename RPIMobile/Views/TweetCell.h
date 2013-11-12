@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define kTweetLabelWidth 234
 
 @interface TweetCell : UITableViewCell {
     IBOutlet UILabel *tweet, *username, *date;
