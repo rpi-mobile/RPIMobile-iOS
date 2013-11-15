@@ -6,10 +6,12 @@
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
 
+
 #import "MZDayPicker.h"
 #import "NSString+HTML.h"
+#import "MBProgressHUD.h"
 #import "MorningMailCell.h"
-#import "WebViewController.h"
+#import "PBWebViewController.h"
 #import "UIImageView+WebCache.h"
 #import "MMDrawerBarButtonItem.h"
 #import "AFHTTPRequestOperation.h"
@@ -63,6 +65,11 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 }
 
 - (void) fetchMorningMailWithDate:(NSString *) date {
+    
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:activity]];
+    [activity startAnimating];
+    
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", morningMailBaseUrl, date]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:15.0];
     
@@ -76,10 +83,20 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
             self.morningMailObjects = [self reformatMorningMailResponse:responseObject];
             [self.tableView reloadData];
         } else {
-            NSLog(@"Response object not NSDictionary");
+            NSLog(@"Response object not valid (NOT NSDictionary)");
         }
+        [activity stopAnimating];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Failed downloading the morning mail
+        NSLog(@"ERROR: error downloading morning mail: %@", error);
+        [activity stopAnimating];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        [hud setLabelText:@"Error"];
+        [hud setDetailsLabelText:@"MorningMail failed to download. Please check your connection and try again."];
+        [hud setMinShowTime:2.0f];
+        [MBProgressHUD hideHUDForView:self.tableView animated:YES];
+
     }];
     
     [operation start];
@@ -169,7 +186,6 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
                                        options:kNilOptions
                                          range:NSMakeRange(0, [summary length])
                                     usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-                                        NSLog(@"URL FOUND: %@", result);
                                         [summaryDict setObject:[result URL]  forKey:@"url"];
                                     }];
             if(![summaryDict objectForKey:@"url"]) {
@@ -186,13 +202,13 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 }
 #pragma mark - Table view data source
 
-#define PADDING 30.0f
+#define PADDING 35.0f
 // Auto-layout not compatible with MZDayPicker - manually coding height detection
 - (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row < self.morningMailObjects.count) {
         UIFont *summaryFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:13.0f];
-        UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue" size:13.0f];
+        UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
         
         NSDictionary *summaryDict = [[self.morningMailObjects objectAtIndex:indexPath.row] objectForKey:@"summary_dict"];
         NSString *title = [[self.morningMailObjects objectAtIndex:indexPath.row] objectForKey:@"title" ];
@@ -257,44 +273,6 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
@@ -302,10 +280,11 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    WebViewController *nextView = [segue destinationViewController];
-    NSURL *url = [[self.morningMailObjects objectAtIndex:self.tableView.indexPathForSelectedRow.row] objectForKey:@"link"];
-    NSLog(@"Pushing URL :%@", url);
-    nextView.firstRequest = [NSURLRequest requestWithURL:url];
+    PBWebViewController *nextView = [segue destinationViewController];
+    [self.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+    [nextView setShowsNavigationToolbar:YES];
+    NSURL *url = [NSURL URLWithString:[[self.morningMailObjects objectAtIndex:self.tableView.indexPathForSelectedRow.row] objectForKey:@"link"]];
+    [nextView setURL:url];
 }
 
 

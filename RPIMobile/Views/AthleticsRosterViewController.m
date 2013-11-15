@@ -8,7 +8,7 @@
 #import "JSONKit.h"
 #import "DataSources.h"
 #import "MBProgressHUD.h"
-#import "WebViewController.h"
+#import "PBWebViewController.h"
 #import "UIImageView+WebCache.h"
 #import "AFHTTPRequestOperation.h"
 #import "AthleticsRosterViewController.h"
@@ -130,9 +130,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSDictionary *athlete = [_roster objectAtIndex:indexPath.row];
-    WebViewController *nextView = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil url:[athlete objectForKey:@"url"]];
-    [_previousView.navigationController pushViewController:nextView animated:YES];
+    
+    PBWebViewController *nextView = [[PBWebViewController alloc] init];
+    [nextView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+    [nextView setShowsNavigationToolbar:YES];
+    [nextView setURL:[NSURL URLWithString:[athlete objectForKey:@"url"]]];
     [nextView setTitle:[athlete objectForKey:@"name"]];
+    
+    [_previousView.navigationController pushViewController:nextView animated:YES];
+
 
     
 }

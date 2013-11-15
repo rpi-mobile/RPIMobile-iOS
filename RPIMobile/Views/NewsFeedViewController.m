@@ -113,7 +113,6 @@
     
     [self buildView];
     [self parseNewFeed:@"All"];
-    
 }
 
 #pragma mark -

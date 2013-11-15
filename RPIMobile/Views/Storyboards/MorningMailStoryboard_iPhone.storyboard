@@ -71,7 +71,7 @@
         <!--Web View Controller-->
         <scene sceneID="8sA-8E-SLP">
             <objects>
-                <viewController id="EuB-nP-B6Z" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController id="EuB-nP-B6Z" customClass="PBWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3e1-SJ-dUm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,7 +89,7 @@
                 <navigationController definesPresentationContext="YES" id="sF1-Gp-pWl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vsb-7F-FNn">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.82908163270000002" green="0.15071904720000001" blue="0.085929744439999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.86274516582489014" green="0.23921570181846619" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -103,6 +103,7 @@
             <point key="canvasLocation" x="95" y="67"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

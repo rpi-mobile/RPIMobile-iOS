@@ -20,7 +20,7 @@ Build and run the `REMenuExample` project in Xcode to see `REMenu` in action.
 ### CocoaPods
 
 The recommended approach for installating `REMenu` is via the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
-For best results, it is recommended that you install via CocoaPods >= **0.23.0** using Git >= **1.8.0** installed via Homebrew.
+For best results, it is recommended that you install via CocoaPods >= **0.27.0** using Git >= **1.8.0** installed via Homebrew.
 
 Install CocoaPods if not already available:
 
@@ -41,7 +41,7 @@ Edit your Podfile and add REMenu:
 
 ``` bash
 platform :ios, '5.0'
-pod 'REMenu', '~> 1.5'
+pod 'REMenu', '~> 1.7'
 ```
 
 Install into your Xcode project:
@@ -158,8 +158,11 @@ You can customize the following properties of `REMenu`:
 @property (assign, readwrite, nonatomic) NSTimeInterval animationDuration;
 @property (assign, readwrite, nonatomic) NSTimeInterval bounceAnimationDuration;
 @property (assign, readwrite, nonatomic) REMenuImageAlignment imageAlignment;
-@property (assign, readwrite, nonatomic) BOOL appearsBeyondNavigationBar;
+@property (assign, readwrite, nonatomic) BOOL appearsBehindNavigationBar;
 @property (assign, readwrite, nonatomic) BOOL bounce;
+@property (assign, readwrite, nonatomic) BOOL liveBlur; // Available only in iOS 7
+@property (strong, readwrite, nonatomic) UIColor *liveBlurTintColor; // Available only in iOS 7
+@property (assign, readwrite, nonatomic) REMenuLiveBackgroundStyle liveBlurBackgroundStyle; // Available only in iOS 7
 @property (copy, readwrite, nonatomic) void (^badgeLabelConfigurationBlock)(UILabel *badgeLabel, REMenuItem *item);
 ```
 

@@ -96,9 +96,7 @@
         //  http://stackoverflow.com/questions/129502/how-do-i-wrap-text-in-a-uitableviewcell-without-a-custom-cell
         UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:12.0];
         CGSize constraintSize = CGSizeMake(67.0f, MAXFLOAT);
-        CGSize labelSize = [labelString sizeWithFont:cellFont
-                                   constrainedToSize:constraintSize
-                                       lineBreakMode:UILineBreakModeWordWrap];
+        CGSize labelSize = [labelString sizeWithFont:cellFont constrainedToSize:constraintSize];
         
         height = labelSize.height;
         
@@ -108,9 +106,8 @@
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             constraintSize = CGSizeMake(768.0f - 67.0f - 60.0f, MAXFLOAT);
         }
-        labelSize = [detailString sizeWithFont:cellFont
-                             constrainedToSize:constraintSize
-                                 lineBreakMode:UILineBreakModeWordWrap];
+        labelSize = [detailString sizeWithFont:cellFont constrainedToSize:constraintSize];
+
         height2 = labelSize.height;
         
         //  Find the greater of the two.  If it is less than 30 pixels (empirically determined),

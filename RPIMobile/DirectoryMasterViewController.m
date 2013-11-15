@@ -60,6 +60,9 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
     
     self.detailViewController = (DirectoryDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+
     m_searchTimer = nil;
     m_queue = [[NSOperationQueue alloc] init];
     m_queue.name = @"com.brendonjustin.RPI-Directory.search";
@@ -88,9 +91,6 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
     // Release any retained subviews of the main view.
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 
     [m_searchTimer invalidate];
     m_searchTimer = nil;

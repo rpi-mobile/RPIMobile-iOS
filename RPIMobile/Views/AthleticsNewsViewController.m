@@ -12,6 +12,7 @@
 #import "MWFeedParser.h"
 #import "WebViewController.h"
 #import "UIImageView+WebCache.h"
+#import "PBWebViewController.h"
 #import "AthleticsNewsViewController.h"
 
 @interface AthleticsNewsViewController () <UITableViewDataSource, UITableViewDelegate, MWFeedParserDelegate>
@@ -120,7 +121,10 @@
     
     // Make sure the RSS item has a link
     if (item.link) {
-        WebViewController *nextView = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil url:item.link];
+        PBWebViewController *nextView = [[PBWebViewController alloc] init];// initWithNibName:@"WebViewController" bundle:nil url:item.link];
+        [nextView setURL:[NSURL URLWithString:item.link]];
+        [nextView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+        [nextView setShowsNavigationToolbar:YES];
         [_previousView.navigationController pushViewController:nextView animated:YES];
     }
 

@@ -90,14 +90,12 @@
     }
     
     [super viewDidLoad];
-    [self fetchWeatherStatus];
-    
-    _menuItems = [[NSArray alloc] initWithObjects: @[@"Athletics", @"trophy.png"] ,
-                                                   @[@"Laundry", @"flag.png"],
-                                                   @[@"Social Feed", @"twitter.png"],
-                                                   @[@"Directory", @"group.png"],
-                                                   @[@"MorningMail", @"envelope.png"],
-                                                   @[@"News Feed", @"book.png"],
+
+    _menuItems = [[NSArray alloc] initWithObjects: @[@"Athletics",      @"trophy.png"] ,
+                                                   @[@"Laundry",        @"flag.png"],
+                                                   @[@"Social Feed",    @"twitter.png"],
+                                                   @[@"Directory",      @"group.png"],
+                                                   @[@"MorningMail",    @"envelope.png"],
                                                    nil];
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
@@ -110,7 +108,6 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    [self fetchWeatherStatus];
     if(!self.weatherLastUpdated) self.weatherLastUpdated = [NSDate date];
     if( ([self.weatherLastUpdated timeIntervalSinceNow]) > kWeatherRefreshInterval) {
         // Need to update weather

@@ -27,7 +27,6 @@
 #import "REMenuItem.h"
 #import "REMenuItemView.h"
 
-
 @interface REMenuItem ()
 
 @property (assign, readwrite, nonatomic) REMenuItemView *itemView;
@@ -41,8 +40,10 @@
 @property (strong, readwrite, nonatomic) REMenuContainerView *containerView;
 @property (strong, readwrite, nonatomic) UIButton *backgroundButton;
 @property (assign, readwrite, nonatomic) BOOL isOpen;
+@property (assign, readwrite, nonatomic) BOOL isAnimating;
 @property (strong, readwrite, nonatomic) NSMutableArray *itemViews;
 @property (weak, readwrite, nonatomic) UINavigationBar *navigationBar;
+@property (strong, readwrite, nonatomic) UIToolbar *toolbar;
 
 @end
 
@@ -104,7 +105,10 @@
 
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view
 {
+    if (self.isAnimating) return;
+    
     self.isOpen = YES;
+    self.isAnimating = YES;
     
     // Create views
     //
@@ -122,7 +126,9 @@
     
     self.menuView = ({
         UIView *view = [[UIView alloc] init];
-        view.backgroundColor = self.backgroundColor;
+        if (!self.liveBlur || !REUIKitIsFlatMode()) {
+            view.backgroundColor = self.backgroundColor;
+        }
         view.layer.cornerRadius = self.cornerRadius;
         view.layer.borderColor = self.borderColor.CGColor;
         view.layer.borderWidth = self.borderWidth;
@@ -133,15 +139,28 @@
         view;
     });
     
+    if (REUIKitIsFlatMode()) {
+        self.toolbar = ({
+            UIToolbar *toolbar = [[UIToolbar alloc] init];
+            toolbar.barStyle = self.liveBlurBackgroundStyle;
+            if ([toolbar respondsToSelector:@selector(setBarTintColor:)])
+                [toolbar performSelector:@selector(setBarTintColor:) withObject:self.liveBlurTintColor];
+            toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+            toolbar;
+        });
+    }
+    
     self.menuWrapperView = ({
         UIView *view = [[UIView alloc] init];
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        view.layer.shadowColor = self.shadowColor.CGColor;
-        view.layer.shadowOffset = self.shadowOffset;
-        view.layer.shadowOpacity = self.shadowOpacity;
-        view.layer.shadowRadius = self.shadowRadius;
-        view.layer.shouldRasterize = YES;
-        view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        if (!self.liveBlur || !REUIKitIsFlatMode()) {
+            view.layer.shadowColor = self.shadowColor.CGColor;
+            view.layer.shadowOffset = self.shadowOffset;
+            view.layer.shadowOpacity = self.shadowOpacity;
+            view.layer.shadowRadius = self.shadowRadius;
+            view.layer.shouldRasterize = YES;
+            view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        }
         view;
     });
     
@@ -195,11 +214,17 @@
     //
     self.menuWrapperView.frame = CGRectMake(0, -self.combinedHeight - navigationBarOffset, rect.size.width, self.combinedHeight + navigationBarOffset);
     self.menuView.frame = self.menuWrapperView.bounds;
+    if (REUIKitIsFlatMode() && self.liveBlur) {
+        self.toolbar.frame = self.menuWrapperView.bounds;
+    }
     self.containerView.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     self.backgroundButton.frame = self.containerView.bounds;
     
     // Add subviews
     //
+    if (REUIKitIsFlatMode() && self.liveBlur) {
+        [self.menuWrapperView addSubview:self.toolbar];
+    }
     [self.menuWrapperView addSubview:self.menuView];
     [self.containerView addSubview:self.backgroundButton];
     [self.containerView addSubview:self.menuWrapperView];
@@ -207,12 +232,48 @@
     
     // Animate appearance
     //
-    [UIView animateWithDuration:self.animationDuration animations:^{
-        self.backgroundView.alpha = 1.0;
-        CGRect frame = self.menuView.frame;
-        frame.origin.y = -40.0 - self.separatorHeight;
-        self.menuWrapperView.frame = frame;
-    } completion:nil];
+    if (self.bounce)
+    {
+        self.isAnimating = YES;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+        [UIView animateWithDuration:self.animationDuration+self.bounceAnimationDuration
+                              delay:0.0
+             usingSpringWithDamping:0.6
+              initialSpringVelocity:4.0
+#else
+        [UIView animateWithDuration:self.animationDuration
+                              delay:0.0
+#endif
+                            options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+        {
+            self.backgroundView.alpha = 1.0;
+            CGRect frame = self.menuView.frame;
+            frame.origin.y = -40.0 - self.separatorHeight;
+            self.menuWrapperView.frame = frame;
+        }
+        completion:^(BOOL finished)
+        {
+            self.isAnimating = NO;
+        }];
+    }
+    else
+    {
+        [UIView animateWithDuration:self.animationDuration
+                              delay:0.0
+                            options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+        {
+            self.backgroundView.alpha = 1.0;
+            CGRect frame = self.menuView.frame;
+            frame.origin.y = -40.0 - self.separatorHeight;
+            self.menuWrapperView.frame = frame;
+        }
+        completion:^(BOOL finished)
+        {
+            self.isAnimating = NO;
+        }];
+    }
 }
 
 - (void)showInView:(UIView *)view
@@ -222,6 +283,8 @@
 
 - (void)showFromNavigationController:(UINavigationController *)navigationController
 {
+    if (self.isAnimating) return;
+    
     self.navigationBar = navigationController.navigationBar;
     [self showFromRect:CGRectMake(0, 0, navigationController.navigationBar.frame.size.width, navigationController.view.frame.size.height) inView:navigationController.view];
     self.containerView.appearsBehindNavigationBar = self.appearsBehindNavigationBar;
@@ -233,33 +296,46 @@
 
 - (void)closeWithCompletion:(void (^)(void))completion
 {
+    if (self.isAnimating) return;
+    
+    self.isAnimating = YES;
+    
+    CGFloat navigationBarOffset = self.appearsBehindNavigationBar && self.navigationBar ? 64 : 0;
+    
     void (^closeMenu)(void) = ^{
-        [UIView animateWithDuration:self.animationDuration animations:^{
+        [UIView animateWithDuration:self.animationDuration
+                              delay:0.0
+                            options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+        {
             CGRect frame = self.menuView.frame;
-            frame.origin.y = - self.combinedHeight;
+            frame.origin.y = - self.combinedHeight - navigationBarOffset;
             self.menuWrapperView.frame = frame;
             self.backgroundView.alpha = 0;
-        } completion:^(BOOL finished) {
+        }
+        completion:^(BOOL finished)
+        {
+            self.isOpen = NO;
+            self.isAnimating = NO;
+            
             [self.menuView removeFromSuperview];
             [self.menuWrapperView removeFromSuperview];
             [self.backgroundButton removeFromSuperview];
             [self.backgroundView removeFromSuperview];
             [self.containerView removeFromSuperview];
-            self.isOpen = NO;
+            
             if (completion)
+            {
                 completion();
+            }
             
             if (self.closeCompletionHandler)
+            {
                 self.closeCompletionHandler();
+            }
         }];
         
-        if (self.appearsBehindNavigationBar) {
-            [UIView animateWithDuration:self.animationDuration / 2.0 delay:self.animationDuration / 2.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                self.menuWrapperView.alpha = 0;
-            } completion:nil];
-        }
     };
-    
     
     if (self.bounce) {
         [UIView animateWithDuration:self.bounceAnimationDuration animations:^{
