@@ -15,10 +15,13 @@
 #import "SideMenuViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "CRNavigationController.h"
+#import "UIImage+Tint.h"
 
+#import "NewsFeedViewController.h"
 #import "AthleticsMainViewController.h"
 #import "TwitterFeedViewController.h"
 #import "LaundryViewController.h"
+#import "DirectoryMasterViewController.h"
 
 #define kWeatherRefreshInterval 0 // In seconds (10 minutes)
 #define kWeatherBarHeight 44
@@ -89,7 +92,13 @@
     [super viewDidLoad];
     [self fetchWeatherStatus];
     
-    _menuItems = [[NSArray alloc] initWithObjects: @"Athletics", @"Laundry", @"Social Feed", @"Transportation", nil];
+    _menuItems = [[NSArray alloc] initWithObjects: @[@"Athletics", @"trophy.png"] ,
+                                                   @[@"Laundry", @"flag.png"],
+                                                   @[@"Social Feed", @"twitter.png"],
+                                                   @[@"Directory", @"group.png"],
+                                                   @[@"MorningMail", @"envelope.png"],
+                                                   @[@"News Feed", @"book.png"],
+                                                   nil];
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -133,8 +142,10 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     
-    cell.textLabel.text = [_menuItems objectAtIndex:indexPath.row];
-        
+    NSArray *menuItem = [_menuItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = [menuItem firstObject];
+    cell.imageView.image = [[UIImage imageNamed:[menuItem lastObject]] imageTintedWithColor:[UIColor colorWithWhite:0.402 alpha:1.000]];
+
     return cell;
 }
 
@@ -188,19 +199,37 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *nextView;
-
+    UIStoryboard *storyboard;
     switch (indexPath.row) {
         case 0:
             nextView = [[AthleticsMainViewController alloc] init];
             break;
         case 1:
-            nextView = [[LaundryViewController alloc] init];
+            storyboard = [UIStoryboard storyboardWithName:@"LaundryStoryboard_iPhone" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            return;
             break;
         case 2:
-            nextView = [[TwitterFeedViewController alloc] init];
+            storyboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            return;
             break;
         case 3:
-            nextView = [[UIViewController alloc] init];
+            storyboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            return;
+            break;
+        case 4:
+            storyboard = [UIStoryboard storyboardWithName:@"MorningMailStoryboard_iPhone" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            return;
+            break;
+        case 5:
+            nextView = [[NewsFeedViewController alloc] init];
             break;
         default:
             break;

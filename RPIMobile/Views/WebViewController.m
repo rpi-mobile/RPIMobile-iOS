@@ -12,7 +12,7 @@
 @interface WebViewController () <UIWebViewDelegate>
 
 @property (strong) IBOutlet CRToolBar *toolBar;
-@property (strong) NSURLRequest *firstRequest;
+
 
 @end
 

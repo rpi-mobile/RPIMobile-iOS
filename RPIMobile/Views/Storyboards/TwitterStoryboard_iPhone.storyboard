@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eDg-TT-zZO">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--Twitter Feed View Controller - Twitter Feed-->
+        <scene sceneID="unb-o7-zWx">
+            <objects>
+                <tableViewController id="e5T-r7-eCx" customClass="TwitterFeedViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ax3-5a-fda">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tweetCell" rowHeight="120" id="MWq-Ld-i41" customClass="TweetCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWq-Ld-i41" id="bJG-ol-M4x">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="234" translatesAutoresizingMaskIntoConstraints="NO" id="06x-99-VGS">
+                                            <rect key="frame" x="77" y="38" width="234" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="First home game of the season! (@ RPI Houston Field House - @rpiathletics w/ 16 others) [pic]: http://4sq.com/1htaVbw">
+                                                    <attributes>
+                                                        <color key="NSBackgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.0" colorSpace="deviceRGB"/>
+                                                        <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="18" defaultTabInterval="36">
+                                                            <tabStops/>
+                                                        </paragraphStyle>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="C08-rm-bRv">
+                                            <rect key="frame" x="77" y="10" width="200" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="zzx-gP-Dh2"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="@stephensilber">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSX-1U-Eb9">
+                                            <rect key="frame" x="259" y="16" width="52" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="Ah0-hn-cix"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="10d">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.20346715328467152" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="NYV-D1-sah">
+                                            <rect key="frame" x="9" y="20" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="5MR-BV-28T"/>
+                                                <constraint firstAttribute="width" constant="60" id="PgZ-UN-dBB"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="06x-99-VGS" firstAttribute="leading" secondItem="NYV-D1-sah" secondAttribute="trailing" constant="8" symbolic="YES" id="C5a-L3-oIN"/>
+                                        <constraint firstItem="C08-rm-bRv" firstAttribute="top" secondItem="bJG-ol-M4x" secondAttribute="top" constant="10" id="CaE-EN-EwZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="OSX-1U-Eb9" secondAttribute="trailing" constant="9" id="Jqp-Fv-hCz"/>
+                                        <constraint firstItem="06x-99-VGS" firstAttribute="leading" secondItem="C08-rm-bRv" secondAttribute="leading" id="MlA-WY-v7u"/>
+                                        <constraint firstItem="NYV-D1-sah" firstAttribute="leading" secondItem="bJG-ol-M4x" secondAttribute="leading" constant="9" id="TA0-dz-ZRu"/>
+                                        <constraint firstItem="06x-99-VGS" firstAttribute="top" secondItem="OSX-1U-Eb9" secondAttribute="bottom" constant="8" symbolic="YES" id="U7m-io-S7Y"/>
+                                        <constraint firstItem="NYV-D1-sah" firstAttribute="top" secondItem="bJG-ol-M4x" secondAttribute="top" constant="20" id="Vik-Qe-lpP"/>
+                                        <constraint firstItem="C08-rm-bRv" firstAttribute="top" secondItem="bJG-ol-M4x" secondAttribute="top" constant="10" id="ZAj-at-mBr"/>
+                                        <constraint firstItem="OSX-1U-Eb9" firstAttribute="top" secondItem="bJG-ol-M4x" secondAttribute="top" constant="16" id="jzx-Rv-onf"/>
+                                        <constraint firstItem="NYV-D1-sah" firstAttribute="leading" secondItem="bJG-ol-M4x" secondAttribute="leading" constant="9" id="lBp-Pu-Air"/>
+                                        <constraint firstItem="C08-rm-bRv" firstAttribute="leading" secondItem="bJG-ol-M4x" secondAttribute="leading" constant="77" id="m2T-Yi-hB6"/>
+                                        <constraint firstItem="06x-99-VGS" firstAttribute="top" secondItem="C08-rm-bRv" secondAttribute="bottom" constant="7" id="nsk-TH-ZN2"/>
+                                        <constraint firstItem="OSX-1U-Eb9" firstAttribute="trailing" secondItem="06x-99-VGS" secondAttribute="trailing" id="uO0-lc-ElQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="date" destination="OSX-1U-Eb9" id="GWa-Uh-CKp"/>
+                                    <outlet property="profileImage" destination="NYV-D1-sah" id="QFY-Jt-W20"/>
+                                    <outlet property="tweet" destination="06x-99-VGS" id="mWI-Qd-mYp"/>
+                                    <outlet property="username" destination="C08-rm-bRv" id="b8a-xJ-mQ3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Twitter Feed" id="lCl-Rj-idg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qft-8S-YZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zwt-V8-zrQ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="eDg-TT-zZO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YXK-gN-WJ9" customClass="CRNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.82908163270000002" green="0.15071904720000001" blue="0.085929744439999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="e5T-r7-eCx" kind="relationship" relationship="rootViewController" id="iYD-QX-z6i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCX-SU-scL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="114"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -7,4 +7,5 @@ pod 'MWFeedParser', '~> 0.0.1'
 pod 'REMenu', '~> 1.5'
 pod 'SDWebImage'
 pod 'STTwitter'
-
+pod 'MZDayPicker', '~> 0.0.5'
+pod 'PBWebViewController' 

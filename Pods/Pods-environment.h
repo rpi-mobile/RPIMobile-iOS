@@ -114,6 +114,18 @@
 #define COCOAPODS_VERSION_MINOR_MWFeedParser_NSString_XMLEntities 0
 #define COCOAPODS_VERSION_PATCH_MWFeedParser_NSString_XMLEntities 1
 
+// MZDayPicker
+#define COCOAPODS_POD_AVAILABLE_MZDayPicker
+#define COCOAPODS_VERSION_MAJOR_MZDayPicker 0
+#define COCOAPODS_VERSION_MINOR_MZDayPicker 0
+#define COCOAPODS_VERSION_PATCH_MZDayPicker 5
+
+// PBWebViewController
+#define COCOAPODS_POD_AVAILABLE_PBWebViewController
+#define COCOAPODS_VERSION_MAJOR_PBWebViewController 0
+#define COCOAPODS_VERSION_MINOR_PBWebViewController 1
+#define COCOAPODS_VERSION_PATCH_PBWebViewController 0
+
 // REMenu
 #define COCOAPODS_POD_AVAILABLE_REMenu
 #define COCOAPODS_VERSION_MAJOR_REMenu 1

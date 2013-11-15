@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Downsample Images.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>RPIMobile.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DC3DCAF018340E79001E92DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DC79404417F7687500A9D53C</key>
 		<dict>
 			<key>primary</key>

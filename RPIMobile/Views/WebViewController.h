@@ -11,6 +11,7 @@
 @interface WebViewController : UIViewController
 
 @property (strong) IBOutlet UIWebView *webView;
+@property (strong) NSURLRequest *firstRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil url:(NSString *)url;
 

@@ -18,7 +18,6 @@
 
 @interface LaundryViewController ()
 @property (strong) NSArray *laundryMachines;
-@property (strong) UITableView *tableView;
 @property (strong) UIRefreshControl *refreshControl;
 @end
 
@@ -80,31 +79,15 @@
         self.edgesForExtendedLayout = UIRectEdgeTop;
     }
     
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000]];
-    
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
-
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"LaundryTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
 
     // Refresh controls for UITableView
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchLaundryStatus) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
 
-    
-//    // Create reload button
-//    self.refreshButton = [[UIBarButtonItem alloc]
-//                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-//                               target:self
-//                               action:@selector(fetchLaundryStatus)];
-//    self.navigationItem.rightBarButtonItem = self.refreshButton;
-
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
     [self fetchLaundryStatus];
 }
 
@@ -136,17 +119,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"laundryCell";
     
     LaundryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    NSDictionary *machine = [_laundryMachines objectAtIndex:indexPath.row];
-    cell.titleLbl.text = [machine objectForKey:@"Room"];
 
-    cell.washInUseLbl.text = [machine objectForKey:@"WashersInUse"];
-    cell.dryInUseLbl.text = [machine objectForKey:@"DryersInUse"];
-    
-    cell.washOpenLbl.text = [machine objectForKey:@"WashersAvailable"];
-    cell.dryOpenLbl.text = [machine objectForKey:@"DryersAvailable"];
+    NSDictionary *machine = [_laundryMachines objectAtIndex:indexPath.row];
+
+    cell.titleLbl.text      = [machine objectForKey:@"Room"];
+    cell.washInUseLbl.text  = [machine objectForKey:@"WashersInUse"];
+    cell.dryInUseLbl.text   = [machine objectForKey:@"DryersInUse"];
+    cell.washOpenLbl.text   = [machine objectForKey:@"WashersAvailable"];
+    cell.dryOpenLbl.text    = [machine objectForKey:@"DryersAvailable"];
     
     return cell;
 }

@@ -33,24 +33,24 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // this will appear as the title in the navigation bar
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont systemFontOfSize:20.0];
-        label.textAlignment = NSTextAlignmentCenter;
-        
-        // ^-Use UITextAlignmentCenter for older SDKs.
-        label.textColor = [UIColor whiteColor];
-        self.navigationItem.titleView = label;
-        label.text = NSLocalizedString(@"Twitter Feeds", @"");
-        [label sizeToFit];
+//        // this will appear as the title in the navigation bar
+//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+//        label.backgroundColor = [UIColor clearColor];
+//        label.font = [UIFont systemFontOfSize:20.0];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        
+//        // ^-Use UITextAlignmentCenter for older SDKs.
+//        label.textColor = [UIColor whiteColor];
+//        self.navigationItem.titleView = label;
+//        label.text = NSLocalizedString(@"Twitter Feeds", @"");
+//        [label sizeToFit];
     }
     return self;
 }
 
 - (void) loadMoreTweets {
     if(self.tweets && self.tweets.count > 0) {
-        double oldestId = [[[self.tweets lastObject] objectForKey:@"id"] doubleValue] - 5;
+        double oldestId = [[[self.tweets lastObject] objectForKey:@"id"] doubleValue] - 50;
         
         self.oldestTweetId = [NSString stringWithFormat:@"%.0f", oldestId];
         NSLog(@"Updating oldest tweet ID to %@ %.0f", self.oldestTweetId, oldestId);
@@ -73,7 +73,7 @@
 
 - (void)fetchTweets {
 
-    [self.twitter getListsStatusesForListID:kTwitterFeedListID sinceID:nil maxID:nil count:@"50" includeEntities:nil includeRetweets:[NSNumber numberWithInt:1] successBlock:^(NSArray *statuses) {
+    [self.twitter getListsStatusesForListID:kTwitterFeedListID sinceID:self.latestTweetId maxID:nil count:@"50" includeEntities:nil includeRetweets:[NSNumber numberWithInt:1] successBlock:^(NSArray *statuses) {
         // Downloaded tweets from RPIMobileApp list
         NSLog(@"Successfully downloaded %i tweets.", statuses.count);
         
@@ -120,7 +120,6 @@
     [self authenticateTwitter];
     
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
@@ -129,6 +128,7 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl = refreshControl;
     [refreshControl addTarget:self action:@selector(fetchTweets) forControlEvents:UIControlEventValueChanged];
+    [self.tableView setScrollsToTop:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,16 +167,14 @@
 
 - (UITableViewCell *)tweetCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"tweetCell";
     TweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = (TweetCell *)[TweetCell cellFromNibNamed:@"TweetCell"];
-    }
     
     NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
     cell.tweet.text = [tweet objectForKey:@"text"];
     cell.username.text = [NSString stringWithFormat:@"@%@", [[tweet objectForKey:@"user"] objectForKey:@"screen_name" ]];
     cell.date.text = [self timeSinceTweetTimestamp:[tweet objectForKey:@"created_at"]];
+
     // Get the Layer of any view
     CALayer * l = [cell.profileImage layer];
     [l setMasksToBounds:YES];
