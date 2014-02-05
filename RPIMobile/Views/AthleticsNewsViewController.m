@@ -123,7 +123,7 @@
     if (item.link) {
         PBWebViewController *nextView = [[PBWebViewController alloc] init];// initWithNibName:@"WebViewController" bundle:nil url:item.link];
         [nextView setURL:[NSURL URLWithString:item.link]];
-        [nextView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+        [_previousView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
         [nextView setShowsNavigationToolbar:YES];
         [_previousView.navigationController pushViewController:nextView animated:YES];
     }

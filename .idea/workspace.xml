@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6db5116b-7983-4109-a519-b6e94bad7027" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/Images.xcassets/AppIcon.appiconset/Icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/Images.xcassets/LaunchImage.launchimage/LaunchImage@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/Images.xcassets/LaunchImage.launchimage/LaunchImage_R4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/globe@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/retweet@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/star@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsStoryboard_iPhone.storyboard" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MKHorizMenu.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-libwebp.xcscheme" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/book.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/book.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/compass.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/compass.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/date_placeholder.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/date_placeholder.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/date_placeholder@2x.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/date_placeholder@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/envelope.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/envelope.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/female.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/female.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/flag.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/flag.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/group.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/group.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/male.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/male.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/placeholder.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/placeholder.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/placeholder@2x.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/placeholder@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/shocked.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/shocked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/trophy.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/trophy.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/twitter.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/twitter.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/user_female.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/user_female.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/user_female@2x.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/user_female@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/user_male.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/user_male.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Icons/user_male@2x.png" afterPath="$PROJECT_DIR$/RPIMobile/Icons/user_male@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/RPIMobile.xcdatamodeld/.xccurrentversion" afterPath="$PROJECT_DIR$/RPIMobile/RPIMobile.xcdatamodeld/.xccurrentversion" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/AppDelegate.h" afterPath="$PROJECT_DIR$/RPIMobile/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/AppDelegate.m" afterPath="$PROJECT_DIR$/RPIMobile/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsDetailViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsDetailViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsDetailViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsDetailViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsMainViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsMainViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsMainViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsMainViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsNewsViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsNewsViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsNewsViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsNewsViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsRosterViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsRosterViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsRosterViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsRosterViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsScheduleViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsScheduleViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/AthleticsScheduleViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/AthleticsScheduleViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcworkspace/xcuserdata/stephen.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/RPIMobile.xcworkspace/xcuserdata/stephen.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/CRToolBar.h" afterPath="$PROJECT_DIR$/RPIMobile/CRToolBar.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/CRToolBar.m" afterPath="$PROJECT_DIR$/RPIMobile/CRToolBar.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/RPIMobile/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="$PROJECT_DIR$/RPIMobile/Images.xcassets/LaunchImage.launchimage/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/DataSources.h" afterPath="$PROJECT_DIR$/RPIMobile/DataSources.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/GTMNSString+HTML.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/GTMNSString+HTML.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/GTMNSString+HTML.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/GTMNSString+HTML.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISGumView.h" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISGumView.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISGumView.m" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISGumView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISRefreshControl.h" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISRefreshControl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISRefreshControl.m" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/ISRefreshControl.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/en.lproj/InfoPlist.strings" afterPath="$PROJECT_DIR$/RPIMobile/en.lproj/InfoPlist.strings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobileTests/en.lproj/InfoPlist.strings" afterPath="$PROJECT_DIR$/RPIMobileTests/en.lproj/InfoPlist.strings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/LICENSE.txt" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/LICENSE" afterPath="$PROJECT_DIR$/Pods/AFNetworking/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MBProgressHUD/LICENSE" afterPath="$PROJECT_DIR$/Pods/MBProgressHUD/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/LICENSE" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/LICENSE" afterPath="$PROJECT_DIR$/Pods/SDWebImage/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/LaundryStoryboard_iPhone.storyboard" afterPath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/LaundryStoryboard_iPhone.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/LaundryTableViewCell.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/LaundryTableViewCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/LaundryTableViewCell.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/LaundryTableViewCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/LaundryViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/LaundryViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/LaundryViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/LaundryViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.h" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController+Subclass.h" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController+Subclass.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController.h" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController.m" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.h" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedInfo.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedInfo.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedInfo.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedInfo.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedItem.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedItem.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedItem.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedItem.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser_Private.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/MWFeedParser_Private.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/MorningMailCell.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/MorningMailCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/MorningMailCell.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/MorningMailCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/MorningMailMasterViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/MorningMailMasterViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/MorningMailMasterViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/MorningMailMasterViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/MorningMailStoryboard_iPhone.storyboard" afterPath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/MorningMailStoryboard_iPhone.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/NSData+GIF.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/NSData+GIF.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/NSData+GIF.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/NSData+GIF.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSDate+InternetDateTime.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSDate+InternetDateTime.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSDate+InternetDateTime.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSDate+InternetDateTime.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSString+HTML.h" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSString+HTML.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSString+HTML.m" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/Classes/NSString+HTML.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.xib" afterPath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedCell.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/NewsFeedViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-AFNetworking-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-AFNetworking-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-AFNetworking-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-AFNetworking-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-AFNetworking-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-AFNetworking-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-AFNetworking.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-AFNetworking.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-AFNetworking.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-AFNetworking.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-ISRefreshControl.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-ISRefreshControl.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-ISRefreshControl.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MBProgressHUD.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MBProgressHUD.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MBProgressHUD.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MKHorizMenu.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-MMDrawerController-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MMDrawerController.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MMDrawerController.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MMDrawerController.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MMDrawerController.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-MWFeedParser-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-MWFeedParser.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-MWFeedParser.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MWFeedParser.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-MWFeedParser.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-REMenu-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-REMenu-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-REMenu-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-REMenu-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-REMenu-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-REMenu-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-REMenu.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-REMenu.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-REMenu.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-REMenu.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-SDWebImage-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-SDWebImage-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-SDWebImage-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-SDWebImage-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-SDWebImage-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-SDWebImage-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-SDWebImage.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-SDWebImage.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-SDWebImage.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods-SDWebImage.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Pods-acknowledgements.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Pods-acknowledgements.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-environment.h" afterPath="$PROJECT_DIR$/Pods/Pods-environment.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-libwebp-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-libwebp-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-libwebp-dummy.m" afterPath="$PROJECT_DIR$/Pods/Pods-libwebp-dummy.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-libwebp-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Pods-libwebp-prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-libwebp.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods-libwebp.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods-resources.sh" afterPath="$PROJECT_DIR$/Pods/Pods-resources.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcconfig" afterPath="$PROJECT_DIR$/Pods/Pods.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/Pods.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MWFeedParser/README.markdown" afterPath="$PROJECT_DIR$/Pods/MWFeedParser/README.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/README.md" afterPath="$PROJECT_DIR$/Pods/AFNetworking/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/README.md" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/README.md" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/REMenu/README.md" afterPath="$PROJECT_DIR$/Pods/REMenu/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/README.md" afterPath="$PROJECT_DIR$/Pods/SDWebImage/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MBProgressHUD/README.mdown" afterPath="$PROJECT_DIR$/Pods/MBProgressHUD/README.mdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/REMenu/REMenu/REMenu.m" afterPath="$PROJECT_DIR$/Pods/REMenu/REMenu/REMenu.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/REMenu/REMenu/REMenuItemView.m" afterPath="$PROJECT_DIR$/Pods/REMenu/REMenu/REMenuItemView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/RPIMobile-Info.plist" afterPath="$PROJECT_DIR$/RPIMobile/RPIMobile-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/RPIMobile-Prefix.pch" afterPath="$PROJECT_DIR$/RPIMobile/RPIMobile-Prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/RPIMobile.xcscheme" afterPath="$PROJECT_DIR$/RPIMobile.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/RPIMobile.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobileTests/RPIMobileTests-Info.plist" afterPath="$PROJECT_DIR$/RPIMobileTests/RPIMobileTests-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobileTests/RPIMobileTests.m" afterPath="$PROJECT_DIR$/RPIMobileTests/RPIMobileTests.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDImageCache.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDImageCache.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDImageCache.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDImageCache.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageCompat.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageCompat.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageCompat.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageCompat.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageManager.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageManager.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageManager.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageOperation.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImageOperation.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/SideMenuViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/SideMenuViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/SideMenuViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/SideMenuViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/TweetCell.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/TweetCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/TweetCell.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/TweetCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/TwitterFeedViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/TwitterFeedViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/TwitterFeedViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/TwitterFeedViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/TwitterStoryboard_iPhone.storyboard" afterPath="$PROJECT_DIR$/RPIMobile/Views/Storyboards/TwitterStoryboard_iPhone.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIButton+WebCache.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIButton+WebCache.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIButton+WebCache.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIButton+WebCache.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m" afterPath="$PROJECT_DIR$/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/UITableViewController+RefreshControl.h" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/UITableViewController+RefreshControl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/UITableViewController+RefreshControl.m" afterPath="$PROJECT_DIR$/Pods/ISRefreshControl/ISRefreshControl/UITableViewController+RefreshControl.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.h" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m" afterPath="$PROJECT_DIR$/Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" afterPath="$PROJECT_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.h" afterPath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.m" afterPath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.xib" afterPath="$PROJECT_DIR$/RPIMobile/Views/WebViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcworkspace/xcuserdata/stephen.xcuserdatad/WorkspaceSettings.xcsettings" afterPath="$PROJECT_DIR$/RPIMobile.xcworkspace/xcuserdata/stephen.xcuserdatad/WorkspaceSettings.xcsettings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="$PROJECT_DIR$/RPIMobile.xcodeproj/project.xcworkspace/contents.xcworkspacedata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcworkspace/contents.xcworkspacedata" afterPath="$PROJECT_DIR$/RPIMobile.xcworkspace/contents.xcworkspacedata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/RPIMobile.xcdatamodeld/RPIMobile.xcdatamodel/contents" afterPath="$PROJECT_DIR$/RPIMobile/RPIMobile.xcdatamodeld/RPIMobile.xcdatamodel/contents" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile/main.m" afterPath="$PROJECT_DIR$/RPIMobile/main.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/RPIMobile.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPIMobile.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/RPIMobile.xcodeproj/xcuserdata/stephen.xcuserdatad/xcschemes/xcschememanagement.plist" />
+    </list>
+    <ignored path="RPIMobile.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="FavoritesManager">
+    <favorites_list name="RPIMobile" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="AppDelegate.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RPIMobile/AppDelegate.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="1" selection-start="3906" selection-end="3906" vertical-scroll-proportion="0.51123595" vertical-offset="598" max-vertical-offset="2548">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="260" />
+    <option name="y" value="109" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPIMobile" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPIMobile" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPIMobile" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Application.Downsample Images">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="RPIMobile" TARGET_NAME="RPIMobile" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="RPIMobile" RUN_TARGET_NAME="RPIMobile" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Downsample Images" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Downsample Images" PROJECT_NAME="RPIMobile" TARGET_NAME="Downsample Images" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RPIMobile" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="RPIMobile" PROJECT_NAME="RPIMobile" TARGET_NAME="RPIMobile" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="RPIMobile" RUN_TARGET_NAME="RPIMobile" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-AFNetworking" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-AFNetworking" PROJECT_NAME="Pods" TARGET_NAME="Pods-AFNetworking" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-ISRefreshControl" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-ISRefreshControl" PROJECT_NAME="Pods" TARGET_NAME="Pods-ISRefreshControl" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-MBProgressHUD" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-MBProgressHUD" PROJECT_NAME="Pods" TARGET_NAME="Pods-MBProgressHUD" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-MMDrawerController" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-MMDrawerController" PROJECT_NAME="Pods" TARGET_NAME="Pods-MMDrawerController" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-MWFeedParser" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-MWFeedParser" PROJECT_NAME="Pods" TARGET_NAME="Pods-MWFeedParser" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-MZDayPicker" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-MZDayPicker" PROJECT_NAME="Pods" TARGET_NAME="Pods-MZDayPicker" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-PBWebViewController" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-PBWebViewController" PROJECT_NAME="Pods" TARGET_NAME="Pods-PBWebViewController" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-REMenu" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-REMenu" PROJECT_NAME="Pods" TARGET_NAME="Pods-REMenu" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-SDWebImage" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-SDWebImage" PROJECT_NAME="Pods" TARGET_NAME="Pods-SDWebImage" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-STTwitter" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-STTwitter" PROJECT_NAME="Pods" TARGET_NAME="Pods-STTwitter" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-TTTAttributedLabel" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods-TTTAttributedLabel" PROJECT_NAME="Pods" TARGET_NAME="Pods-TTTAttributedLabel" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pods" PROJECT_NAME="Pods" TARGET_NAME="Pods" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <list size="14">
+      <item index="0" class="java.lang.String" itemvalue="Application.Downsample Images" />
+      <item index="1" class="java.lang.String" itemvalue="Application.RPIMobile" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-AFNetworking" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-ISRefreshControl" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Pods-MBProgressHUD" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Pods-MMDrawerController" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Pods-MWFeedParser" />
+      <item index="7" class="java.lang.String" itemvalue="Application.Pods-MZDayPicker" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-PBWebViewController" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Pods-REMenu" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Pods-SDWebImage" />
+      <item index="11" class="java.lang.String" itemvalue="Application.Pods-STTwitter" />
+      <item index="12" class="java.lang.String" itemvalue="Application.Pods-TTTAttributedLabel" />
+      <item index="13" class="java.lang.String" itemvalue="Application.Pods" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6db5116b-7983-4109-a519-b6e94bad7027" name="Default" comment="" />
+      <created>1391550441464</created>
+      <updated>1391550441464</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="260" y="109" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/RPIMobile/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="1" selection-start="3906" selection-end="3906" vertical-scroll-proportion="0.51123595" vertical-offset="598" max-vertical-offset="2548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

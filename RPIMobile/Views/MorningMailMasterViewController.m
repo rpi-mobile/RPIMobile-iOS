@@ -120,10 +120,10 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate dateFromDay:26 month:11 year:2013]];
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"MM-dd-YYYY"];
-    NSString *mmDate=[formatter stringFromDate:[NSDate date]];
+    NSString *mmDate=[formatter stringFromDate:[NSDate dateFromDay:26 month:11 year:2013]];
     
     self.dayPicker.month = [components month];
     self.dayPicker.year = [components year];;
@@ -265,7 +265,7 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 {
     NSLog(@"Did select day %@",day.day);
     NSString *mmDay = [day.day stringValue];
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate dateFromDay:26 month:11 year:2013]];
     if(mmDay.length == 1) mmDay = [@"0" stringByAppendingString:mmDay];
     NSString *mmDateString = [NSString stringWithFormat:@"%i-%@-%i", components.month, mmDay, components.year];
 

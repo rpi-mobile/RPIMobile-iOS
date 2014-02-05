@@ -20,11 +20,35 @@
 #define kTwitterConsumerKey @"zCx2p9ktPO4r5jpLC0fyEw"
 #define kTwitterConsumerSecret @"jincrPpRGq6SHO85ZjW5OcMw75XsRnxRqaKYP1dBWR0"
 
+@interface UILabel (VAlign)
+- (void) setVerticalAlignmentTop;
+@end
+
+// UILabel(VAlign).m
+@implementation UILabel (VAlign)
+- (void) setVerticalAlignmentTop
+{
+    CGSize textSize = [self.text sizeWithFont:self.font
+                            constrainedToSize:self.frame.size
+                                lineBreakMode:self.lineBreakMode];
+    
+    CGRect textRect = CGRectMake(self.frame.origin.x,
+                                 self.frame.origin.y,
+                                 self.frame.size.width,
+                                 textSize.height);
+    [self setFrame:textRect];
+    [self setNeedsDisplay];
+}
+
+@end
 
 @interface TwitterFeedViewController ()
 @property (nonatomic, strong) STTwitterAPI *twitter;
 @property (nonatomic, strong) NSMutableArray *tweets;
 @property (nonatomic, strong) NSString *latestTweetId, *oldestTweetId;
+@property (nonatomic, strong) NSIndexPath *expandedIndexPath;
+@property (nonatomic) CGFloat expandedCellHeight;
+
 @end
 
 @implementation TwitterFeedViewController
@@ -174,6 +198,8 @@
     cell.tweet.text = [tweet objectForKey:@"text"];
     cell.username.text = [NSString stringWithFormat:@"@%@", [[tweet objectForKey:@"user"] objectForKey:@"screen_name" ]];
     cell.date.text = [self timeSinceTweetTimestamp:[tweet objectForKey:@"created_at"]];
+    
+    [cell.tweet setVerticalAlignmentTop];
 
     // Get the Layer of any view
     CALayer * l = [cell.profileImage layer];
@@ -236,10 +262,16 @@
 #define PADDING 10.0f
 
 - (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cellHeight = 50;
     if (indexPath.row < self.tweets.count) {
         NSString *text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"text"];
         CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(self.tableView.frame.size.width - 90, 1000.0f)];
-        return textSize.height + 50;
+        if([self.expandedIndexPath isEqual:indexPath]) {
+            cellHeight += 50;
+        }
+
+        return textSize.height + cellHeight + 10;
+        
     }
 
     return 44.0f;
@@ -258,5 +290,36 @@
         cell.backgroundColor = [UIColor clearColor];
     }
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //if user taps the expanded cell, just make it unexpanded
+    if ([self.expandedIndexPath isEqual:indexPath])
+        self.expandedIndexPath = nil;
+    else {
+        //make cell with this indexpath  expanded
+        self.expandedIndexPath = indexPath;
+        //get the pointer to the cell which was tapped
+        TweetCell *cell = (TweetCell *)[tableView cellForRowAtIndexPath:indexPath];
+        //define the maximum size for description label as
+        //CGSize with width of description label and infinite height
+        CGSize maximumSize = CGSizeMake(cell.tweet.bounds.size.width, NSIntegerMax);
+        //this method returns the expected size of the description label with respect to the amount
+        //of text it contains
+        CGSize expectedSize = [cell.tweet.text sizeWithFont:cell.tweet.font constrainedToSize:maximumSize];
+        //this defines the height of expanded cell adding the delta between current
+        //label height and expected height to  cell content view height.
+        self.expandedCellHeight =  cell.contentView.bounds.size.height - cell.tweet.bounds.size.height + expectedSize.height + 50;
+        
+    }
+    //this asks tableview to redraw cells
+    //actually it invokes reload of cell just if it's height was changed
+    //and animates the resize of the cell
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
+
 
 @end

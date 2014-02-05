@@ -9,3 +9,5 @@ pod 'SDWebImage'
 pod 'STTwitter'
 pod 'MZDayPicker', '~> 0.0.5'
 pod 'PBWebViewController' 
+pod 'TTTAttributedLabel'
+

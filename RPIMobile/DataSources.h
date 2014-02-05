@@ -13,5 +13,11 @@
 #define kAthleticsRosterUrl @"http://localhost:8080/v1/roster/"
 #define kAthleticsScheduleUrl @"http://localhost:8080/v1/schedule/"
 #define kLaundryStatusFeedUrl @"http://localhost:8080/v1/laundry"
+
+//#define kAthleticsRosterUrl @"http://192.168.0.17:8080/v1/roster/"
+//#define kAthleticsScheduleUrl @"http://192.168.0.17:8080/v1/schedule/"
+//#define kLaundryStatusFeedUrl @"http://192.168.0.17:8080/v1/laundry"
+
+
 #define kWeatherStatusUrl @"http://api.openweathermap.org/data/2.5/weather?q=troy,ny"
 #endif

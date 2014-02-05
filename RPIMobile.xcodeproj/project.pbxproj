@@ -22,6 +22,10 @@
 
 /* Begin PBXBuildFile section */
 		7978CF22D0F24352BDDED9D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0128A2D9254CFFA7194F70 /* libPods.a */; };
+		DC021715183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC021714183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard */; };
+		DC021718183C353F002F420B /* retweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC021716183C353F002F420B /* retweet@2x.png */; };
+		DC021719183C353F002F420B /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC021717183C353F002F420B /* star@2x.png */; };
+		DC02171B183C35BD002F420B /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC02171A183C35BD002F420B /* globe@2x.png */; };
 		DC3DCAEE18340739001E92DC /* DirectoryStorboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3DCAEC18340739001E92DC /* DirectoryStorboard_iPad.storyboard */; };
 		DC3DCAEF18340739001E92DC /* DirectoryStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3DCAED18340739001E92DC /* DirectoryStoryboard_iPhone.storyboard */; };
 		DC3DCB2718340F87001E92DC /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3DCB0B18340F87001E92DC /* book.png */; };
@@ -125,6 +129,10 @@
 
 /* Begin PBXFileReference section */
 		1C0128A2D9254CFFA7194F70 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC021714183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AthleticsStoryboard_iPhone.storyboard; path = Views/AthleticsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		DC021716183C353F002F420B /* retweet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet@2x.png"; sourceTree = "<group>"; };
+		DC021717183C353F002F420B /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		DC02171A183C35BD002F420B /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
 		DC3002859BFC491B8339B869 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DC3DCAEC18340739001E92DC /* DirectoryStorboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DirectoryStorboard_iPad.storyboard; path = Views/Storyboards/DirectoryStorboard_iPad.storyboard; sourceTree = "<group>"; };
 		DC3DCAED18340739001E92DC /* DirectoryStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DirectoryStoryboard_iPhone.storyboard; path = Views/Storyboards/DirectoryStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -334,6 +342,7 @@
 				DC5B9E0517FB709400CEBC74 /* AthleticsRosterViewController.m */,
 				DC5B9E2917FBDB6400CEBC74 /* AthleticsScheduleViewController.h */,
 				DC5B9E2A17FBDB6400CEBC74 /* AthleticsScheduleViewController.m */,
+				DC021714183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard */,
 			);
 			name = Athletics;
 			sourceTree = "<group>";
@@ -341,6 +350,9 @@
 		DC5B9E2417FBCEF700CEBC74 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DC02171A183C35BD002F420B /* globe@2x.png */,
+				DC021716183C353F002F420B /* retweet@2x.png */,
+				DC021717183C353F002F420B /* star@2x.png */,
 				DC3DCB0B18340F87001E92DC /* book.png */,
 				DC3DCB0C18340F87001E92DC /* book@2x.png */,
 				DC3DCB0D18340F87001E92DC /* compass.png */,
@@ -610,6 +622,7 @@
 				DC3DCB2F18340F87001E92DC /* female.png in Resources */,
 				DC3DCB3C18340F87001E92DC /* trophy@2x.png in Resources */,
 				DC79405517F7687500A9D53C /* InfoPlist.strings in Resources */,
+				DC02171B183C35BD002F420B /* globe@2x.png in Resources */,
 				DC5B9DFC17F7BE4D00CEBC74 /* menSportsList.plist in Resources */,
 				DC3DCB6118353AA1001E92DC /* TwitterStoryboard_iPhone.storyboard in Resources */,
 				DC3DCB4B183415AD001E92DC /* LaundryStoryboard_iPhone.storyboard in Resources */,
@@ -619,8 +632,11 @@
 				DC3DCB2718340F87001E92DC /* book.png in Resources */,
 				DC3DCB3118340F87001E92DC /* flag.png in Resources */,
 				DC3DCB4118340F87001E92DC /* user_male.png in Resources */,
+				DC021719183C353F002F420B /* star@2x.png in Resources */,
 				DC3DCB3818340F87001E92DC /* placeholder@2x.png in Resources */,
 				DC3DCB4218340F87001E92DC /* user_male@2x.png in Resources */,
+				DC021715183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard in Resources */,
+				DC021718183C353F002F420B /* retweet@2x.png in Resources */,
 				DC3DCB3718340F87001E92DC /* placeholder.png in Resources */,
 				DC3DCB3A18340F87001E92DC /* shocked@2x.png in Resources */,
 				DC3DCB6318353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard in Resources */,
@@ -944,6 +960,7 @@
 				DC3DCAF318340E79001E92DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC79404017F7687500A9D53C /* Build configuration list for PBXProject "RPIMobile" */ = {
 			isa = XCConfigurationList;

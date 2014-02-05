@@ -65,6 +65,7 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     [super viewDidLoad];
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
@@ -132,10 +133,10 @@
     NSDictionary *athlete = [_roster objectAtIndex:indexPath.row];
     
     PBWebViewController *nextView = [[PBWebViewController alloc] init];
-    [nextView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+    [_previousView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
     [nextView setShowsNavigationToolbar:YES];
     [nextView setURL:[NSURL URLWithString:[athlete objectForKey:@"url"]]];
-    [nextView setTitle:[athlete objectForKey:@"name"]];
+//    [nextView setTitle:[athlete objectForKey:@"name"]];
     
     [_previousView.navigationController pushViewController:nextView animated:YES];
 
