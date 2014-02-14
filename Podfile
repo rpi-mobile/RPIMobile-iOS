@@ -1,4 +1,4 @@
-platform :ios, '6.0'
+platform :ios, :deployment_target => "7.0"
 pod 'MMDrawerController', '~> 0.5.0'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
