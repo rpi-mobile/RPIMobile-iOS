@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
 
-#import "MMTableViewCell.h"
 #import "MMDrawerBarButtonItem.h"
+
 #import "DataSources.h"
 #import "AFHTTPRequestOperation.h"
-#import "MMSideDrawerSectionHeaderView.h"
-#import "MMSideDrawerTableViewCell.h"
+
 #import "SideMenuViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "CRNavigationController.h"
