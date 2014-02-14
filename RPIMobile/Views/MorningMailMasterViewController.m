@@ -41,25 +41,27 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 - (NSMutableArray *) reformatMorningMailResponse:(NSDictionary *) responseObject {
     NSArray *tempReponse = [responseObject objectForKey:@"nodes"];
     NSMutableArray *reformattedArray = [NSMutableArray array];
-    for(int i = 0; i < tempReponse.count; ++i) {
-        NSMutableDictionary *node = [[[tempReponse objectAtIndex:i] objectForKey:@"node"] mutableCopy];
-        
-        NSDictionary *summaryDict = [self formatSummaryForCell:[node objectForKey:@"summary"]];
-        
-        [node setObject:summaryDict forKey:@"summary"];
-        [node setObject:[node objectForKey:@"title"] forKey:@"title"];
-        [node setObject:[node objectForKey:@"link"] forKey:@"link"];
-        [node removeObjectForKey:@"summary"];
-        
-        [reformattedArray addObject:node];
-        [node setObject:summaryDict forKey:@"summary_dict"];
-    }
-    
     if(tempReponse.count == 0) {
         NSMutableDictionary *noMorningMailDict = [NSMutableDictionary dictionaryWithObject:@"No Morning Mail available for this date." forKey:@"title"];
         [noMorningMailDict setObject:[NSDictionary dictionaryWithObject:@"Morning Mail is not published on Saturday or Sunday" forKey:@"description"] forKey:@"summary_dict"];
         [reformattedArray addObject:noMorningMailDict];
+    } else {
+        for(int i = 0; i < tempReponse.count; ++i) {
+            NSMutableDictionary *node = [[[tempReponse objectAtIndex:i] objectForKey:@"node"] mutableCopy];
+            
+            NSDictionary *summaryDict = [self formatSummaryForCell:[node objectForKey:@"summary"]];
+            
+            [node setObject:summaryDict forKey:@"summary"];
+            [node setObject:[node objectForKey:@"title"] forKey:@"title"];
+            [node setObject:[node objectForKey:@"link"] forKey:@"link"];
+//            [node removeObjectForKey:@"summary"];
+            if(node) {
+                [reformattedArray addObject:node];
+                [node setObject:summaryDict forKey:@"summary_dict"];
+            }
+        }
     }
+
 
     return reformattedArray;
 }
@@ -123,7 +125,11 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate dateFromDay:26 month:11 year:2013]];
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"MM-dd-YYYY"];
-    NSString *mmDate=[formatter stringFromDate:[NSDate dateFromDay:26 month:11 year:2013]];
+    NSDate *today = [NSDate date];
+
+    // Demo date -- uncomment
+//    NSString *mmDate=[formatter stringFromDate:[NSDate dateFromDay:12 month:2 year:2014]];
+    NSString *mmDate = [formatter stringFromDate:today];
     
     self.dayPicker.month = [components month];
     self.dayPicker.year = [components year];;
