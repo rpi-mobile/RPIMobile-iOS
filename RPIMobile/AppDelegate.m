@@ -31,7 +31,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
-    SideMenuViewController * leftDrawer = [[SideMenuViewController alloc] init];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SideMenu" bundle:nil];
+    
+    SideMenuViewController *leftDrawer = [storyboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];
     _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
     
     // Initialize the side drawer for menu and navigation
@@ -41,8 +44,9 @@
                                              rightDrawerViewController:nil];
     [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState slideAndScaleVisualStateBlock]];
-    [drawerController setMaximumLeftDrawerWidth:200.0f];
+    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState swingingDoorVisualStateBlock]];
+    [drawerController setShouldStretchDrawer:NO];
+    [drawerController setMaximumLeftDrawerWidth:85.0f];
 
     
     //Set disk cache
