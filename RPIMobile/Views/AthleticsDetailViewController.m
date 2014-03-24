@@ -15,7 +15,9 @@
 #define kMenuItems @[@"News", @"Roster", @"Schedule", @"Mobile Site"]
 
 @interface AthleticsDetailViewController () <ViewPagerDelegate, ViewPagerDataSource>
-    @property (strong) NSString *key, *sport, *gender;
+    @property (strong) NSString *key;
+    @property (strong) NSString *gender;
+    @property (strong) NSString *sport;
 @end
 
 @implementation AthleticsDetailViewController
@@ -25,34 +27,17 @@
         _key = key;
         _sport = sport;
         _gender = gender;
-
-        // this will appear as the title in the navigation bar
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont systemFontOfSize:20.0];
-        label.textAlignment = NSTextAlignmentCenter;
-        
-        // ^-Use UITextAlignmentCenter for older SDKs.
-        label.textColor = [UIColor whiteColor];
-        self.navigationItem.titleView = label;
-        label.text = NSLocalizedString(sport, @"");
-        [label sizeToFit];
-
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [self.view setBackgroundColor:[UIColor blackColor]];
+    // FUTURE: Setup custom background view that can be seen when dragging past first and last sections
+    self.title = self.sport;
     self.dataSource = self;
     self.delegate = self;
-//    self.view.contentMode = UIEdgeInsetsMake(64,0,0,0);
-
-    // Keeps tab bar below navigation bar on iOS 7.0+
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
     
     [super viewDidLoad];
@@ -95,18 +80,23 @@
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
 
     UIViewController *nextView;
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AthleticsStoryboard_iPhone" bundle:nil];
     switch (index) {
         case 0:
-            // News tab tapped
-            nextView = [[AthleticsNewsViewController alloc] initWithSport:_sport andKey:_key andViewController:self];
+            // News tab requested
+            nextView = [[AthleticsNewsViewController alloc] initWithSport:self.sport andKey:self.key andPreviousViewController:self];
+//            nextView = (AthleticsNewsViewController *) [sb instantiateViewControllerWithIdentifier:@"newsView"];
+            ((AthleticsNewsViewController *) nextView).previousView = self;
+            ((AthleticsNewsViewController *) nextView).key = self.key;
+            ((AthleticsNewsViewController *) nextView).sport = self.sport;
             break;
         case 1:
-            // Roster tab tapped
-            nextView = [[AthleticsRosterViewController alloc] initWithSport:_sport andKey:_key andGender:_gender andViewController:self];
+            // Roster tab requested
+            nextView = [[AthleticsRosterViewController alloc] initWithSport:self.sport andKey:self.key andGender:self.gender andViewController:self];
             break;
         case 2:
-            // Schedule tab tapped
-            nextView = [[AthleticsScheduleViewController alloc] initWithSport:_sport andKey:_key andGender:_gender];
+            // Schedule tab requested
+            nextView = [[AthleticsScheduleViewController alloc] initWithSport:self.sport andKey:self.key andGender:self.gender];
             break;
         default:
             break;

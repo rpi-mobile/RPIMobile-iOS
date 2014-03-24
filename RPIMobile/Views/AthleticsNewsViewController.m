@@ -13,23 +13,24 @@
 #import "WebViewController.h"
 #import "UIImageView+WebCache.h"
 #import "PBWebViewController.h"
+#import "AthleticsNewsTableViewCell.h"
 #import "AthleticsNewsViewController.h"
 
 @interface AthleticsNewsViewController () <UITableViewDataSource, UITableViewDelegate, MWFeedParserDelegate>
 
-@property (strong) UITableView *tableView;
-@property (strong) MWFeedParser *feedParser;
-@property (strong) NSMutableArray *feedItems;
-@property (strong) UIViewController *previousView; // Is this the proper way to handle this case?
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MWFeedParser *feedParser;
+@property (nonatomic, strong) NSMutableArray *feedItems;
+//@property (nonatomic, strong) UIViewController *previousView; // Could be done better! FUTURE
 
 @end
 
 @implementation AthleticsNewsViewController
 
-- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andViewController:(UIViewController *)view
+- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andPreviousViewController:(UIViewController *)view
 {
     if (self = [super init]) {
-        _previousView = view; // Used to push news articles onto navigation stack of previous view
+        self.previousView = view; // Used to push news articles onto navigation stack of previous view. Problem is with library used for tabbed navigation
         [self parseNewFeed:key];
     }
     return self;
@@ -37,32 +38,27 @@
 
 - (void)viewDidLoad
 {
-    // Keeps tab bar below navigation bar on iOS 7.0+
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-    
-    // Build table view
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    
     [super viewDidLoad];
-    [self.view addSubview:_tableView];
-
+//    // Build table view
+//    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+// 
+////    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    
+//
+//    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
@@ -95,23 +91,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"athleticNewsCell";
+    AthleticsNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[AthleticsNewsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     MWFeedItem *item = [_feedItems objectAtIndex:indexPath.row];
     NSString *title = item.title ? item.title : @"[No Title]";
     NSString *summary = item.summary ? [item.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
     
-    cell.textLabel.text = title;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-    
-    cell.detailTextLabel.text = summary;
-    cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
+    cell.articleImageView.image = [UIImage imageNamed:@"RPI_athletics_sample.jpg"];
+    cell.articleTitle.text = title;
+//    
+//    cell.textLabel.text = title;
+//    cell.textLabel.numberOfLines = 0;
+//    cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+//    
+//    cell.detailTextLabel.text = summary;
+//    cell.detailTextLabel.numberOfLines = 0;
+//    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
     return cell;
 }
 
@@ -173,6 +172,7 @@
 // Parsing failed
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    // FUTURE: add error message details here with MBProgressHUD
     NSLog(@"Error Parsing: %@", error);
 }
 

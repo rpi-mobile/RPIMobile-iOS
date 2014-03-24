@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Google-Maps-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ISRefreshControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,62 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10224CCCA88345D3BC787841</key>
+		<key>024DA6F7D3714002866EA765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A81820BE49C4C0F9B07CE87</key>
+		<key>05D0B31A16FD4D0489BD8E6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33839D5EC9B640CD895D5757</key>
+		<key>09664378E9574FE890D60D98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35F2844D0C9F4519A7BFE1A1</key>
+		<key>190137974CB3429387E3B08B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66624D5703F74829A51B6AC3</key>
+		<key>2A73A2CFA02B4F32A3D8E7D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F869864B6C14A478FF5575B</key>
+		<key>2C3C5438CD404C39998FB219</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FB0DAF7DBA6485295742E13</key>
+		<key>2F38387F10E843EE89F4EE35</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B679017BE5DC404B81425025</key>
+		<key>64979D77F41A43029FFD3A49</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C17FB5373AD946B88D797E23</key>
+		<key>68D9201041AC45C2AA799623</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D568AE1235C54CE89E35F21E</key>
+		<key>B8044ACDE20A4CC9AB0A52C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF158CE8C8BA4FCF90E01074</key>
+		<key>E5D8DBFD801C468A99E4C8EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9540976189240EF9F5237CB</key>
+		<key>EC934F062CCE4F3E88FA8D2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9C01E50F9B841A0A0001D62</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -21,6 +21,7 @@
 #import "TwitterFeedViewController.h"
 #import "LaundryViewController.h"
 #import "DirectoryMasterViewController.h"
+#import "CampusMapViewController.h"
 
 @interface SideMenuViewController ()
 @property (strong) NSArray *menuItems;
@@ -75,14 +76,21 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *nextView;
+    CRNavigationController *navController;
     UIStoryboard *storyboard;
     switch (indexPath.row) {
         case 0:
             nextView = [[AthleticsMainViewController alloc] init];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+             navController = [[CRNavigationController alloc] initWithRootViewController:nextView];
+            [self.mm_drawerController setCenterViewController:navController withFullCloseAnimation:YES completion:nil];
             return;
         case 1:
             storyboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            return;
+        case 2:
+            storyboard = [UIStoryboard storyboardWithName:@"CampusMapViewController" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
             [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
             return;

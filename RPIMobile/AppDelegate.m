@@ -5,7 +5,7 @@
 //  Created by Stephen Silber on 9/28/13.
 //  Copyright (c) 2013 Stephen Silber. All rights reserved.
 //
-
+#import <GoogleMaps/GoogleMaps.h>
 #import "AppDelegate.h"
 #import "MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
@@ -31,6 +31,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SideMenu" bundle:nil];
     
@@ -54,6 +56,7 @@
                                                          diskCapacity:20 * 1024 * 1024
                                                              diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
+    [GMSServices provideAPIKey:@"AIzaSyBn7BdKND4vd9XpI2ob-vZflie3SjKSsz4"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = drawerController;

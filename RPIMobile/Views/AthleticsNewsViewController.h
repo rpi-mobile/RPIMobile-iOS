@@ -10,6 +10,10 @@
 
 @interface AthleticsNewsViewController : UIViewController
 
-- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andViewController:(UIViewController *) view;
+
+@property (nonatomic, strong) NSString *sport;
+@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) UIViewController *previousView;
+- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andPreviousViewController:(UIViewController *) view;
 
 @end

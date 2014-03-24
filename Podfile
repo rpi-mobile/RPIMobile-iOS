@@ -10,4 +10,4 @@ pod 'STTwitter'
 pod 'MZDayPicker', '~> 0.0.5'
 pod 'PBWebViewController' 
 pod 'TTTAttributedLabel'
-
+pod 'Google-Maps-iOS-SDK'
