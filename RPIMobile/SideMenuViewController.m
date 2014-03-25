@@ -82,32 +82,32 @@
         case 0:
             nextView = [[AthleticsMainViewController alloc] init];
              navController = [[CRNavigationController alloc] initWithRootViewController:nextView];
-            [self.mm_drawerController setCenterViewController:navController withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:navController withCloseAnimation:YES completion:nil];
             return;
         case 1:
             storyboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 2:
             storyboard = [UIStoryboard storyboardWithName:@"CampusMapViewController" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 3:
             storyboard = [UIStoryboard storyboardWithName:@"LaundryStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 4:
             storyboard = [UIStoryboard storyboardWithName:@"MorningMailStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 5:
             storyboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         default:
             return;

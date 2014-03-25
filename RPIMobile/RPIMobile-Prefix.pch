@@ -15,7 +15,3 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
-
-static BOOL OSVersionIsAtLeastiOS7() {
-    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
-}

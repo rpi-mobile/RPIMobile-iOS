@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CTidy.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CXFeedParser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Google-Maps-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +35,6 @@
 			<false/>
 		</dict>
 		<key>Pods-MMDrawerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MWFeedParser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,67 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>024DA6F7D3714002866EA765</key>
+		<key>13EDE816D3B94FE2A02F6C7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>05D0B31A16FD4D0489BD8E6A</key>
+		<key>33D2DD0A01B748C98EFC8627</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>09664378E9574FE890D60D98</key>
+		<key>3C8379CBF9384BDD92061BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>190137974CB3429387E3B08B</key>
+		<key>574D529EA38E42DA8D86423B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A73A2CFA02B4F32A3D8E7D1</key>
+		<key>5786FF768F83469B831FE79F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C3C5438CD404C39998FB219</key>
+		<key>602F1462D8D7487E8DE32A31</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F38387F10E843EE89F4EE35</key>
+		<key>76CB712B60C54C2EAE472DFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64979D77F41A43029FFD3A49</key>
+		<key>8C0C0C76113F4B98AA90E5AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68D9201041AC45C2AA799623</key>
+		<key>93E009FD189D41FEA83E6650</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8044ACDE20A4CC9AB0A52C3</key>
+		<key>B70C5756977047C4B3B5C26F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5D8DBFD801C468A99E4C8EF</key>
+		<key>D5BD661292EE4C05826567F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC934F062CCE4F3E88FA8D2A</key>
+		<key>EF49083E283A450197533398</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9C01E50F9B841A0A0001D62</key>
+		<key>F01884C6A30642E0BEC90763</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAD7B3F65A794318963E0CA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

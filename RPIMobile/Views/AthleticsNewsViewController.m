@@ -16,7 +16,7 @@
 #import "AthleticsNewsTableViewCell.h"
 #import "AthleticsNewsViewController.h"
 
-@interface AthleticsNewsViewController () <UITableViewDataSource, UITableViewDelegate, MWFeedParserDelegate>
+@interface AthleticsNewsViewController () <MWFeedParserDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MWFeedParser *feedParser;
@@ -27,27 +27,14 @@
 
 @implementation AthleticsNewsViewController
 
-- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andPreviousViewController:(UIViewController *)view
-{
-    if (self = [super init]) {
-        self.previousView = view; // Used to push news articles onto navigation stack of previous view. Problem is with library used for tabbed navigation
-        [self parseNewFeed:key];
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    // Build table view
-//    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-// 
-////    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    
-//
-//    [self.view addSubview:self.tableView];
+    [self parseNewFeed:self.key];
+    [self.tableView setRowHeight:200.0f];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [self.tableView setSeparatorColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,31 +49,14 @@
     return 1;
 }
 
-- (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
-    UITextView *calculationView = [[UITextView alloc] init];
-    [calculationView setAttributedText:text];
-    CGSize size = [calculationView sizeThatFits:CGSizeMake(width, FLT_MAX)];
-    return size.height;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSString *rawSummary = [[[_feedItems objectAtIndex:indexPath.row] summary] stringByConvertingHTMLToPlainText];
-    NSString *rawTitle = [[[_feedItems objectAtIndex:indexPath.row] title] stringByConvertingHTMLToPlainText];
-    NSAttributedString *summary = [[NSAttributedString alloc] initWithString:rawSummary];
-    NSAttributedString *title = [[NSAttributedString alloc] initWithString:rawTitle];
-
-    CGFloat titleHeight = [self textViewHeightForAttributedText:title andWidth:self.view.frame.size.width];
-    CGFloat cellHeight = [self textViewHeightForAttributedText:summary andWidth:tableView.frame.size.width - 40];
-
-    // Clean this up to be more efficient/accurate
-    return (cellHeight > 0) ? (cellHeight + titleHeight + 10) : 100;
+    return 180.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return _feedItems.count;
+    return self.feedItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,34 +67,36 @@
         cell = [[AthleticsNewsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    MWFeedItem *item = [_feedItems objectAtIndex:indexPath.row];
+    MWFeedItem *item = [self.feedItems objectAtIndex:indexPath.row];
     NSString *title = item.title ? item.title : @"[No Title]";
-    NSString *summary = item.summary ? [item.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
-    
-    cell.articleImageView.image = [UIImage imageNamed:@"RPI_athletics_sample.jpg"];
+    NSURL *imageUrl;
+    for(NSDictionary *enclosure in item.enclosures) {
+        if([[enclosure objectForKey:@"type"] isEqualToString:@"image/jpg"]) {
+            imageUrl = [NSURL URLWithString:[enclosure objectForKey:@"url"]];
+            NSLog(@"Enclosure: %@", enclosure);
+            break;
+        }
+    }
+    [cell.articleImageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"blank_news_image.png"]];
+    cell.clipsToBounds = YES;
     cell.articleTitle.text = title;
-//    
-//    cell.textLabel.text = title;
-//    cell.textLabel.numberOfLines = 0;
-//    cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-//    
-//    cell.detailTextLabel.text = summary;
-//    cell.detailTextLabel.numberOfLines = 0;
-//    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
+
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"Test: %@", self.parentViewController.navigationController);
+
     MWFeedItem *item = [_feedItems objectAtIndex:indexPath.row];
     
     // Make sure the RSS item has a link
     if (item.link) {
         PBWebViewController *nextView = [[PBWebViewController alloc] init];// initWithNibName:@"WebViewController" bundle:nil url:item.link];
         [nextView setURL:[NSURL URLWithString:item.link]];
-        [_previousView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
+        [self.previousView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
         [nextView setShowsNavigationToolbar:YES];
-        [_previousView.navigationController pushViewController:nextView animated:YES];
+        [self.previousView.navigationController pushViewController:nextView animated:YES];
     }
 
 }

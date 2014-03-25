@@ -14,21 +14,23 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.articleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+//        self.articleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
 //        self.articleImageView.image = [UIImage imageNamed:@"RPI_athletics_sample.jpg"];
 //        self.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
-//        UIView *titleBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 275, 50)];
-//        titleBackground.backgroundColor = [UIColor redColor];
-//        titleBackground.alpha = 0.75f;
 //        
-//        self.articleTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 105, 255, 40)];
-//        self.articleTitle.font = [UIFont systemFontOfSize:14.0f];
+//        UIView *titleBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 100, (self.articleImageView.frame.size.width * 0.75), 44)];
+//        titleBackground.backgroundColor = [UIColor colorWithRed:0.80 green:0.17 blue:0.11 alpha:1.0];
+//        titleBackground.alpha = 0.9f;
+//        
+//        self.articleTitle = [[UILabel alloc] initWithFrame:titleBackground.frame];
+//        self.articleTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0f];
 //        self.articleTitle.numberOfLines = 2;
 //        self.articleTitle.textColor = [UIColor whiteColor];
+//        
+//        [titleBackground addSubview:self.articleTitle];
 //
 //        [self.contentView addSubview:self.articleImageView];
 //        [self.contentView addSubview:titleBackground];
-//        [self.contentView addSubview:self.articleTitle];
     }
     return self;
 }

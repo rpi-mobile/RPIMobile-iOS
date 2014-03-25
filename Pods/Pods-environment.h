@@ -48,6 +48,42 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 2
 
+// CTidy
+#define COCOAPODS_POD_AVAILABLE_CTidy
+#define COCOAPODS_VERSION_MAJOR_CTidy 0
+#define COCOAPODS_VERSION_MINOR_CTidy 3
+#define COCOAPODS_VERSION_PATCH_CTidy 1
+
+// CXFeedParser
+#define COCOAPODS_POD_AVAILABLE_CXFeedParser
+#define COCOAPODS_VERSION_MAJOR_CXFeedParser 0
+#define COCOAPODS_VERSION_MINOR_CXFeedParser 1
+#define COCOAPODS_VERSION_PATCH_CXFeedParser 2
+
+// CXFeedParser/Feed
+#define COCOAPODS_POD_AVAILABLE_CXFeedParser_Feed
+#define COCOAPODS_VERSION_MAJOR_CXFeedParser_Feed 0
+#define COCOAPODS_VERSION_MINOR_CXFeedParser_Feed 1
+#define COCOAPODS_VERSION_PATCH_CXFeedParser_Feed 2
+
+// CXFeedParser/NSDate+InternetDateTime
+#define COCOAPODS_POD_AVAILABLE_CXFeedParser_NSDate_InternetDateTime
+#define COCOAPODS_VERSION_MAJOR_CXFeedParser_NSDate_InternetDateTime 0
+#define COCOAPODS_VERSION_MINOR_CXFeedParser_NSDate_InternetDateTime 1
+#define COCOAPODS_VERSION_PATCH_CXFeedParser_NSDate_InternetDateTime 2
+
+// CXFeedParser/NSString+HTML
+#define COCOAPODS_POD_AVAILABLE_CXFeedParser_NSString_HTML
+#define COCOAPODS_VERSION_MAJOR_CXFeedParser_NSString_HTML 0
+#define COCOAPODS_VERSION_MINOR_CXFeedParser_NSString_HTML 1
+#define COCOAPODS_VERSION_PATCH_CXFeedParser_NSString_HTML 2
+
+// CXFeedParser/NSString+XMLEntities
+#define COCOAPODS_POD_AVAILABLE_CXFeedParser_NSString_XMLEntities
+#define COCOAPODS_VERSION_MAJOR_CXFeedParser_NSString_XMLEntities 0
+#define COCOAPODS_VERSION_MINOR_CXFeedParser_NSString_XMLEntities 1
+#define COCOAPODS_VERSION_PATCH_CXFeedParser_NSString_XMLEntities 2
+
 // Google-Maps-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Google_Maps_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Google_Maps_iOS_SDK 1
@@ -95,36 +131,6 @@
 #define COCOAPODS_VERSION_MAJOR_MMDrawerController_Subclass 0
 #define COCOAPODS_VERSION_MINOR_MMDrawerController_Subclass 5
 #define COCOAPODS_VERSION_PATCH_MMDrawerController_Subclass 1
-
-// MWFeedParser
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser 0
-#define COCOAPODS_VERSION_MINOR_MWFeedParser 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser 1
-
-// MWFeedParser/Feed
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_Feed
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_Feed 0
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_Feed 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_Feed 1
-
-// MWFeedParser/NSDate+InternetDateTime
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSDate_InternetDateTime
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSDate_InternetDateTime 0
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_NSDate_InternetDateTime 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_NSDate_InternetDateTime 1
-
-// MWFeedParser/NSString+HTML
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSString_HTML
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSString_HTML 0
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_NSString_HTML 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_NSString_HTML 1
-
-// MWFeedParser/NSString+XMLEntities
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSString_XMLEntities
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSString_XMLEntities 0
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_NSString_XMLEntities 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_NSString_XMLEntities 1
 
 // MZDayPicker
 #define COCOAPODS_POD_AVAILABLE_MZDayPicker

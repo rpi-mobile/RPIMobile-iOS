@@ -17,6 +17,17 @@ PODS:
   - AFNetworking/Serialization (2.0.2)
   - AFNetworking/UIKit (2.0.2):
     - AFNetworking/NSURLConnection
+  - CTidy (0.3.1)
+  - CXFeedParser (0.1.2):
+    - CXFeedParser/Feed
+    - CXFeedParser/NSDate+InternetDateTime
+    - CXFeedParser/NSString+HTML
+    - CXFeedParser/NSString+XMLEntities
+  - CXFeedParser/Feed (0.1.2):
+    - CTidy (~> 0.3.1)
+  - CXFeedParser/NSDate+InternetDateTime (0.1.2)
+  - CXFeedParser/NSString+HTML (0.1.2)
+  - CXFeedParser/NSString+XMLEntities (0.1.2)
   - Google-Maps-iOS-SDK (1.7.0)
   - ISRefreshControl (1.0.2)
   - MBProgressHUD (0.8)
@@ -32,15 +43,6 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.1):
     - MMDrawerController/Core
-  - MWFeedParser (0.0.1):
-    - MWFeedParser/Feed
-    - MWFeedParser/NSDate+InternetDateTime
-    - MWFeedParser/NSString+HTML
-    - MWFeedParser/NSString+XMLEntities
-  - MWFeedParser/Feed (0.0.1)
-  - MWFeedParser/NSDate+InternetDateTime (0.0.1)
-  - MWFeedParser/NSString+HTML (0.0.1)
-  - MWFeedParser/NSString+XMLEntities (0.0.1)
   - MZDayPicker (0.0.5)
   - PBWebViewController (0.1)
   - REMenu (1.7)
@@ -52,11 +54,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - CXFeedParser
   - Google-Maps-iOS-SDK
   - ISRefreshControl (~> 1.0.2)
   - MBProgressHUD
   - MMDrawerController (~> 0.5.0)
-  - MWFeedParser (~> 0.0.1)
   - MZDayPicker (~> 0.0.5)
   - PBWebViewController
   - REMenu (~> 1.5)
@@ -66,11 +68,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: e663917201cdb73f4ad2ba239ad35be8dc9a1e3c
+  CTidy: a8ebe9201cdb4269fa8e7ed7f32d34856db62630
+  CXFeedParser: fe88eb62a394ce822a3f59273d80c7d36e1cf119
   Google-Maps-iOS-SDK: 08c003195d87b81ea2c8265eaa2724ac38ac21b7
   ISRefreshControl: 38b6073a026117ad8fcbe33853b36bee4e39bf4c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MMDrawerController: 3e22aec684dbee5307ff9d1e76523003a3303a2d
-  MWFeedParser: 2ca0852fac352f8333d5f46fdd4b583b921e0c4e
   MZDayPicker: 1ebc98a0aa72906dc367de4c5b7d4ddb054bb910
   PBWebViewController: 8a84b04caf635691335e3b449034dc0e9c1967c8
   REMenu: ec4836dc12b718ee8e35317218a2383976d41d84

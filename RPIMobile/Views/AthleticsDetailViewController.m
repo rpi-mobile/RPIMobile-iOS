@@ -80,15 +80,16 @@
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
 
     UIViewController *nextView;
+    AthleticsNewsViewController *newsView;
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AthleticsStoryboard_iPhone" bundle:nil];
     switch (index) {
         case 0:
             // News tab requested
-            nextView = [[AthleticsNewsViewController alloc] initWithSport:self.sport andKey:self.key andPreviousViewController:self];
-//            nextView = (AthleticsNewsViewController *) [sb instantiateViewControllerWithIdentifier:@"newsView"];
-            ((AthleticsNewsViewController *) nextView).previousView = self;
-            ((AthleticsNewsViewController *) nextView).key = self.key;
-            ((AthleticsNewsViewController *) nextView).sport = self.sport;
+            newsView = [sb instantiateViewControllerWithIdentifier:@"newsView"];
+            newsView.key = self.key;
+            newsView.sport = self.sport;
+            newsView.previousView = self;
+            return newsView;
             break;
         case 1:
             // Roster tab requested
