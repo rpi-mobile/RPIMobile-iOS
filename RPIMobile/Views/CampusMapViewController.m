@@ -8,13 +8,18 @@
 
 #import "CampusMapViewController.h"
 #import "MMDrawerBarButtonItem.h"
+#import "RMDirectionService.h"
+#import "CampusMapListTableViewController.h"
 #import "UIViewController+MMDrawerController.h"
 
-@interface CampusMapViewController ()
-@property (nonatomic, strong) IBOutlet GMSMapView *mapView;
+@interface CampusMapViewController () {
+    NSMutableArray *waypoints_;
+    NSMutableArray *waypointStrings_;
+}
 @end
 
 @implementation CampusMapViewController
+@synthesize mapView, markers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,13 +35,85 @@
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
+/*
+ Map Marker Types:
+ 0: Housing
+ 1: Student Life (Union, playhouse, empac)
+ 2: Administration
+ 3: Academic
+ 4: Athletic
+ 5: Dining Hall
+ 6: Nearby food?
+*/
+- (void) readMapDataFromJson {
+    markers = [[NSMutableArray alloc] init];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"map_data" ofType:@"json"];
+    NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:nil];
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:nil];
+    for(NSArray *mapObject in jsonObject) {
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = CLLocationCoordinate2DMake([[mapObject objectAtIndex:2] floatValue], [[mapObject objectAtIndex:3] floatValue]);
+        marker.title = [mapObject firstObject];
+        marker.appearAnimation = kGMSMarkerAnimationNone;
+        marker.map = self.mapView;
+        
+        
+        switch ([[mapObject lastObject] intValue]) {
+            case 0:
+                marker.icon = [UIImage imageNamed:@"mm_student_housing.png"];
+                break;
+            case 1:
+                marker.icon = [UIImage imageNamed:@"mm_student_life.png"];
+                break;
+            case 2:
+                marker.icon = [UIImage imageNamed:@"mm_administration.png"];
+                break;
+            case 3:
+                marker.icon = [UIImage imageNamed:@"mm_academic.png"];
+                break;
+            default:
+                break;
+        }
+        
+        [markers addObject:marker];
+    }
+
+}
+
+- (BOOL) selectPinWithTitle:(NSString *) title {
+    for(GMSMarker *marker in self.markers) {
+        NSLog(@"M: %@", marker);
+        if( [marker.title isEqualToString:title] ) {
+            [self.mapView setSelectedMarker: marker];
+            [self.mapView setCamera:[GMSCameraPosition cameraWithLatitude:marker.position.latitude longitude:marker.position.longitude zoom:16.0f]];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void) toggleMapViewType:(id) sender {
+    if(self.mapView.mapType == kGMSTypeNormal) {
+        self.mapView.mapType = kGMSTypeSatellite;
+    } else {
+        self.mapView.mapType = kGMSTypeNormal;
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self readMapDataFromJson];
+    waypoints_ = [[NSMutableArray alloc]init];
+    waypointStrings_ = [[NSMutableArray alloc]init];
     
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleMapViewType:)];
+    doubleTap.numberOfTapsRequired = 2;
+    
+    [self.navigationController.navigationBar addGestureRecognizer:doubleTap];
     
     [self.mapView setDelegate:self];
     self.title = @"Campus Map";
@@ -45,13 +122,69 @@
                                                                  zoom:16];
     self.mapView.camera = camera;
     self.mapView.myLocationEnabled = YES;
+    self.mapView.indoorEnabled = YES;
+
+    NSLog(@"Location: %@", self.mapView.myLocation);
     
+
+    
+}
+
+- (void) getDirectionsToMarker:(GMSMarker *) marker {
+
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(
+                                                                 marker.position.latitude,
+                                                                 marker.position.longitude);
+    /* Load user location into waypoints */
+    CLLocation *location = self.mapView.myLocation;
+    NSLog(@"Location: %f, %f", location.coordinate.latitude,location.coordinate.longitude);
+    NSString *positionString = [[NSString alloc] initWithFormat:@"%f,%f",
+                                self.mapView.myLocation.coordinate.latitude,self.mapView.myLocation.coordinate.longitude];
+    [waypointStrings_ addObject:positionString];
+    
+    [waypoints_ addObject:marker];
+    positionString = [[NSString alloc] initWithFormat:@"%f,%f",
+                                position.latitude, position.longitude];
+    [waypointStrings_ addObject:positionString];
+    
+    if([waypointStrings_ count]>1){
+        NSString *sensor = @"false";
+        NSArray *parameters = [NSArray arrayWithObjects:sensor, waypointStrings_,
+                               nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
+        NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters
+                                                          forKeys:keys];
+        RMDirectionService *mds = [[RMDirectionService alloc] init];
+        SEL selector = @selector(addDirections:);
+        [mds setDirectionsQuery:query
+                   withSelector:selector
+                   withDelegate:self];
+    }
+}
+
+- (void)addDirections:(NSDictionary *)json {
+    
+    NSDictionary *routes = [json objectForKey:@"routes"][0];
+    
+    NSDictionary *route = [routes objectForKey:@"overview_polyline"];
+    NSString *overview_route = [route objectForKey:@"points"];
+    GMSPath *path = [GMSPath pathFromEncodedPath:overview_route];
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+    polyline.map = self.mapView;
+    polyline.tappable = YES;
+    polyline.strokeColor = [UIColor colorWithRed:0.80 green:0.17 blue:0.11 alpha:1.0];
+    polyline.strokeWidth = 4.f;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CampusMapListTableViewController *nextView = [segue destinationViewController];
+    nextView.mapView = self;
 }
 
 @end
