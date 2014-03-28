@@ -12,8 +12,9 @@
 
 @interface CampusMapViewController : UIViewController <GMSMapViewDelegate>
 @property (nonatomic, strong) IBOutlet GMSMapView *mapView;
-@property (nonatomic, strong) IBOutlet NSMutableArray *markers;
+@property (nonatomic, strong) IBOutlet NSMutableDictionary *markers;
 
 - (BOOL) selectPinWithTitle:(NSString *) title;
+- (void) getDirectionsToMarker:(GMSMarker *) marker;
 
 @end

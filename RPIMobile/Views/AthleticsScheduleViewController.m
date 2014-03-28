@@ -59,6 +59,7 @@
     [super viewDidLoad];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+
     _tableView.delegate = self;
     _tableView.dataSource = self;
     

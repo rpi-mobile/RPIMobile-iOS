@@ -121,6 +121,7 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.title = @"Morning Mail";
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
@@ -141,6 +142,8 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     self.dayPicker.dayNameLabelFontSize = 10.0f;
     self.dayPicker.dayLabelFontSize = 14.0f;
     
+
+    self.dayPicker.bottomBorderColor = [UIColor colorWithRed:0.80 green:0.17 blue:0.11 alpha:1.0];
     [self.dayPicker setActiveDaysFrom:1 toDay:[components day]];
     
     [self.dayPicker setCurrentDay:[components day] animated:YES];

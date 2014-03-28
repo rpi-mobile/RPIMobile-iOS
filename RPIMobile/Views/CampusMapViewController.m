@@ -46,7 +46,8 @@
  6: Nearby food?
 */
 - (void) readMapDataFromJson {
-    markers = [[NSMutableArray alloc] init];
+    markers = [[NSMutableDictionary alloc] init];
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"map_data" ofType:@"json"];
     NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:nil];
     NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:nil];
@@ -75,13 +76,16 @@
                 break;
         }
         
-        [markers addObject:marker];
+        [markers setObject:marker forKey:marker.title];
     }
 
 }
 
+- (IBAction) getCurrentLocation:(id) sender {
+    
+}
 - (BOOL) selectPinWithTitle:(NSString *) title {
-    for(GMSMarker *marker in self.markers) {
+    for(GMSMarker *marker in self.markers.allValues) {
         NSLog(@"M: %@", marker);
         if( [marker.title isEqualToString:title] ) {
             [self.mapView setSelectedMarker: marker];
@@ -117,6 +121,7 @@
     
     [self.mapView setDelegate:self];
     self.title = @"Campus Map";
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.72997
                                                             longitude:-73.676649
                                                                  zoom:16];
@@ -124,14 +129,15 @@
     self.mapView.myLocationEnabled = YES;
     self.mapView.indoorEnabled = YES;
 
-    NSLog(@"Location: %@", self.mapView.myLocation);
-    
-
-    
 }
 
 - (void) getDirectionsToMarker:(GMSMarker *) marker {
 
+    if(self.mapView.myLocationEnabled == NO || self.mapView.myLocation == nil) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"You cannot use this feature with your location services disabled for RPI Mobile. Please enable this in settings and try again!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+        return;
+    }
+    
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(
                                                                  marker.position.latitude,
                                                                  marker.position.longitude);

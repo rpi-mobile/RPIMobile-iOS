@@ -142,10 +142,14 @@
     if (REUIKitIsFlatMode()) {
         self.toolbar = ({
             UIToolbar *toolbar = [[UIToolbar alloc] init];
-            toolbar.barStyle = self.liveBlurBackgroundStyle;
+            toolbar.barStyle = (UIBarStyle)self.liveBlurBackgroundStyle;
             if ([toolbar respondsToSelector:@selector(setBarTintColor:)])
                 [toolbar performSelector:@selector(setBarTintColor:) withObject:self.liveBlurTintColor];
             toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+            toolbar.layer.cornerRadius = self.cornerRadius;
+            toolbar.layer.borderColor = self.borderColor.CGColor;
+            toolbar.layer.borderWidth = self.borderWidth;
+            toolbar.layer.masksToBounds = YES;
             toolbar;
         });
     }
@@ -196,10 +200,9 @@
                                                                                     index * self.itemHeight + (index + 1.0) * self.separatorHeight + 40.0 + navigationBarOffset,
                                                                                     rect.size.width,
                                                                                     itemHeight)
-                                                                    menu:self
+                                                                    menu:self item:item
                                                              hasSubtitle:item.subtitle.length > 0];
         itemView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        itemView.item = item;
         item.itemView = itemView;
         itemView.separatorView = separatorView;
         itemView.autoresizesSubviews = YES;
@@ -351,6 +354,10 @@
         }];
         
     };
+    
+    if (self.closePreparationBlock) {
+        self.closePreparationBlock();
+    }
     
     if (self.bounce) {
         [UIView animateWithDuration:self.bounceAnimationDuration animations:^{

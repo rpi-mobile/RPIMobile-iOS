@@ -1,22 +1,23 @@
 PODS:
-  - AFNetworking (2.0.2):
+  - AFNetworking (2.2.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.2):
+  - AFNetworking/NSURLConnection (2.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.2):
+  - AFNetworking/NSURLSession (2.2.1):
     - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.0.2)
-  - AFNetworking/Security (2.0.2)
-  - AFNetworking/Serialization (2.0.2)
-  - AFNetworking/UIKit (2.0.2):
+  - AFNetworking/Reachability (2.2.1)
+  - AFNetworking/Security (2.2.1)
+  - AFNetworking/Serialization (2.2.1)
+  - AFNetworking/UIKit (2.2.1):
     - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - CTidy (0.3.1)
   - CXFeedParser (0.1.2):
     - CXFeedParser/Feed
@@ -28,29 +29,29 @@ PODS:
   - CXFeedParser/NSDate+InternetDateTime (0.1.2)
   - CXFeedParser/NSString+HTML (0.1.2)
   - CXFeedParser/NSString+XMLEntities (0.1.2)
-  - Google-Maps-iOS-SDK (1.7.0)
+  - Google-Maps-iOS-SDK (1.7.2)
   - ISRefreshControl (1.0.2)
   - MBProgressHUD (0.8)
-  - MMDrawerController (0.5.1):
+  - MMDrawerController (0.5.3):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
     - MMDrawerController/MMDrawerVisualStates
     - MMDrawerController/Subclass
-  - MMDrawerController/Core (0.5.1)
-  - MMDrawerController/MMDrawerBarButtonItem (0.5.1):
+  - MMDrawerController/Core (0.5.3)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.3):
     - MMDrawerController/Core
-  - MMDrawerController/MMDrawerVisualStates (0.5.1):
+  - MMDrawerController/MMDrawerVisualStates (0.5.3):
     - MMDrawerController/Core
-  - MMDrawerController/Subclass (0.5.1):
+  - MMDrawerController/Subclass (0.5.3):
     - MMDrawerController/Core
   - MZDayPicker (0.0.5)
   - PBWebViewController (0.1)
-  - REMenu (1.7)
-  - SDWebImage (3.5):
+  - REMenu (1.8.4)
+  - SDWebImage (3.5.4):
     - SDWebImage/Core
-  - SDWebImage/Core (3.5)
-  - STTwitter (0.0.6)
-  - TTTAttributedLabel (1.7.5)
+  - SDWebImage/Core (3.5.4)
+  - STTwitter (0.1.1)
+  - TTTAttributedLabel (1.9.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -67,18 +68,18 @@ DEPENDENCIES:
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
-  AFNetworking: e663917201cdb73f4ad2ba239ad35be8dc9a1e3c
+  AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
   CTidy: a8ebe9201cdb4269fa8e7ed7f32d34856db62630
   CXFeedParser: fe88eb62a394ce822a3f59273d80c7d36e1cf119
-  Google-Maps-iOS-SDK: 08c003195d87b81ea2c8265eaa2724ac38ac21b7
+  Google-Maps-iOS-SDK: 5ac063b3d020b6a7f91dcbf59b3b0e3c17170d27
   ISRefreshControl: 38b6073a026117ad8fcbe33853b36bee4e39bf4c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  MMDrawerController: 3e22aec684dbee5307ff9d1e76523003a3303a2d
+  MMDrawerController: 4445e1927e8947b7e2382136c9b7109840efbfb9
   MZDayPicker: 1ebc98a0aa72906dc367de4c5b7d4ddb054bb910
   PBWebViewController: 8a84b04caf635691335e3b449034dc0e9c1967c8
-  REMenu: ec4836dc12b718ee8e35317218a2383976d41d84
-  SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f
-  STTwitter: 0a2459e87d7655c6798d1c6dba48e393114649b7
-  TTTAttributedLabel: 1eb635d4d844cb7abce4d839faefca2a3409950d
+  REMenu: 9ee5b3bea51ce8e48b550feb9b50203d6ad27499
+  SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
+  STTwitter: ae95132beac148ffa1624c491c424345ecbb4f03
+  TTTAttributedLabel: 3299d80e6cc066676fd6ac44276a2b0baaa1e965
 
 COCOAPODS: 0.29.0

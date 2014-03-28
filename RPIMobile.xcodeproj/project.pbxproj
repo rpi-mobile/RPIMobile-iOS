@@ -53,6 +53,15 @@
 		DC3DCB6118353AA1001E92DC /* TwitterStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3DCB6018353AA1001E92DC /* TwitterStoryboard_iPhone.storyboard */; };
 		DC3DCB6318353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3DCB6218353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard */; };
 		DC47502B18E128E0008BDE7A /* blank_news_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47502A18E128E0008BDE7A /* blank_news_image@2x.png */; };
+		DC47503318E13E88008BDE7A /* mm_academic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47502D18E13E88008BDE7A /* mm_academic@2x.png */; };
+		DC47503418E13E88008BDE7A /* mm_student_life@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47502E18E13E88008BDE7A /* mm_student_life@2x.png */; };
+		DC47503518E13E88008BDE7A /* mm_student_life_alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47502F18E13E88008BDE7A /* mm_student_life_alt@2x.png */; };
+		DC47503618E13E88008BDE7A /* mm_administration@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47503018E13E88008BDE7A /* mm_administration@2x.png */; };
+		DC47503718E13E88008BDE7A /* mm_student_housing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47503118E13E88008BDE7A /* mm_student_housing@2x.png */; };
+		DC47503818E13E88008BDE7A /* mm_academic_alt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC47503218E13E88008BDE7A /* mm_academic_alt@2x.png */; };
+		DC47503A18E1427F008BDE7A /* map_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DC47503918E1427F008BDE7A /* map_data.json */; };
+		DC47503D18E14973008BDE7A /* RMDirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = DC47503C18E14973008BDE7A /* RMDirectionService.m */; };
+		DC47504018E15480008BDE7A /* CampusMapListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC47503F18E15480008BDE7A /* CampusMapListTableViewController.m */; };
 		DC5B9DF917F7B96800CEBC74 /* AthleticsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9DF817F7B96800CEBC74 /* AthleticsMainViewController.m */; };
 		DC5B9DFC17F7BE4D00CEBC74 /* menSportsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9DFA17F7BE4D00CEBC74 /* menSportsList.plist */; };
 		DC5B9DFD17F7BE4D00CEBC74 /* womenSportsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC5B9DFB17F7BE4D00CEBC74 /* womenSportsList.plist */; };
@@ -167,6 +176,17 @@
 		DC3DCB6018353AA1001E92DC /* TwitterStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TwitterStoryboard_iPhone.storyboard; path = Views/Storyboards/TwitterStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DC3DCB6218353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MorningMailStoryboard_iPhone.storyboard; path = Views/Storyboards/MorningMailStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DC47502A18E128E0008BDE7A /* blank_news_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_news_image@2x.png"; sourceTree = "<group>"; };
+		DC47502D18E13E88008BDE7A /* mm_academic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_academic@2x.png"; sourceTree = "<group>"; };
+		DC47502E18E13E88008BDE7A /* mm_student_life@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_student_life@2x.png"; sourceTree = "<group>"; };
+		DC47502F18E13E88008BDE7A /* mm_student_life_alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_student_life_alt@2x.png"; sourceTree = "<group>"; };
+		DC47503018E13E88008BDE7A /* mm_administration@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_administration@2x.png"; sourceTree = "<group>"; };
+		DC47503118E13E88008BDE7A /* mm_student_housing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_student_housing@2x.png"; sourceTree = "<group>"; };
+		DC47503218E13E88008BDE7A /* mm_academic_alt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_academic_alt@2x.png"; sourceTree = "<group>"; };
+		DC47503918E1427F008BDE7A /* map_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map_data.json; sourceTree = "<group>"; };
+		DC47503B18E14973008BDE7A /* RMDirectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDirectionService.h; path = Controllers/RMDirectionService.h; sourceTree = "<group>"; };
+		DC47503C18E14973008BDE7A /* RMDirectionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDirectionService.m; path = Controllers/RMDirectionService.m; sourceTree = "<group>"; };
+		DC47503E18E15480008BDE7A /* CampusMapListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CampusMapListTableViewController.h; path = Views/CampusMapListTableViewController.h; sourceTree = "<group>"; };
+		DC47503F18E15480008BDE7A /* CampusMapListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CampusMapListTableViewController.m; path = Views/CampusMapListTableViewController.m; sourceTree = "<group>"; };
 		DC4A441D18308FE5001A2C5D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DC4A441F18308FE9001A2C5D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		DC5B9DF717F7B96800CEBC74 /* AthleticsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AthleticsMainViewController.h; path = Views/AthleticsMainViewController.h; sourceTree = "<group>"; };
@@ -298,6 +318,20 @@
 			name = MorningMail;
 			sourceTree = "<group>";
 		};
+		DC47502C18E139FE008BDE7A /* Campus Map */ = {
+			isa = PBXGroup;
+			children = (
+				DCA7A78C18B1966C00BF9810 /* CampusMapViewController.h */,
+				DCA7A78D18B1966C00BF9810 /* CampusMapViewController.m */,
+				DC47503E18E15480008BDE7A /* CampusMapListTableViewController.h */,
+				DC47503F18E15480008BDE7A /* CampusMapListTableViewController.m */,
+				DC47503B18E14973008BDE7A /* RMDirectionService.h */,
+				DC47503C18E14973008BDE7A /* RMDirectionService.m */,
+				DCA7A78F18B1967F00BF9810 /* CampusMapViewController.storyboard */,
+			);
+			name = "Campus Map";
+			sourceTree = "<group>";
+		};
 		DC4A4421183093D0001A2C5D /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +391,12 @@
 		DC5B9E2417FBCEF700CEBC74 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DC47502D18E13E88008BDE7A /* mm_academic@2x.png */,
+				DC47502E18E13E88008BDE7A /* mm_student_life@2x.png */,
+				DC47502F18E13E88008BDE7A /* mm_student_life_alt@2x.png */,
+				DC47503018E13E88008BDE7A /* mm_administration@2x.png */,
+				DC47503118E13E88008BDE7A /* mm_student_housing@2x.png */,
+				DC47503218E13E88008BDE7A /* mm_academic_alt@2x.png */,
 				DCA5643018ADEFF600D1102E /* cog@2x.png */,
 				DCA5643118ADEFF600D1102E /* envelope@2x.png */,
 				DCA5643218ADEFF600D1102E /* group@2x.png */,
@@ -441,18 +481,17 @@
 				DC5B9E2417FBCEF700CEBC74 /* Icons */,
 				DC5B9E1817FB9BF800CEBC74 /* Athletics */,
 				DC79409417F769D800A9D53C /* Third Party Libraries */,
+				DC47502C18E139FE008BDE7A /* Campus Map */,
 				DC79405917F7687500A9D53C /* AppDelegate.h */,
 				DC79405A17F7687500A9D53C /* AppDelegate.m */,
 				DC79408A17F7689800A9D53C /* SideMenuViewController.h */,
 				DC79408B17F7689800A9D53C /* SideMenuViewController.m */,
-				DCA7A78C18B1966C00BF9810 /* CampusMapViewController.h */,
-				DCA7A78D18B1966C00BF9810 /* CampusMapViewController.m */,
-				DCA7A78F18B1967F00BF9810 /* CampusMapViewController.storyboard */,
 				DCA5642718ADEA7300D1102E /* SideMenu.storyboard */,
 				DCA5644018ADF94F00D1102E /* MenuItemCell.h */,
 				DCA5644118ADF94F00D1102E /* MenuItemCell.m */,
 				DC79405F17F7687500A9D53C /* Images.xcassets */,
 				DC79405C17F7687500A9D53C /* RPIMobile.xcdatamodeld */,
+				DC47503918E1427F008BDE7A /* map_data.json */,
 				DC79405117F7687500A9D53C /* Supporting Files */,
 			);
 			path = RPIMobile;
@@ -614,15 +653,19 @@
 				DC5B9DFD17F7BE4D00CEBC74 /* womenSportsList.plist in Resources */,
 				DC3DCB3918340F87001E92DC /* shocked.png in Resources */,
 				DCA7A79018B1967F00BF9810 /* CampusMapViewController.storyboard in Resources */,
+				DC47503718E13E88008BDE7A /* mm_student_housing@2x.png in Resources */,
 				DCA5643D18ADEFF600D1102E /* time@2x.png in Resources */,
 				DC3DCB4018340F87001E92DC /* user_female@2x.png in Resources */,
+				DC47503418E13E88008BDE7A /* mm_student_life@2x.png in Resources */,
 				DC3DCAEF18340739001E92DC /* DirectoryStoryboard_iPhone.storyboard in Resources */,
 				DC3DCB2A18340F87001E92DC /* compass@2x.png in Resources */,
 				DCA5642618AC959300D1102E /* male@2x.png in Resources */,
+				DC47503518E13E88008BDE7A /* mm_student_life_alt@2x.png in Resources */,
 				DC3DCB2C18340F87001E92DC /* date_placeholder@2x.png in Resources */,
 				DC5B9E3417FC761100CEBC74 /* WebViewController.xib in Resources */,
 				DC3DCB3618340F87001E92DC /* male@2x.png in Resources */,
 				DCA5643E18ADEFF600D1102E /* trophy@2x.png in Resources */,
+				DC47503318E13E88008BDE7A /* mm_academic@2x.png in Resources */,
 				DCA5643F18ADEFF600D1102E /* twitter@2x.png in Resources */,
 				DCA5643918ADEFF600D1102E /* envelope@2x.png in Resources */,
 				DC3DCB3518340F87001E92DC /* male.png in Resources */,
@@ -647,9 +690,12 @@
 				DC3DCB4218340F87001E92DC /* user_male@2x.png in Resources */,
 				DC021715183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard in Resources */,
 				DC021718183C353F002F420B /* retweet@2x.png in Resources */,
+				DC47503618E13E88008BDE7A /* mm_administration@2x.png in Resources */,
 				DC3DCB3718340F87001E92DC /* placeholder.png in Resources */,
 				DC3DCB3A18340F87001E92DC /* shocked@2x.png in Resources */,
 				DC3DCB6318353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard in Resources */,
+				DC47503818E13E88008BDE7A /* mm_academic_alt@2x.png in Resources */,
+				DC47503A18E1427F008BDE7A /* map_data.json in Resources */,
 				DCA5643C18ADEFF600D1102E /* mapmarker@2x.png in Resources */,
 				DCA5643B18ADEFF600D1102E /* location@2x.png in Resources */,
 				DC3DCB2818340F87001E92DC /* book@2x.png in Resources */,
@@ -719,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC47503D18E14973008BDE7A /* RMDirectionService.m in Sources */,
 				DC5B9E0017FA1E4200CEBC74 /* AthleticsDetailViewController.m in Sources */,
 				DCD8C06C1832C7A6002F7D98 /* DirectoryDetailViewController.m in Sources */,
 				DC3DCB5318341C19001E92DC /* MorningMailMasterViewController.m in Sources */,
@@ -742,6 +789,7 @@
 				DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */,
 				DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */,
 				DC5B9E4B17FC8EE100CEBC74 /* CRToolBar.m in Sources */,
+				DC47504018E15480008BDE7A /* CampusMapListTableViewController.m in Sources */,
 				DC661BD418C67A3900DE2F79 /* AthleticsNewsTableViewCell.m in Sources */,
 				DCD8C06D1832C7A6002F7D98 /* DirectoryMasterViewController.m in Sources */,
 				DC79405E17F7687500A9D53C /* RPIMobile.xcdatamodeld in Sources */,
@@ -842,7 +890,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -874,7 +922,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
