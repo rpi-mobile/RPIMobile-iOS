@@ -11,7 +11,8 @@
 #import <MapKit/MapKit.h>
 
 @interface CampusMapViewController : UIViewController <GMSMapViewDelegate>
-@property (nonatomic, strong) IBOutlet GMSMapView *mapView;
+//@property (nonatomic, strong) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) MKMapView *mapView;
 @property (nonatomic, strong) IBOutlet NSMutableDictionary *markers;
 
 - (BOOL) selectPinWithTitle:(NSString *) title;

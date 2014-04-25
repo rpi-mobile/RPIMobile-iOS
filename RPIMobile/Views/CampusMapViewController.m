@@ -12,11 +12,12 @@
 #import "CampusMapListTableViewController.h"
 #import "UIViewController+MMDrawerController.h"
 
-@interface CampusMapViewController () {
+@interface CampusMapViewController () <MKMapViewDelegate> {
     NSTimer *dataUpdateTimer;
     NSMutableArray *waypoints_;
     NSMutableArray *waypointStrings_;
 }
+
 @end
 
 @implementation CampusMapViewController
@@ -98,11 +99,10 @@
 }
 
 - (void) toggleMapViewType:(id) sender {
-    if(self.mapView.mapType == kGMSTypeNormal) {
-        self.mapView.mapType = kGMSTypeSatellite;
-    } else {
-        self.mapView.mapType = kGMSTypeNormal;
-    }
+    if (self.mapView.mapType == MKMapTypeStandard)
+        self.mapView.mapType = MKMapTypeSatellite;
+    else
+        self.mapView.mapType = MKMapTypeStandard;
 }
 
 - (void)viewDidLoad
@@ -121,20 +121,28 @@
     
     [self.navigationController.navigationBar addGestureRecognizer:doubleTap];
     
-    [self.mapView setDelegate:self];
+    
     self.title = @"Campus Map";
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.72997
-                                                            longitude:-73.676649
-                                                                 zoom:16];
-    self.mapView.camera = camera;
-    self.mapView.myLocationEnabled = YES;
-    self.mapView.indoorEnabled = YES;
+    CLLocationCoordinate2D studentUnion =
+    {42.72997, -73.676649};
+
+    MKMapCamera *camera1 = [MKMapCamera
+                            cameraLookingAtCenterCoordinate:studentUnion
+                            fromEyeCoordinate:studentUnion
+                            eyeAltitude:300.0];
+//    
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.72997
+//                                                            longitude:-73.676649
+//                                                                 zoom:16];
+    [self.mapView setShowsUserLocation:YES];
+    [self.mapView setDelegate:self];
+    [self.mapView setCamera:camera1];
 }
 
 - (void) getDirectionsToMarker:(GMSMarker *) marker {
 
-    if(!self.mapView.myLocationEnabled || self.mapView.myLocation == nil) {
+    if(!self.mapView.showsUserLocation || self.mapView.userLocation == nil) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"You cannot use this feature with your location services disabled for RPI Mobile. Please enable this in settings and try again!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
         return;
     }
@@ -143,10 +151,10 @@
                                                                  marker.position.latitude,
                                                                  marker.position.longitude);
     /* Load user location into waypoints */
-    CLLocation *location = self.mapView.myLocation;
+    CLLocation *location = self.mapView.userLocation.location;
     NSLog(@"Location: %f, %f", location.coordinate.latitude,location.coordinate.longitude);
     NSString *positionString = [[NSString alloc] initWithFormat:@"%f,%f",
-                                self.mapView.myLocation.coordinate.latitude,self.mapView.myLocation.coordinate.longitude];
+                                location.coordinate.latitude,location.coordinate.longitude];
     [waypointStrings_ addObject:positionString];
     
     [waypoints_ addObject:marker];
@@ -177,7 +185,8 @@
     NSString *overview_route = [route objectForKey:@"points"];
     GMSPath *path = [GMSPath pathFromEncodedPath:overview_route];
     GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
-    polyline.map = self.mapView;
+//    MKPolylineRenderer *render = [[MKPolylineRenderer alloc] initWithPolyline:[MKPolyline]]
+//    polyline.map = self.mapView;
     polyline.tappable = YES;
     polyline.strokeColor = [UIColor colorWithRed:0.80 green:0.17 blue:0.11 alpha:1.0];
     polyline.strokeWidth = 4.f;
