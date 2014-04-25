@@ -13,6 +13,7 @@
 #import "UIViewController+MMDrawerController.h"
 
 @interface CampusMapViewController () {
+    NSTimer *dataUpdateTimer;
     NSMutableArray *waypoints_;
     NSMutableArray *waypointStrings_;
 }
@@ -108,6 +109,7 @@
 {
     [super viewDidLoad];
     [self readMapDataFromJson];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.84 green:0.22 blue:0.16 alpha:1.0];
     waypoints_ = [[NSMutableArray alloc]init];
     waypointStrings_ = [[NSMutableArray alloc]init];
     
@@ -128,12 +130,11 @@
     self.mapView.camera = camera;
     self.mapView.myLocationEnabled = YES;
     self.mapView.indoorEnabled = YES;
-
 }
 
 - (void) getDirectionsToMarker:(GMSMarker *) marker {
 
-    if(self.mapView.myLocationEnabled == NO || self.mapView.myLocation == nil) {
+    if(!self.mapView.myLocationEnabled || self.mapView.myLocation == nil) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"You cannot use this feature with your location services disabled for RPI Mobile. Please enable this in settings and try again!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
         return;
     }

@@ -10,7 +10,6 @@
 #import "MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "MMDrawerVisualState.h"
-#import "MMDrawerBarButtonItem.h"
 #import "SideMenuViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "CRNavigationController.h"

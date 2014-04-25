@@ -23,6 +23,7 @@
 #import "LaundryViewController.h"
 #import "DirectoryMasterViewController.h"
 #import "CampusMapViewController.h"
+#import "WXController.h"
 
 @interface SideMenuViewController () {
     NSArray *menuItems;
@@ -46,7 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    menuItems = @[@"Athletics", @"Social\nFeed", @"Campus Map", @"Laundry", @"Morning\nMail", @"Directory", @"Settings"];
+    menuItems = @[@"Athletics", @"Social\nFeed", @"Campus Map", @"Laundry", @"Morning\nMail", @"Weather", @"Directory", @"Settings"];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -100,11 +101,17 @@
             cell.itemIconView.image = [UIImage imageNamed:@"envelope"];
             break;
         case 5:
+            // Weather
+            
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"cloud"];
+            break;
+        case 6:
             // Directory
             cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
             cell.itemIconView.image = [UIImage imageNamed:@"group"];
             break;
-        case 6:
+        case 7:
             // Settings
             cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
             cell.itemIconView.image = [UIImage imageNamed:@"cog"];
@@ -151,6 +158,11 @@
             [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 5:
+            nextView = [[WXController alloc] init];
+            navController = [[CRNavigationController alloc] initWithRootViewController:nextView];
+            [self.mm_drawerController setCenterViewController:navController withCloseAnimation:YES completion:nil];
+            return;
+        case 6:
             storyboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
             [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];

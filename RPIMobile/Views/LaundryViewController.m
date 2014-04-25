@@ -44,7 +44,7 @@
 
 - (void) fetchLaundryStatus {
 
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     NSURL *url = [NSURL URLWithString:kLaundryStatusFeedUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -55,7 +55,7 @@
         _laundryMachines = [responseObject objectForKey:@"rooms"];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.tableView animated:YES];
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

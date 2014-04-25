@@ -65,7 +65,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
 
     m_searchTimer = nil;
     m_queue = [[NSOperationQueue alloc] init];
-    m_queue.name = @"com.brendonjustin.RPI-Directory.search";
+    m_queue.name = @"com.rpimobile.RPI-Directory.search";
     m_queue.maxConcurrentOperationCount = 1;
     
     //  Update the array of people on the main thread, when a new array is available.
