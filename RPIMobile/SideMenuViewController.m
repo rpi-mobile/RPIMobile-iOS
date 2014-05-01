@@ -8,6 +8,7 @@
 
 #import "MMDrawerBarButtonItem.h"
 
+#import "MenuItemCell.h"
 #import "DataSources.h"
 #import "AFHTTPRequestOperation.h"
 
@@ -21,10 +22,14 @@
 #import "TwitterFeedViewController.h"
 #import "LaundryViewController.h"
 #import "DirectoryMasterViewController.h"
+#import "CampusMapViewController.h"
+#import "WXController.h"
 
-@interface SideMenuViewController ()
-@property (strong) NSArray *menuItems;
-@property (nonatomic, strong) UITableView * tableView;
+@interface SideMenuViewController () {
+    NSArray *menuItems;
+}
+
+@property (nonatomic, strong) IBOutlet UITableView * tableView;
 
 @end
 
@@ -42,9 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Temporary solution -- doesn't really fix the tableview when scrolling. Suggested to switch to tableview inside of UIViewController
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    menuItems = @[@"Athletics", @"Social\nFeed", @"Campus Map", @"Laundry", @"Morning\nMail", @"Weather", @"Directory", @"Settings"];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -60,12 +63,63 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return menuItems.count;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    MenuItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuItemCell"];
+    
+    switch (indexPath.row) {
+        case 0:
+            // Athletics
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"trophy"];
+            break;
+        case 1:
+            // Social Feed
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"twitter"];
+            break;
+        case 2:
+            // Campus Map
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"location"];
+            break;
+        case 3:
+            // Laundry
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"time"];
+            break;
+        case 4:
+            // Morning Mail
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"envelope"];
+            break;
+        case 5:
+            // Weather
+            
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"cloud"];
+            break;
+        case 6:
+            // Directory
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"group"];
+            break;
+        case 7:
+            // Settings
+            cell.itemTitle.text = [menuItems objectAtIndex:indexPath.row];
+            cell.itemIconView.image = [UIImage imageNamed:@"cog"];
+            break;
+        default:
+            break;
+    }
+    
     return cell;
 }
 
@@ -75,31 +129,43 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *nextView;
+    CRNavigationController *navController;
     UIStoryboard *storyboard;
     switch (indexPath.row) {
         case 0:
             nextView = [[AthleticsMainViewController alloc] init];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+             navController = [[CRNavigationController alloc] initWithRootViewController:nextView];
+            [self.mm_drawerController setCenterViewController:navController withCloseAnimation:YES completion:nil];
             return;
         case 1:
             storyboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
+            return;
+        case 2:
+            storyboard = [UIStoryboard storyboardWithName:@"CampusMapViewController" bundle:nil];
+            nextView = [storyboard instantiateInitialViewController];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 3:
             storyboard = [UIStoryboard storyboardWithName:@"LaundryStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 4:
             storyboard = [UIStoryboard storyboardWithName:@"MorningMailStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         case 5:
+            nextView = [[WXController alloc] init];
+            navController = [[CRNavigationController alloc] initWithRootViewController:nextView];
+            [self.mm_drawerController setCenterViewController:navController withCloseAnimation:YES completion:nil];
+            return;
+        case 6:
             storyboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
             nextView = [storyboard instantiateInitialViewController];
-            [self.mm_drawerController setCenterViewController:nextView withFullCloseAnimation:YES completion:nil];
+            [self.mm_drawerController setCenterViewController:nextView withCloseAnimation:YES completion:nil];
             return;
         default:
             return;

@@ -22,28 +22,19 @@
 
 - (id)init {
     if (self = [super init]) {
-//        // this will appear as the title in the navigation bar
-//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-//        label.backgroundColor = [UIColor clearColor];
-//        label.font = [UIFont systemFontOfSize:20.0];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        
-//        // ^-Use UITextAlignmentCenter for older SDKs.
-//        label.textColor = [UIColor whiteColor];
-//        self.navigationItem.titleView = label;
-//        label.text = NSLocalizedString(@"Men's Teams", @"");
-//        [label sizeToFit];
+
     }
     return self;
 }
 
 - (void)genderChanged:(id)sender {
+    // Alphabetize keys for sports to make it easier for users to find the correct sport
     switch (_genderControl.selectedSegmentIndex) {
         case 0:
-            _sportsTeams = [[_sportsDic objectForKey:@"men" ] allKeys];
+            self.sportsTeams = [[[self.sportsDic objectForKey:@"men" ] allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
             break;
         case 1:
-            _sportsTeams = [[_sportsDic objectForKey:@"women" ] allKeys];
+            self.sportsTeams = [[[self.sportsDic objectForKey:@"women" ] allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];;
             break;
         default:
             break;
@@ -53,31 +44,22 @@
 
 - (void) buildView {
 
-//    _genderControl = [[UISegmentedControl alloc] initWithItems:@[@"Men", @"Women"]];
-    _genderControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"male.png"],[UIImage imageNamed:@"female.png"]]];
-//    _genderControl.frame = CGRectMake(-5, 64, self.view.frame.size.width + 10, kGenderControlHeight);
-    _genderControl.tintColor = [UIColor whiteColor]; //[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000];
-//    _genderControl.backgroundColor = [UIColor whiteColor];
-    _genderControl.alpha = 0.75f;
+    self.genderControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"male.png"],[UIImage imageNamed:@"female.png"]]];
+    self.genderControl.tintColor = [UIColor whiteColor]; //[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000];
+    self.genderControl.alpha = 0.75f;
     
-    [_genderControl addTarget:self action:@selector(genderChanged:) forControlEvents:UIControlEventValueChanged];
-    [_genderControl setSelectedSegmentIndex:0];
-    [self genderChanged:_genderControl];
+    [self.genderControl addTarget:self action:@selector(genderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.genderControl setSelectedSegmentIndex:0];
+    [self genderChanged:self.genderControl];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    self.tableView.contentInset = UIEdgeInsetsMake(0,0,0,0);
+    [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
 
-    // Compensate for _genderControl height under UINavigationBar
-//    viewFrame.origin.y += kGenderControlHeight;
-//    viewFrame.size.height -= kGenderControlHeight;
-    
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-    [_tableView setDataSource:self];
-    [_tableView setDelegate:self];
-//    _tableView.tableHeaderView = _genderControl;
-//    self.navigationItem.titleView = _genderControl;
-    _tableView.contentInset = UIEdgeInsetsMake(0,0,0,0);
-    
-    [self.view addSubview:_tableView];
-//    [self.view addSubview:_genderControl];
-    UIBarButtonItem *segmentBarItem = [[UIBarButtonItem alloc] initWithCustomView:_genderControl];
+    [self.view addSubview:self.tableView];
+
+    UIBarButtonItem *segmentBarItem = [[UIBarButtonItem alloc] initWithCustomView:self.genderControl];
 
     [self.navigationItem setRightBarButtonItem:segmentBarItem];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
@@ -94,24 +76,16 @@
 
 - (void)viewDidLoad
 {
-    // Sets view to start below UINavigationBar
-//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-//        self.edgesForExtendedLayout = UIRectEdgeNone;
     [super viewDidLoad];
     self.title = @"Athletics";
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
-    
 
     // Read sports lists into dictionaries from plist files (allows for remote updating of resources)
     NSDictionary *_menSports = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"menSportsList" ofType:@"plist"]];
     NSDictionary *_womenSports = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"womenSportsList" ofType:@"plist"]];
+
     _sportsDic = [[NSDictionary alloc] initWithObjects:@[_menSports, _womenSports] forKeys:@[@"men", @"women"]];
     [self.tableView setRowHeight:60.0f];
-    
     [self buildView];
-    
-
 }
 
 - (void)didReceiveMemoryWarning

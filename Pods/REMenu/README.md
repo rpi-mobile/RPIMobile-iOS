@@ -8,7 +8,7 @@ Dropdown menu inspired by Vine.
 ## Requirements
 * Xcode 5 or higher
 * Apple LLVM compiler
-* iOS 5.0 or higher
+* iOS 6.0 or higher
 * ARC
 
 ## Demo
@@ -20,7 +20,7 @@ Build and run the `REMenuExample` project in Xcode to see `REMenu` in action.
 ### CocoaPods
 
 The recommended approach for installating `REMenu` is via the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
-For best results, it is recommended that you install via CocoaPods >= **0.27.0** using Git >= **1.8.0** installed via Homebrew.
+For best results, it is recommended that you install via CocoaPods >= **0.28.0** using Git >= **1.8.0** installed via Homebrew.
 
 Install CocoaPods if not already available:
 
@@ -40,8 +40,8 @@ $ edit Podfile
 Edit your Podfile and add REMenu:
 
 ``` bash
-platform :ios, '5.0'
-pod 'REMenu', '~> 1.7.1'
+platform :ios, '6.0'
+pod 'REMenu', '~> 1.8.4'
 ```
 
 Install into your Xcode project:

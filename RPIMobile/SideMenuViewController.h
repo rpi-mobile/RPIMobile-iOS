@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SideMenuViewController : UITableViewController
+@interface SideMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @end

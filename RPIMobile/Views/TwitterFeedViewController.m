@@ -57,17 +57,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-//        // this will appear as the title in the navigation bar
-//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-//        label.backgroundColor = [UIColor clearColor];
-//        label.font = [UIFont systemFontOfSize:20.0];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        
-//        // ^-Use UITextAlignmentCenter for older SDKs.
-//        label.textColor = [UIColor whiteColor];
-//        self.navigationItem.titleView = label;
-//        label.text = NSLocalizedString(@"Twitter Feeds", @"");
-//        [label sizeToFit];
+        
     }
     return self;
 }
@@ -294,6 +284,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+/* NOT GOING TO USE THIS FUNCTIONALITY FOR NOW
+    
     //if user taps the expanded cell, just make it unexpanded
     if ([self.expandedIndexPath isEqual:indexPath])
         self.expandedIndexPath = nil;
@@ -318,6 +310,7 @@
     //and animates the resize of the cell
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
+ */
 }
 
 

@@ -136,7 +136,6 @@
     [_previousView.navigationController.toolbar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
     [nextView setShowsNavigationToolbar:YES];
     [nextView setURL:[NSURL URLWithString:[athlete objectForKey:@"url"]]];
-//    [nextView setTitle:[athlete objectForKey:@"name"]];
     
     [_previousView.navigationController pushViewController:nextView animated:YES];
 

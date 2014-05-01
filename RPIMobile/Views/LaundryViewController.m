@@ -44,9 +44,9 @@
 
 - (void) fetchLaundryStatus {
 
+    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     NSURL *url = [NSURL URLWithString:kLaundryStatusFeedUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -55,22 +55,24 @@
         _laundryMachines = [responseObject objectForKey:@"rooms"];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+        [MBProgressHUD hideHUDForView:self.tableView animated:YES];
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Request raised an error and reset activity indicator to refresh button
         NSLog(@"Request to download laundry status1 failed: %@\n\n%@", error, [operation responseString]);
         [self.refreshControl endRefreshing];
+        [MBProgressHUD hideHUDForView:self.tableView animated:YES];
         
         // Create alert for the user to show that laundry could not be displayed
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
         hud.mode = MBProgressHUDModeText;
         [hud setLabelText:@"Error"];
         [hud setDetailsLabelText:@"Laundry Status failed to download. Please check your connection and try again."];
-        [hud setMinShowTime:2.0f];
-        [MBProgressHUD hideHUDForView:self.tableView animated:YES];
+        [hud hide:YES afterDelay:2.0f];
+
     }];
-    
+        
     [operation start];
 }
 
@@ -86,6 +88,8 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeTop;
     }
+    
+    
     
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];

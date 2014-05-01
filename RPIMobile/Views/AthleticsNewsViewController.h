@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AthleticsNewsViewController : UIViewController
+@interface AthleticsNewsViewController : UITableViewController
 
-- (id)initWithSport:(NSString *) sport andKey:(NSString *) key andViewController:(UIViewController *) view;
+
+@property (nonatomic, strong) NSString *sport;
+@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) UIViewController *previousView;
 
 @end

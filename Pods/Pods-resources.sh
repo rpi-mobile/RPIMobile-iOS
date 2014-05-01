@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
 install_resource "ISRefreshControl/ISRefreshControl/Images/ISRefresgControlIcon.png"
 install_resource "ISRefreshControl/ISRefreshControl/Images/ISRefresgControlIcon@2x.png"
 

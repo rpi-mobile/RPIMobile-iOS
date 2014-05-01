@@ -59,6 +59,7 @@
     [super viewDidLoad];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -96,13 +97,14 @@
     return size.height;
 }
 
+#define kPadding 85
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *rawTeam = [[[_schedule objectAtIndex:indexPath.row] objectForKey:@"team"] stringByRemovingNewLinesAndWhitespace];
     NSAttributedString *team = [[NSAttributedString alloc] initWithString:rawTeam];
     
-    CGFloat titleHeight = [self textViewHeightForAttributedText:team andWidth:self.view.frame.size.width - 250];
-    return titleHeight + 85;
+    CGFloat titleHeight = [self textViewHeightForAttributedText:team andWidth:self.view.frame.size.width - 250.0f];
+    return titleHeight + kPadding;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,8 +143,5 @@
     
     return cell;
 }
-
-//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//}
 
 @end

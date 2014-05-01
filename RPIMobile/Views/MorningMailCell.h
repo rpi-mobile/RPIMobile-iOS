@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MorningMailCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel *mmTitle;
-@property (nonatomic, weak) IBOutlet UIImageView *mmImage;
-@property (nonatomic, weak) IBOutlet UILabel *mmDescription;
+@property (nonatomic, strong) IBOutlet UILabel *mmTitle;
+@property (nonatomic, strong) IBOutlet UIImageView *mmImage;
+@property (nonatomic, strong) IBOutlet UILabel *mmDescription;
+
+@property (nonatomic) float requiredCellHeight;
+
 @end
