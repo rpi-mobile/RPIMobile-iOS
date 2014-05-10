@@ -112,7 +112,6 @@
 		DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B9E4D17FE2D1600CEBC74 /* LaundryTableViewCell.m */; };
 		DC661BD118C6793B00DE2F79 /* RPI_athletics_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC661BD018C6793B00DE2F79 /* RPI_athletics_sample.jpg */; };
 		DC661BD418C67A3900DE2F79 /* AthleticsNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC661BD318C67A3900DE2F79 /* AthleticsNewsTableViewCell.m */; };
-		DC764EFC190A03580031CD65 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC764EFB190A03580031CD65 /* Reveal.framework */; };
 		DC764EFE190A03F80031CD65 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC764EFD190A03F80031CD65 /* menu@2x.png */; };
 		DC79404917F7687500A9D53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404817F7687500A9D53C /* Foundation.framework */; };
 		DC79404B17F7687500A9D53C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79404A17F7687500A9D53C /* CoreGraphics.framework */; };
@@ -149,6 +148,7 @@
 		DCA5644218ADF94F00D1102E /* MenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5644118ADF94F00D1102E /* MenuItemCell.m */; };
 		DCA7A78E18B1966C00BF9810 /* CampusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA7A78D18B1966C00BF9810 /* CampusMapViewController.m */; };
 		DCA7A79018B1967F00BF9810 /* CampusMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA7A78F18B1967F00BF9810 /* CampusMapViewController.storyboard */; };
+		DCB55109191DDDCB003C363D /* mm_academic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB55108191DDDCB003C363D /* mm_academic@2x.png */; };
 		DCD8C06C1832C7A6002F7D98 /* DirectoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8C0671832C7A6002F7D98 /* DirectoryDetailViewController.m */; };
 		DCD8C06D1832C7A6002F7D98 /* DirectoryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8C0691832C7A6002F7D98 /* DirectoryMasterViewController.m */; };
 		DCD8C06E1832C7A6002F7D98 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8C06B1832C7A6002F7D98 /* Person.m */; };
@@ -293,7 +293,6 @@
 		DC661BD018C6793B00DE2F79 /* RPI_athletics_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RPI_athletics_sample.jpg; sourceTree = "<group>"; };
 		DC661BD218C67A3900DE2F79 /* AthleticsNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AthleticsNewsTableViewCell.h; path = Views/AthleticsNewsTableViewCell.h; sourceTree = "<group>"; };
 		DC661BD318C67A3900DE2F79 /* AthleticsNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AthleticsNewsTableViewCell.m; path = Views/AthleticsNewsTableViewCell.m; sourceTree = "<group>"; };
-		DC764EFB190A03580031CD65 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		DC764EFD190A03F80031CD65 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		DC79404517F7687500A9D53C /* RPIMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPIMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC79404817F7687500A9D53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -340,6 +339,7 @@
 		DCA7A78C18B1966C00BF9810 /* CampusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CampusMapViewController.h; path = Views/CampusMapViewController.h; sourceTree = "<group>"; };
 		DCA7A78D18B1966C00BF9810 /* CampusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CampusMapViewController.m; path = Views/CampusMapViewController.m; sourceTree = "<group>"; };
 		DCA7A78F18B1967F00BF9810 /* CampusMapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CampusMapViewController.storyboard; path = Views/CampusMapViewController.storyboard; sourceTree = "<group>"; };
+		DCB55108191DDDCB003C363D /* mm_academic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm_academic@2x.png"; sourceTree = "<group>"; };
 		DCD8C0661832C7A6002F7D98 /* DirectoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryDetailViewController.h; sourceTree = "<group>"; };
 		DCD8C0671832C7A6002F7D98 /* DirectoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryDetailViewController.m; sourceTree = "<group>"; };
 		DCD8C0681832C7A6002F7D98 /* DirectoryMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryMasterViewController.h; sourceTree = "<group>"; };
@@ -359,7 +359,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC764EFC190A03580031CD65 /* Reveal.framework in Frameworks */,
 				DC5B9E0817FB713500CEBC74 /* QuartzCore.framework in Frameworks */,
 				DC79404B17F7687500A9D53C /* CoreGraphics.framework in Frameworks */,
 				DC79404F17F7687500A9D53C /* CoreData.framework in Frameworks */,
@@ -581,9 +580,9 @@
 		DC79405017F7687500A9D53C /* RPIMobile */ = {
 			isa = PBXGroup;
 			children = (
-				DC764EFB190A03580031CD65 /* Reveal.framework */,
 				DC661BD018C6793B00DE2F79 /* RPI_athletics_sample.jpg */,
 				DC47502A18E128E0008BDE7A /* blank_news_image@2x.png */,
+				DCB55108191DDDCB003C363D /* mm_academic@2x.png */,
 				DC53EC431900EB9600AB5F8C /* bg_test.jpg */,
 				DC53EC8B1900F2FE00AB5F8C /* bg_test2.jpg */,
 				DC3DCB4E18341A3A001E92DC /* MorningMail */,
@@ -837,6 +836,7 @@
 				DC3DCB4218340F87001E92DC /* user_male@2x.png in Resources */,
 				DC021715183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard in Resources */,
 				DC53EC771900ED7600AB5F8C /* weather-few-night.png in Resources */,
+				DCB55109191DDDCB003C363D /* mm_academic@2x.png in Resources */,
 				DC021718183C353F002F420B /* retweet@2x.png in Resources */,
 				DC764EFE190A03F80031CD65 /* menu@2x.png in Resources */,
 				DC47503618E13E88008BDE7A /* mm_administration@2x.png in Resources */,
