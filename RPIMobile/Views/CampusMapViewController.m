@@ -126,23 +126,23 @@
     
     CLLocationCoordinate2D studentUnion =
     {42.72997, -73.676649};
-
-    MKMapCamera *camera1 = [MKMapCamera
-                            cameraLookingAtCenterCoordinate:studentUnion
-                            fromEyeCoordinate:studentUnion
-                            eyeAltitude:300.0];
-//    
-//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.72997
-//                                                            longitude:-73.676649
-//                                                                 zoom:16];
-    [self.mapView setShowsUserLocation:YES];
-    [self.mapView setDelegate:self];
-    [self.mapView setCamera:camera1];
+//
+//    MKMapCamera *camera1 = [MKMapCamera
+//                            cameraLookingAtCenterCoordinate:studentUnion
+//                            fromEyeCoordinate:studentUnion
+//                            eyeAltitude:300.0];
+//
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:studentUnion.latitude
+                                                            longitude:studentUnion.longitude
+                                                                 zoom:16];
+//    [self.mapView setShowsUserLocation:YES];
+//    [self.mapView setDelegate:self];
+    [self.mapView setCamera:camera];
 }
 
 - (void) getDirectionsToMarker:(GMSMarker *) marker {
 
-    if(!self.mapView.showsUserLocation || self.mapView.userLocation == nil) {
+    if(!self.mapView.myLocationEnabled || self.mapView.myLocation == nil) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"You cannot use this feature with your location services disabled for RPI Mobile. Please enable this in settings and try again!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
         return;
     }
@@ -151,7 +151,7 @@
                                                                  marker.position.latitude,
                                                                  marker.position.longitude);
     /* Load user location into waypoints */
-    CLLocation *location = self.mapView.userLocation.location;
+    CLLocation *location = self.mapView.myLocation;
     NSLog(@"Location: %f, %f", location.coordinate.latitude,location.coordinate.longitude);
     NSString *positionString = [[NSString alloc] initWithFormat:@"%f,%f",
                                 location.coordinate.latitude,location.coordinate.longitude];
