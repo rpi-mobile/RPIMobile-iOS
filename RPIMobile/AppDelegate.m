@@ -43,9 +43,9 @@
                                              initWithCenterViewController:_navController
                                              leftDrawerViewController:leftDrawer
                                              rightDrawerViewController:nil];
-    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
+    [drawerController setOpenDrawerGestureModeMask:(MMOpenDrawerGestureModePanningNavigationBar | MMOpenDrawerGestureModeBezelPanningCenterView)];
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState swingingDoorVisualStateBlock]];
+    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:MAXFLOAT]];
     [drawerController setShouldStretchDrawer:NO];
     [drawerController setMaximumLeftDrawerWidth:85.0f];
 
