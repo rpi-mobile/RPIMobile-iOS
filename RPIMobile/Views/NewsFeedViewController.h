@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MWFeedParser.h"
+#import "MasterViewController.h"
 
 @interface NewsFeedViewController : UITableViewController <MWFeedParserDelegate>
+
+@property (nonatomic) MasterViewController *master;
 
 @end

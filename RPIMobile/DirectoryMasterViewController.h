@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
 @class DirectoryDetailViewController;
 
@@ -14,5 +15,6 @@
 
 @property (strong, nonatomic) DirectoryDetailViewController  *detailViewController;
 @property (nonatomic, strong) NSMutableArray        *people;
+@property (nonatomic) MasterViewController *master;
 
 @end

@@ -19,7 +19,18 @@
 #import "SideMenuViewController.h"
 #import "WebViewController.h"
 
-//#import "LaundryViewController.h"
+//View Controllers
+#import "MorningMailMasterViewController.h"
+#import "DirectoryMasterViewController.h"
+#import "NewsFeedViewController.h"
+#import "LaundryViewController.h"
+#import "TwitterFeedViewController.h"
+#import "AthleticsMainViewController.h"
+#import "CampusMapViewController.h"
+
+//MasterView Stuff
+#import "MasterViewController.h"
+#import "MasterMenuObject.h"
 
 @implementation AppDelegate
 
@@ -29,13 +40,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
+   // AthleticsMainViewController *mainView = [[AthleticsMainViewController alloc] init];
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SideMenu" bundle:nil];
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SideMenu" bundle:nil];
     
-    SideMenuViewController *leftDrawer = [storyboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];
+    /*SideMenuViewController *leftDrawer = [storyboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];
     _navController = [[CRNavigationController alloc] initWithRootViewController:mainView];
     
     // Initialize the side drawer for menu and navigation
@@ -47,8 +58,47 @@
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:MAXFLOAT]];
     [drawerController setShouldStretchDrawer:NO];
-    [drawerController setMaximumLeftDrawerWidth:85.0f];
-
+    [drawerController setMaximumLeftDrawerWidth:85.0f];*/
+    
+    //Create Storyboards
+    UIStoryboard *morningMailStoryboard = [UIStoryboard storyboardWithName:@"MorningMailStoryboard_iPhone" bundle:nil];
+    UIStoryboard *directoryStoryboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
+    UIStoryboard *laundryStoryboard = [UIStoryboard storyboardWithName:@"LaundryStoryboard_iPhone" bundle:nil];
+    UIStoryboard *twitterStoryboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
+    UIStoryboard *athleticsStoryboard = [UIStoryboard storyboardWithName:@"AthleticsStoryboard_iPhone" bundle:nil];
+    UIStoryboard *campusMapSotryboard = [UIStoryboard storyboardWithName:@"CampusMapViewController" bundle:nil];
+    
+    //Create View Controlelrs
+    MorningMailMasterViewController *morningMailView = [morningMailStoryboard instantiateViewControllerWithIdentifier:@"morningMail"];
+    DirectoryMasterViewController *directoryView = [directoryStoryboard instantiateViewControllerWithIdentifier:@"directoryView"];
+    NewsFeedViewController *newsFeedView = [[NewsFeedViewController alloc] init];
+    LaundryViewController *laundryView = [laundryStoryboard instantiateViewControllerWithIdentifier:@"laundryView"];
+    TwitterFeedViewController *twitterView = [twitterStoryboard instantiateViewControllerWithIdentifier:@"twitterView"];
+    AthleticsMainViewController *athleticsView = [[AthleticsMainViewController alloc] init];
+    CampusMapViewController *campusMapView = [campusMapSotryboard instantiateViewControllerWithIdentifier:@"campusMapView"];
+    
+    //MenuObjects
+    MasterMenuObject *morningMailMenu = [[MasterMenuObject alloc] initWithViewController:morningMailView andTitle:@"Morning Mail" andImage:[UIImage imageNamed:@"envelope"]];
+    MasterMenuObject *directoryMenu = [[MasterMenuObject alloc] initWithViewController:directoryView andTitle:@"Directory" andImage:[UIImage imageNamed:@"group"]];
+    MasterMenuObject *newsFeedMenu = [[MasterMenuObject alloc] initWithViewController:newsFeedView andTitle:@"News Feed" andImage:nil];
+    MasterMenuObject *laundryMenu = [[MasterMenuObject alloc] initWithViewController:laundryView andTitle:@"Laundry" andImage:[UIImage imageNamed:@"time"]];
+    MasterMenuObject *twitterMenu = [[MasterMenuObject alloc] initWithViewController:twitterView andTitle:@"Twitter" andImage:[UIImage imageNamed:@"twitter"]];
+    MasterMenuObject *athleticsMenu = [[MasterMenuObject alloc] initWithViewController:athleticsView andTitle:@"Athletics" andImage:[UIImage imageNamed:@"trophy"]];
+    MasterMenuObject *campusMenu = [[MasterMenuObject alloc] initWithViewController:campusMapView andTitle:@"Campus Map" andImage:[UIImage imageNamed:@"location"]];
+    
+    //Create Master and fill
+    UIStoryboard *masterStoryboard = [UIStoryboard storyboardWithName:@"Navigation" bundle:nil];
+    MasterViewController *master = [masterStoryboard instantiateViewControllerWithIdentifier:@"masterView"];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:athleticsView];
+    master._viewControllers = [[NSArray alloc] initWithObjects:morningMailMenu, directoryMenu, newsFeedMenu, laundryMenu, twitterMenu, athleticsMenu, campusMenu, nil];
+    master._navController = navigation;
+    morningMailView.master = master;
+    directoryView.master = master;
+    newsFeedView.master = master;
+    laundryView.master = master;
+    twitterView.master = master;
+    athleticsView.master = master;
+    campusMapView.master = master;
     
     //Set disk cache
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
@@ -58,7 +108,7 @@
     [GMSServices provideAPIKey:@"AIzaSyBn7BdKND4vd9XpI2ob-vZflie3SjKSsz4"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = drawerController;
+    self.window.rootViewController = navigation;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.window.tintColor = [UIColor whiteColor]; // Changes the uinavigationbar button colors (back button)
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; // Changes status bar text color to white

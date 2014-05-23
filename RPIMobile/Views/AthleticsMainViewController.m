@@ -19,6 +19,7 @@
 @end
 
 @implementation AthleticsMainViewController
+@synthesize master;
 
 - (id)init {
     if (self = [super init]) {
@@ -64,7 +65,7 @@
     [self.navigationItem setRightBarButtonItem:segmentBarItem];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
     
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 

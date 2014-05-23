@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
 @interface AthleticsMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) MasterViewController *master;
 
 @end

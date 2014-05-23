@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
-@interface MorningMailMasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MZDayPickerDataSource, MZDayPickerDelegate>
+@interface MorningMailMasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate /*MZDayPickerDataSource, MZDayPickerDelegate*/>
+
+@property (nonatomic) MasterViewController *master;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
 @interface TwitterFeedViewController : UITableViewController
+
+@property (nonatomic) MasterViewController *master;
 
 @end

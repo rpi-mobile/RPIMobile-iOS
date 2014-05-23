@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import <MapKit/MapKit.h>
+#import "MasterViewController.h"
 
 @interface CampusMapViewController : UIViewController <GMSMapViewDelegate>
 //@property (nonatomic, strong) IBOutlet GMSMapView *mapView;
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (nonatomic, strong) IBOutlet NSMutableDictionary *markers;
+@property (nonatomic) MasterViewController *master;
 
 - (BOOL) selectPinWithTitle:(NSString *) title;
 - (void) getDirectionsToMarker:(GMSMarker *) marker;

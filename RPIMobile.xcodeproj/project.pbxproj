@@ -22,6 +22,10 @@
 
 /* Begin PBXBuildFile section */
 		7978CF22D0F24352BDDED9D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0128A2D9254CFFA7194F70 /* libPods.a */; };
+		84B80E8C192F09B400AD02A8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B80E85192F09B400AD02A8 /* MasterViewController.m */; };
+		84B80E8D192F09B400AD02A8 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B80E86192F09B400AD02A8 /* Navigation.storyboard */; };
+		84B80E8E192F09B400AD02A8 /* MasterMenuObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B80E88192F09B400AD02A8 /* MasterMenuObject.m */; };
+		84B80E8F192F09B400AD02A8 /* MasterMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B80E8A192F09B400AD02A8 /* MasterMenuCell.m */; };
 		DC021715183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC021714183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard */; };
 		DC021718183C353F002F420B /* retweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC021716183C353F002F420B /* retweet@2x.png */; };
 		DC021719183C353F002F420B /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC021717183C353F002F420B /* star@2x.png */; };
@@ -176,6 +180,13 @@
 
 /* Begin PBXFileReference section */
 		1C0128A2D9254CFFA7194F70 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B80E84192F09B400AD02A8 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		84B80E85192F09B400AD02A8 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		84B80E86192F09B400AD02A8 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		84B80E87192F09B400AD02A8 /* MasterMenuObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterMenuObject.h; sourceTree = "<group>"; };
+		84B80E88192F09B400AD02A8 /* MasterMenuObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterMenuObject.m; sourceTree = "<group>"; };
+		84B80E89192F09B400AD02A8 /* MasterMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterMenuCell.h; sourceTree = "<group>"; };
+		84B80E8A192F09B400AD02A8 /* MasterMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterMenuCell.m; sourceTree = "<group>"; };
 		DC021714183C0E31002F420B /* AthleticsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AthleticsStoryboard_iPhone.storyboard; path = Views/AthleticsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DC021716183C353F002F420B /* retweet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet@2x.png"; sourceTree = "<group>"; };
 		DC021717183C353F002F420B /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
@@ -382,6 +393,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84B80E81192F07D100AD02A8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				84B80E84192F09B400AD02A8 /* MasterViewController.h */,
+				84B80E85192F09B400AD02A8 /* MasterViewController.m */,
+				84B80E86192F09B400AD02A8 /* Navigation.storyboard */,
+				84B80E87192F09B400AD02A8 /* MasterMenuObject.h */,
+				84B80E88192F09B400AD02A8 /* MasterMenuObject.m */,
+				84B80E89192F09B400AD02A8 /* MasterMenuCell.h */,
+				84B80E8A192F09B400AD02A8 /* MasterMenuCell.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		DC3DCB4E18341A3A001E92DC /* MorningMail */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +605,7 @@
 		DC79405017F7687500A9D53C /* RPIMobile */ = {
 			isa = PBXGroup;
 			children = (
+				84B80E81192F07D100AD02A8 /* Navigation */,
 				DC661BD018C6793B00DE2F79 /* RPI_athletics_sample.jpg */,
 				DC47502A18E128E0008BDE7A /* blank_news_image@2x.png */,
 				DCB55108191DDDCB003C363D /* mm_academic@2x.png */,
@@ -820,6 +846,7 @@
 				DC53EC7A1900ED7600AB5F8C /* weather-few@2x.png in Resources */,
 				DCA5643A18ADEFF600D1102E /* group@2x.png in Resources */,
 				DC53EC7F1900ED7600AB5F8C /* weather-rain-night.png in Resources */,
+				84B80E8D192F09B400AD02A8 /* Navigation.storyboard in Resources */,
 				DC79406017F7687500A9D53C /* Images.xcassets in Resources */,
 				DCA5643818ADEFF600D1102E /* cog@2x.png in Resources */,
 				DC53EC861900ED7600AB5F8C /* weather-shower@2x.png in Resources */,
@@ -923,6 +950,7 @@
 				DC5B9E0017FA1E4200CEBC74 /* AthleticsDetailViewController.m in Sources */,
 				DCD8C06C1832C7A6002F7D98 /* DirectoryDetailViewController.m in Sources */,
 				DC3DCB5318341C19001E92DC /* MorningMailMasterViewController.m in Sources */,
+				84B80E8F192F09B400AD02A8 /* MasterMenuCell.m in Sources */,
 				DC5B9E1B17FBC2FF00CEBC74 /* JSONKit.m in Sources */,
 				DCA7A78E18B1966C00BF9810 /* CampusMapViewController.m in Sources */,
 				DCA5644218ADF94F00D1102E /* MenuItemCell.m in Sources */,
@@ -936,6 +964,7 @@
 				DC3DCB5F18342B46001E92DC /* MorningMailCell.m in Sources */,
 				DC5B9E1217FB8CBA00CEBC74 /* AthleticsNewsViewController.m in Sources */,
 				DC79408C17F7689800A9D53C /* SideMenuViewController.m in Sources */,
+				84B80E8C192F09B400AD02A8 /* MasterViewController.m in Sources */,
 				DCE715A8182F38E400371233 /* TweetCell.m in Sources */,
 				DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */,
 				DC3DCB45183410C9001E92DC /* UIImage+Tint.m in Sources */,
@@ -947,6 +976,7 @@
 				DC53EC581900ED4600AB5F8C /* WXDailyForecast.m in Sources */,
 				DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */,
 				DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */,
+				84B80E8E192F09B400AD02A8 /* MasterMenuObject.m in Sources */,
 				DC5B9E4B17FC8EE100CEBC74 /* CRToolBar.m in Sources */,
 				DC47504018E15480008BDE7A /* CampusMapListTableViewController.m in Sources */,
 				DC661BD418C67A3900DE2F79 /* AthleticsNewsTableViewCell.m in Sources */,
