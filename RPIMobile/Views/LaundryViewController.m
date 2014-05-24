@@ -22,6 +22,7 @@
 @end
 
 @implementation LaundryViewController
+@synthesize master;
 
 - (id)init
 {
@@ -76,12 +77,6 @@
     [operation start];
 }
 
-
-#pragma mark - Button Handlers
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
 - (void)viewDidLoad
 {
     // Keeps tab bar below navigation bar on iOS 7.0+
@@ -91,7 +86,7 @@
     
     
     
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 
     // Refresh controls for UITableView

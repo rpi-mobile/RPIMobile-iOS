@@ -26,6 +26,9 @@
     _titleLabel = [[UILabel alloc] init];
     [_titleLabel setText:menuObject.title];
     [_titleLabel sizeToFit];
+    if ([menuObject.title rangeOfString:@"\n"].location != NSNotFound) {
+        _titleLabel.frame = CGRectMake(_titleLabel.frame.origin.x, _titleLabel.frame.origin.y, _titleLabel.frame.size.width, _titleLabel.frame.size.height*2);
+    }
     [_titleLabel setFrame:CGRectMake((self.frame.size.width-_titleLabel.frame.size.width)/2, self.frame.size.height-10-_titleLabel.frame.size.height, _titleLabel.frame.size.width, _titleLabel.frame.size.height)];
     [_titleLabel setTextColor:[UIColor blackColor]];
     //[_titleLabel setFont:[UIFont fontWithName:@"GothamHTF-Black" size:18]];
@@ -43,7 +46,7 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
     if (selected) {
-        [_titleLabel setTextColor:[UIColor colorWithRed:0.40 green:0.78 blue:0.82 alpha:1.0]];
+        [_titleLabel setTextColor:[UIColor colorWithRed:0.86 green:0.34 blue:0.29 alpha:1.0]];
     }
     else {
         [_titleLabel setTextColor:[UIColor blackColor]];
@@ -52,7 +55,7 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-        [_titleLabel setTextColor:[UIColor colorWithRed:0.40 green:0.78 blue:0.82 alpha:1.0]];
+        [_titleLabel setTextColor:[UIColor colorWithRed:0.86 green:0.34 blue:0.29 alpha:1.0]];
     }
     else {
         [_titleLabel setTextColor:[UIColor blackColor]];

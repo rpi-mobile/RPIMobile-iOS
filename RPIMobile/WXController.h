@@ -7,8 +7,11 @@
 //
 
 @import UIKit;
+#import "MasterViewController.h"
 
 @interface WXController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+
+@property (nonatomic) MasterViewController *master;
 
 @end

@@ -52,6 +52,7 @@
 @end
 
 @implementation TwitterFeedViewController
+@synthesize master;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -123,11 +124,6 @@
     }];
 }
 
-#pragma mark - Button Handlers
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
 
 - (void)viewDidLoad
 {
@@ -135,7 +131,7 @@
     
     [super viewDidLoad];
     
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
     
     // Refresh controls for UITableView

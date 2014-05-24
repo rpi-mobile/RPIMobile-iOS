@@ -35,7 +35,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
 @implementation DirectoryMasterViewController
 
 @synthesize detailViewController = _detailViewController;
-
+@synthesize master;
 @synthesize people = m_people;
 @synthesize m_searchTimer;
 @synthesize m_searchString;
@@ -60,7 +60,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
     
     self.detailViewController = (DirectoryDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 
     m_searchTimer = nil;
@@ -78,11 +78,6 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
                                                       [self.searchDisplayController.searchResultsTableView reloadData];
                                                       [self.tableView reloadData];
                                                   }];
-}
-
-#pragma mark - Button Handlers
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)viewDidUnload

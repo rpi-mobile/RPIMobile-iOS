@@ -29,6 +29,7 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
 @end
 
 @implementation MorningMailMasterViewController
+@synthesize master;
 
 - (id) init {
     if (self = [super init]) {
@@ -105,17 +106,11 @@ const NSString *morningMailBaseUrl = @"http://morningmail.rpi.edu/json/";
     
 }
 
-#pragma mark - Button Handlers
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 
     

@@ -27,6 +27,8 @@
 #import "TwitterFeedViewController.h"
 #import "AthleticsMainViewController.h"
 #import "CampusMapViewController.h"
+#import "WXController.h"
+#import "CRNavigationController.h"
 
 //MasterView Stuff
 #import "MasterViewController.h"
@@ -65,7 +67,6 @@
     UIStoryboard *directoryStoryboard = [UIStoryboard storyboardWithName:@"DirectoryStoryboard_iPhone" bundle:nil];
     UIStoryboard *laundryStoryboard = [UIStoryboard storyboardWithName:@"LaundryStoryboard_iPhone" bundle:nil];
     UIStoryboard *twitterStoryboard = [UIStoryboard storyboardWithName:@"TwitterStoryboard_iPhone" bundle:nil];
-    UIStoryboard *athleticsStoryboard = [UIStoryboard storyboardWithName:@"AthleticsStoryboard_iPhone" bundle:nil];
     UIStoryboard *campusMapSotryboard = [UIStoryboard storyboardWithName:@"CampusMapViewController" bundle:nil];
     
     //Create View Controlelrs
@@ -76,21 +77,23 @@
     TwitterFeedViewController *twitterView = [twitterStoryboard instantiateViewControllerWithIdentifier:@"twitterView"];
     AthleticsMainViewController *athleticsView = [[AthleticsMainViewController alloc] init];
     CampusMapViewController *campusMapView = [campusMapSotryboard instantiateViewControllerWithIdentifier:@"campusMapView"];
+    WXController *weatherView = [[WXController alloc] init];
     
     //MenuObjects
-    MasterMenuObject *morningMailMenu = [[MasterMenuObject alloc] initWithViewController:morningMailView andTitle:@"Morning Mail" andImage:[UIImage imageNamed:@"envelope"]];
+    MasterMenuObject *morningMailMenu = [[MasterMenuObject alloc] initWithViewController:morningMailView andTitle:@"Morning\nMail" andImage:[UIImage imageNamed:@"envelope"]];
     MasterMenuObject *directoryMenu = [[MasterMenuObject alloc] initWithViewController:directoryView andTitle:@"Directory" andImage:[UIImage imageNamed:@"group"]];
-    MasterMenuObject *newsFeedMenu = [[MasterMenuObject alloc] initWithViewController:newsFeedView andTitle:@"News Feed" andImage:nil];
+    //MasterMenuObject *newsFeedMenu = [[MasterMenuObject alloc] initWithViewController:newsFeedView andTitle:@"News Feed" andImage:nil];
     MasterMenuObject *laundryMenu = [[MasterMenuObject alloc] initWithViewController:laundryView andTitle:@"Laundry" andImage:[UIImage imageNamed:@"time"]];
-    MasterMenuObject *twitterMenu = [[MasterMenuObject alloc] initWithViewController:twitterView andTitle:@"Twitter" andImage:[UIImage imageNamed:@"twitter"]];
+    MasterMenuObject *twitterMenu = [[MasterMenuObject alloc] initWithViewController:twitterView andTitle:@"Social\nFeed" andImage:[UIImage imageNamed:@"twitter"]];
     MasterMenuObject *athleticsMenu = [[MasterMenuObject alloc] initWithViewController:athleticsView andTitle:@"Athletics" andImage:[UIImage imageNamed:@"trophy"]];
-    MasterMenuObject *campusMenu = [[MasterMenuObject alloc] initWithViewController:campusMapView andTitle:@"Campus Map" andImage:[UIImage imageNamed:@"location"]];
+    MasterMenuObject *campusMenu = [[MasterMenuObject alloc] initWithViewController:campusMapView andTitle:@"Campus\nMap" andImage:[UIImage imageNamed:@"location"]];
+    MasterMenuObject *weatherMenu = [[MasterMenuObject alloc] initWithViewController:weatherView andTitle:@"Weather" andImage:[UIImage imageNamed:@"cloud"]];
     
     //Create Master and fill
     UIStoryboard *masterStoryboard = [UIStoryboard storyboardWithName:@"Navigation" bundle:nil];
     MasterViewController *master = [masterStoryboard instantiateViewControllerWithIdentifier:@"masterView"];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:athleticsView];
-    master._viewControllers = [[NSArray alloc] initWithObjects:morningMailMenu, directoryMenu, newsFeedMenu, laundryMenu, twitterMenu, athleticsMenu, campusMenu, nil];
+    master._viewControllers = [[NSArray alloc] initWithObjects:athleticsMenu, twitterMenu, campusMenu, laundryMenu, morningMailMenu, weatherMenu,directoryMenu, nil];
     master._navController = navigation;
     morningMailView.master = master;
     directoryView.master = master;
@@ -99,6 +102,7 @@
     twitterView.master = master;
     athleticsView.master = master;
     campusMapView.master = master;
+    weatherView.master = master;
     
     //Set disk cache
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024

@@ -24,6 +24,7 @@
 @end
 
 @implementation WXController
+@synthesize master;
 
 - (id)init {
     if (self = [super init]) {
@@ -35,20 +36,13 @@
     }
     return self;
 }
-
-#pragma mark - Button Handlers
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
-    
     
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Weather";
     
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.84 green:0.22 blue:0.16 alpha:1.0];
     
