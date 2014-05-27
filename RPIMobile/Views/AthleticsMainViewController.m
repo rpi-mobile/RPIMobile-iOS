@@ -44,30 +44,21 @@
 }
 
 - (void) buildView {
-    UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 70, 320, 30)];
-    
     self.genderControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"male.png"],[UIImage imageNamed:@"female.png"]]];
-    self.genderControl.tintColor = [UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000];
-    self.genderControl.frame = CGRectMake(5, 0, 310, 29);
-    [background addSubview:self.genderControl];
+    self.genderControl.tintColor = [UIColor colorWithRed:0.85 green:0.28 blue:0.22 alpha:1.0];//[UIColor colorWithRed:0.828 green:0.000 blue:0.000 alpha:1.000];
     
     [self.genderControl addTarget:self action:@selector(genderChanged:) forControlEvents:UIControlEventValueChanged];
     [self.genderControl setSelectedSegmentIndex:0];
     [self genderChanged:self.genderControl];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 29, self.view.frame.size.width, self.view.frame.size.height-29) style:UITableViewStyleGrouped];//CGRectMake(0, 29, self.view.frame.size.width, self.view.frame.size.height-29) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-29) style:UITableViewStyleGrouped];
     self.tableView.contentInset = UIEdgeInsetsMake(0,0,0,0);
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
 
     [self.view addSubview:self.tableView];
-    //[self.tableView addSubview:self.genderControl];
-    //[self.tableView bringSubviewToFront:self.genderControl];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:background];
-    [self.view bringSubviewToFront:background];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.829 green:0.151 blue:0.086 alpha:1.000]];
-    background.backgroundColor = _tableView.backgroundColor;
     
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:master action:@selector(show)];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
@@ -100,6 +91,15 @@
 }*/
 
 #pragma mark - Table view data source
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.genderControl.frame.size.height+6)];
+    [background setBackgroundColor:[UIColor clearColor]];
+    self.genderControl.frame = CGRectMake(5, 3, 310, 29);
+    [background addSubview:self.genderControl];
+    
+    return background;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

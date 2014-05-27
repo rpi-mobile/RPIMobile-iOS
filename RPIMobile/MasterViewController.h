@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+ImageEffects.h"
 
-@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    UIButton *_dimView;
-    UIView *_controlView;
-    UITableView *_tableView;
+@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+    UIImageView *_backImageView;
+    UIImageView *_frontImageView;
+    UILabel *_titleLabel;
+    UICollectionView *_collectionView;
+    UICollectionViewFlowLayout *_layout;
+    
     NSNumber *index;
 }
 

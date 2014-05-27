@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 
 @property id<ViewPagerDataSource> dataSource;
 @property id<ViewPagerDelegate> delegate;
+@property NSNumber *kDefaultTabWidth;
 
 #pragma mark ViewPagerOptions
 // Tab bar's height, defaults to 49.0

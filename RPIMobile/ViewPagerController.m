@@ -10,7 +10,7 @@
 
 #define kDefaultTabHeight 44.0 // Default tab height
 #define kDefaultTabOffset 56.0 // Offset of the second and further tabs' from left
-#define kDefaultTabWidth 128.0
+//#define kDefaultTabWidth 128.0
 
 #define kDefaultTabLocation 1.0 // 1.0: Top, 0.0: Bottom
 
@@ -101,6 +101,7 @@
 @end
 
 @implementation ViewPagerController
+@synthesize kDefaultTabWidth;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -259,11 +260,12 @@
 
 #pragma mark -
 - (void)defaultSettings {
+    kDefaultTabWidth = [NSNumber numberWithInt:128];
     
     // Default settings
     _tabHeight = kDefaultTabHeight;
     _tabOffset = kDefaultTabOffset;
-    _tabWidth = kDefaultTabWidth;
+    _tabWidth = [kDefaultTabWidth floatValue];
     
     _tabLocation = kDefaultTabLocation;
     
@@ -296,7 +298,7 @@
     if ([self.delegate respondsToSelector:@selector(viewPager:valueForOption:withDefault:)]) {
         _tabHeight = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabHeight withDefault:kDefaultTabHeight];
         _tabOffset = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabOffset withDefault:kDefaultTabOffset];
-        _tabWidth = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabWidth withDefault:kDefaultTabWidth];
+        _tabWidth = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabWidth withDefault:[kDefaultTabWidth floatValue]];
         
         _tabLocation = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabLocation withDefault:kDefaultTabLocation];
         

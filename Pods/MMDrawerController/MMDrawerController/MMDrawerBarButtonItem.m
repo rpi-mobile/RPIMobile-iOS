@@ -216,7 +216,7 @@
         CGRect frame = CGRectMake(0, 0, 26, 26);
         
         //// Bottom Bar Drawing
-        UIBezierPath* bottomBarPath = [UIBezierPath bezierPathWithRect: CGRectMake(CGRectGetMinX(frame) + floor((CGRectGetWidth(frame) - 16) * 0.50000 + 0.5), CGRectGetMinY(frame) + floor((CGRectGetHeight(frame) - 1) * 0.72000 + 0.5), 16, 1)];
+        /*UIBezierPath* bottomBarPath = [UIBezierPath bezierPathWithRect: CGRectMake(CGRectGetMinX(frame) + floor((CGRectGetWidth(frame) - 16) * 0.50000 + 0.5), CGRectGetMinY(frame) + floor((CGRectGetHeight(frame) - 1) * 0.72000 + 0.5), 16, 1)];
         [fillColor setFill];
         [bottomBarPath fill];
         
@@ -230,7 +230,32 @@
         //// Top Bar Drawing
         UIBezierPath* topBarPath = [UIBezierPath bezierPathWithRect: CGRectMake(CGRectGetMinX(frame) + floor((CGRectGetWidth(frame) - 16) * 0.50000 + 0.5), CGRectGetMinY(frame) + floor((CGRectGetHeight(frame) - 1) * 0.24000 + 0.5), 16, 1)];
         [fillColor setFill];
-        [topBarPath fill];
+        [topBarPath fill];*/
+        
+        //Variables
+        float cellFrame = 26;
+        float insets = 2.5;
+        float size = (cellFrame/2)-(insets*2);
+        
+        //Top Left Circle
+        UIBezierPath *topLeftPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(insets, insets, size, size)];
+        [fillColor setFill];
+        [topLeftPath fill];
+        
+        //Top Right Circle
+        UIBezierPath *topRightPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(size+(insets*2), insets, size, size)];
+        [fillColor setFill];
+        [topRightPath fill];
+        
+        //Bottom Left Circle
+        UIBezierPath *bottomLeftPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(insets, size+(insets*2), size, size)];
+        [fillColor setFill];
+        [bottomLeftPath fill];
+        
+        //Bottom Right Circle
+        UIBezierPath *bottomRightPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(size+(insets*2), size+(insets*2), size, size)];
+        [fillColor setFill];
+        [bottomRightPath fill];
         
         drawerButtonImage = UIGraphicsGetImageFromCurrentImageContext();
     });

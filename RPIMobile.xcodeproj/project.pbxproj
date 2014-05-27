@@ -22,6 +22,11 @@
 
 /* Begin PBXBuildFile section */
 		7978CF22D0F24352BDDED9D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0128A2D9254CFFA7194F70 /* libPods.a */; };
+		843816F91931BB4700DA57B7 /* UIImage+Colored.m in Sources */ = {isa = PBXBuildFile; fileRef = 843816F71931BB4700DA57B7 /* UIImage+Colored.m */; };
+		84819C1019354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84819C0F19354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard */; };
+		84B565E619316AB600B97EE7 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565E519316AB600B97EE7 /* UIImage+ImageEffects.m */; };
+		84B565E9193181A500B97EE7 /* MasterCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565E8193181A500B97EE7 /* MasterCollectionCell.m */; };
+		84B565EC193184D000B97EE7 /* MasterCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565EB193184D000B97EE7 /* MasterCollectionLayout.m */; };
 		84B80E8C192F09B400AD02A8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B80E85192F09B400AD02A8 /* MasterViewController.m */; };
 		84B80E8D192F09B400AD02A8 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B80E86192F09B400AD02A8 /* Navigation.storyboard */; };
 		84B80E8E192F09B400AD02A8 /* MasterMenuObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B80E88192F09B400AD02A8 /* MasterMenuObject.m */; };
@@ -179,6 +184,15 @@
 
 /* Begin PBXFileReference section */
 		1C0128A2D9254CFFA7194F70 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		843816F71931BB4700DA57B7 /* UIImage+Colored.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Colored.m"; sourceTree = "<group>"; };
+		843816F81931BB4700DA57B7 /* UIImage+Colored.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Colored.h"; sourceTree = "<group>"; };
+		84819C0F19354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AthleticsStoryboard_iPhone.storyboard; path = Views/AthleticsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		84B565E419316AB600B97EE7 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		84B565E519316AB600B97EE7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		84B565E7193181A500B97EE7 /* MasterCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionCell.h; sourceTree = "<group>"; };
+		84B565E8193181A500B97EE7 /* MasterCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCollectionCell.m; sourceTree = "<group>"; };
+		84B565EA193184D000B97EE7 /* MasterCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionLayout.h; sourceTree = "<group>"; };
+		84B565EB193184D000B97EE7 /* MasterCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCollectionLayout.m; sourceTree = "<group>"; };
 		84B80E84192F09B400AD02A8 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		84B80E85192F09B400AD02A8 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		84B80E86192F09B400AD02A8 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
@@ -394,6 +408,10 @@
 		84B80E81192F07D100AD02A8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				843816F71931BB4700DA57B7 /* UIImage+Colored.m */,
+				843816F81931BB4700DA57B7 /* UIImage+Colored.h */,
+				84B565E419316AB600B97EE7 /* UIImage+ImageEffects.h */,
+				84B565E519316AB600B97EE7 /* UIImage+ImageEffects.m */,
 				84B80E84192F09B400AD02A8 /* MasterViewController.h */,
 				84B80E85192F09B400AD02A8 /* MasterViewController.m */,
 				84B80E86192F09B400AD02A8 /* Navigation.storyboard */,
@@ -401,6 +419,10 @@
 				84B80E88192F09B400AD02A8 /* MasterMenuObject.m */,
 				84B80E89192F09B400AD02A8 /* MasterMenuCell.h */,
 				84B80E8A192F09B400AD02A8 /* MasterMenuCell.m */,
+				84B565E7193181A500B97EE7 /* MasterCollectionCell.h */,
+				84B565E8193181A500B97EE7 /* MasterCollectionCell.m */,
+				84B565EA193184D000B97EE7 /* MasterCollectionLayout.h */,
+				84B565EB193184D000B97EE7 /* MasterCollectionLayout.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -501,6 +523,7 @@
 		DC5B9E1817FB9BF800CEBC74 /* Athletics */ = {
 			isa = PBXGroup;
 			children = (
+				84819C0F19354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard */,
 				DC5B9DF717F7B96800CEBC74 /* AthleticsMainViewController.h */,
 				DC5B9DF817F7B96800CEBC74 /* AthleticsMainViewController.m */,
 				DC5B9DFE17FA1E4200CEBC74 /* AthleticsDetailViewController.h */,
@@ -851,6 +874,7 @@
 				DCA5642518AC959300D1102E /* female@2x.png in Resources */,
 				DC53EC7D1900ED7600AB5F8C /* weather-moon.png in Resources */,
 				DC3DCB2B18340F87001E92DC /* date_placeholder.png in Resources */,
+				84819C1019354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard in Resources */,
 				DC3DCB2718340F87001E92DC /* book.png in Resources */,
 				DC7D4C73190702540088CD72 /* cloud@2x.png in Resources */,
 				DC3DCB4118340F87001E92DC /* user_male.png in Resources */,
@@ -957,6 +981,7 @@
 				DC5B9E2B17FBDB6400CEBC74 /* AthleticsScheduleViewController.m in Sources */,
 				DC88EEC817F76F7A006AB482 /* CRNavigationBar.m in Sources */,
 				DC79409317F7698E00A9D53C /* NewsFeedViewController.m in Sources */,
+				84B565E619316AB600B97EE7 /* UIImage+ImageEffects.m in Sources */,
 				DC3DCB5F18342B46001E92DC /* MorningMailCell.m in Sources */,
 				DC5B9E1217FB8CBA00CEBC74 /* AthleticsNewsViewController.m in Sources */,
 				DC79408C17F7689800A9D53C /* SideMenuViewController.m in Sources */,
@@ -964,12 +989,14 @@
 				DCE715A8182F38E400371233 /* TweetCell.m in Sources */,
 				DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */,
 				DC3DCB45183410C9001E92DC /* UIImage+Tint.m in Sources */,
+				84B565EC193184D000B97EE7 /* MasterCollectionLayout.m in Sources */,
 				DC5B9DF917F7B96800CEBC74 /* AthleticsMainViewController.m in Sources */,
 				DC53EC571900ED4600AB5F8C /* WXController.m in Sources */,
 				DCE715A5182D696400371233 /* Base64.m in Sources */,
 				DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */,
 				DC9B6F0D1814CEE500274579 /* LaundryViewController.m in Sources */,
 				DC53EC581900ED4600AB5F8C /* WXDailyForecast.m in Sources */,
+				843816F91931BB4700DA57B7 /* UIImage+Colored.m in Sources */,
 				DC5B9E1517FB995500CEBC74 /* NewsFeedCell.m in Sources */,
 				DC5B9E0317FA240300CEBC74 /* ViewPagerController.m in Sources */,
 				84B80E8E192F09B400AD02A8 /* MasterMenuObject.m in Sources */,
@@ -982,6 +1009,7 @@
 				DC79405717F7687500A9D53C /* main.m in Sources */,
 				DC5B9E0617FB709400CEBC74 /* AthleticsRosterViewController.m in Sources */,
 				DC53EC591900ED4600AB5F8C /* WXManager.m in Sources */,
+				84B565E9193181A500B97EE7 /* MasterCollectionCell.m in Sources */,
 				DCE7159F182C7A8400371233 /* TwitterFeedViewController.m in Sources */,
 				DC88EEC917F76F7A006AB482 /* CRNavigationController.m in Sources */,
 			);

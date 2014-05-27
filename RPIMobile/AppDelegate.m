@@ -80,14 +80,14 @@
     WXController *weatherView = [[WXController alloc] init];
     
     //MenuObjects
-    MasterMenuObject *morningMailMenu = [[MasterMenuObject alloc] initWithViewController:morningMailView andTitle:@"Morning\nMail" andImage:[UIImage imageNamed:@"envelope"]];
-    MasterMenuObject *directoryMenu = [[MasterMenuObject alloc] initWithViewController:directoryView andTitle:@"Directory" andImage:[UIImage imageNamed:@"group"]];
+    MasterMenuObject *morningMailMenu = [[MasterMenuObject alloc] initWithViewController:morningMailView andTitle:@"Morning\nMail" andImage:[UIImage imageNamed:@"envelope@2x"]];
+    MasterMenuObject *directoryMenu = [[MasterMenuObject alloc] initWithViewController:directoryView andTitle:@"Directory" andImage:[UIImage imageNamed:@"group@2x"]];
     //MasterMenuObject *newsFeedMenu = [[MasterMenuObject alloc] initWithViewController:newsFeedView andTitle:@"News Feed" andImage:nil];
-    MasterMenuObject *laundryMenu = [[MasterMenuObject alloc] initWithViewController:laundryView andTitle:@"Laundry" andImage:[UIImage imageNamed:@"time"]];
-    MasterMenuObject *twitterMenu = [[MasterMenuObject alloc] initWithViewController:twitterView andTitle:@"Social\nFeed" andImage:[UIImage imageNamed:@"twitter"]];
-    MasterMenuObject *athleticsMenu = [[MasterMenuObject alloc] initWithViewController:athleticsView andTitle:@"Athletics" andImage:[UIImage imageNamed:@"trophy"]];
-    MasterMenuObject *campusMenu = [[MasterMenuObject alloc] initWithViewController:campusMapView andTitle:@"Campus\nMap" andImage:[UIImage imageNamed:@"location"]];
-    MasterMenuObject *weatherMenu = [[MasterMenuObject alloc] initWithViewController:weatherView andTitle:@"Weather" andImage:[UIImage imageNamed:@"cloud"]];
+    MasterMenuObject *laundryMenu = [[MasterMenuObject alloc] initWithViewController:laundryView andTitle:@"Laundry" andImage:[UIImage imageNamed:@"time@2x"]];
+    MasterMenuObject *twitterMenu = [[MasterMenuObject alloc] initWithViewController:twitterView andTitle:@"Social\nFeed" andImage:[UIImage imageNamed:@"twitter@2x"]];
+    MasterMenuObject *athleticsMenu = [[MasterMenuObject alloc] initWithViewController:athleticsView andTitle:@"Athletics" andImage:[UIImage imageNamed:@"trophy@2x"]];
+    MasterMenuObject *campusMenu = [[MasterMenuObject alloc] initWithViewController:campusMapView andTitle:@"Campus\nMap" andImage:[UIImage imageNamed:@"location@2x"]];
+    MasterMenuObject *weatherMenu = [[MasterMenuObject alloc] initWithViewController:weatherView andTitle:@"Weather" andImage:[UIImage imageNamed:@"cloud@2x"]];
     
     //Create Master and fill
     UIStoryboard *masterStoryboard = [UIStoryboard storyboardWithName:@"Navigation" bundle:nil];

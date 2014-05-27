@@ -56,6 +56,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    NSLog(@"FeedItems: %i", self.feedItems.count);
     return self.feedItems.count;
 }
 

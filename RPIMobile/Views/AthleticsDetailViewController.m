@@ -38,7 +38,7 @@
     self.dataSource = self;
     self.delegate = self;
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    self.kDefaultTabWidth = [NSNumber numberWithFloat:self.view.frame.size.width/3];
     
     [super viewDidLoad];
 }
