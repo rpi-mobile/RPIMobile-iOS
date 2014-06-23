@@ -24,6 +24,59 @@
 		7978CF22D0F24352BDDED9D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0128A2D9254CFFA7194F70 /* libPods.a */; };
 		843816F91931BB4700DA57B7 /* UIImage+Colored.m in Sources */ = {isa = PBXBuildFile; fileRef = 843816F71931BB4700DA57B7 /* UIImage+Colored.m */; };
 		84819C1019354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84819C0F19354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard */; };
+		8485767F1957EC1800A24C29 /* Saturday 6th Ave. and City Station.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576791957EC1800A24C29 /* Saturday 6th Ave. and City Station.txt */; };
+		848576801957EC1800A24C29 /* Saturday 15th and College.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8485767A1957EC1800A24C29 /* Saturday 15th and College.txt */; };
+		848576811957EC1800A24C29 /* Saturday Blitman Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8485767B1957EC1800A24C29 /* Saturday Blitman Residence Commons.txt */; };
+		848576821957EC1800A24C29 /* Saturday Polytechnic Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8485767C1957EC1800A24C29 /* Saturday Polytechnic Residence Commons.txt */; };
+		848576831957EC1800A24C29 /* Saturday Sage.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8485767D1957EC1800A24C29 /* Saturday Sage.txt */; };
+		848576841957EC1800A24C29 /* Saturday Student Union West.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8485767E1957EC1800A24C29 /* Saturday Student Union West.txt */; };
+		8485769E1957EC2800A24C29 /* STDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576861957EC2800A24C29 /* STDataManager.m */; };
+		8485769F1957EC2800A24C29 /* STETA.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576891957EC2800A24C29 /* STETA.m */; };
+		848576A01957EC2800A24C29 /* STEtasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485768B1957EC2800A24C29 /* STEtasViewController.m */; };
+		848576A11957EC2800A24C29 /* STExtraEtasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485768D1957EC2800A24C29 /* STExtraEtasViewController.m */; };
+		848576A21957EC2800A24C29 /* STFavoriteStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485768F1957EC2800A24C29 /* STFavoriteStop.m */; };
+		848576A31957EC2800A24C29 /* STJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576911957EC2800A24C29 /* STJSONParser.m */; };
+		848576A41957EC2800A24C29 /* STMapPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576931957EC2800A24C29 /* STMapPlacemark.m */; };
+		848576A51957EC2800A24C29 /* STMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576951957EC2800A24C29 /* STMapViewController.m */; };
+		848576A61957EC2800A24C29 /* STRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576971957EC2800A24C29 /* STRoute.m */; };
+		848576A71957EC2800A24C29 /* STShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 848576991957EC2800A24C29 /* STShuttle.m */; };
+		848576A81957EC2800A24C29 /* STSimpleShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485769B1957EC2800A24C29 /* STSimpleShuttle.m */; };
+		848576A91957EC2800A24C29 /* STStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485769D1957EC2800A24C29 /* STStop.m */; };
+		848576AF1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 848576AA1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel */; };
+		848576B01957EC3900A24C29 /* Shuttle_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 848576AB1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodeld */; };
+		848576B11957EC3900A24C29 /* Shuttle-Tracker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848576AE1957EC3900A24C29 /* Shuttle-Tracker-Info.plist */; };
+		848576BE1957EC4500A24C29 /* Sunday 6th Ave. and City Station.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B21957EC4500A24C29 /* Sunday 6th Ave. and City Station.txt */; };
+		848576BF1957EC4500A24C29 /* Sunday 15th and College.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B31957EC4500A24C29 /* Sunday 15th and College.txt */; };
+		848576C01957EC4500A24C29 /* Sunday Blitman Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B41957EC4500A24C29 /* Sunday Blitman Residence Commons.txt */; };
+		848576C11957EC4500A24C29 /* Sunday Polytechnic Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B51957EC4500A24C29 /* Sunday Polytechnic Residence Commons.txt */; };
+		848576C21957EC4500A24C29 /* Sunday Sage.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B61957EC4500A24C29 /* Sunday Sage.txt */; };
+		848576C31957EC4500A24C29 /* Sunday Student Union West.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B71957EC4500A24C29 /* Sunday Student Union West.txt */; };
+		848576C41957EC4500A24C29 /* Weekday 6th Ave. and City Station.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B81957EC4500A24C29 /* Weekday 6th Ave. and City Station.txt */; };
+		848576C51957EC4500A24C29 /* Weekday 15th and College.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576B91957EC4500A24C29 /* Weekday 15th and College.txt */; };
+		848576C61957EC4500A24C29 /* Weekday Blitman Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576BA1957EC4500A24C29 /* Weekday Blitman Residence Commons.txt */; };
+		848576C71957EC4500A24C29 /* Weekday Polytechnic Residence Commons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576BB1957EC4500A24C29 /* Weekday Polytechnic Residence Commons.txt */; };
+		848576C81957EC4500A24C29 /* Weekday Sage.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576BC1957EC4500A24C29 /* Weekday Sage.txt */; };
+		848576C91957EC4500A24C29 /* Weekday Student Union West.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848576BD1957EC4500A24C29 /* Weekday Student Union West.txt */; };
+		848576CB1957EC6D00A24C29 /* Union.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 848576CA1957EC6D00A24C29 /* Union.gpx */; };
+		848576CD1957EC7B00A24C29 /* Blitman.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 848576CC1957EC7B00A24C29 /* Blitman.gpx */; };
+		848576E11957F01800A24C29 /* glyphish_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576CF1957F01800A24C29 /* glyphish_clock.png */; };
+		848576E21957F01800A24C29 /* glyphish_clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D01957F01800A24C29 /* glyphish_clock@2x.png */; };
+		848576E31957F01800A24C29 /* glyphish_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D11957F01800A24C29 /* glyphish_gear.png */; };
+		848576E41957F01800A24C29 /* glyphish_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D21957F01800A24C29 /* glyphish_gear@2x.png */; };
+		848576E51957F01800A24C29 /* glyphish_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D31957F01800A24C29 /* glyphish_map.png */; };
+		848576E61957F01800A24C29 /* glyphish_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D41957F01800A24C29 /* glyphish_map@2x.png */; };
+		848576E71957F01800A24C29 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D51957F01800A24C29 /* Icon-Small-50.png */; };
+		848576E81957F01800A24C29 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D61957F01800A24C29 /* Icon-Small.png */; };
+		848576E91957F01800A24C29 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576D71957F01800A24C29 /* Icon-Small@2x.png */; };
+		848576EA1957F01800A24C29 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 848576D81957F01800A24C29 /* iTunesArtwork */; };
+		848576EB1957F01800A24C29 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 848576D91957F01800A24C29 /* iTunesArtwork@2x */; };
+		848576EC1957F01800A24C29 /* shuttle_color_east.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DA1957F01800A24C29 /* shuttle_color_east.png */; };
+		848576ED1957F01800A24C29 /* shuttle_color_north.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DB1957F01800A24C29 /* shuttle_color_north.png */; };
+		848576EE1957F01800A24C29 /* shuttle_color_south.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DC1957F01800A24C29 /* shuttle_color_south.png */; };
+		848576EF1957F01800A24C29 /* shuttle_color_west.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DD1957F01800A24C29 /* shuttle_color_west.png */; };
+		848576F01957F01800A24C29 /* shuttle_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DE1957F01800A24C29 /* shuttle_color.png */; };
+		848576F11957F01800A24C29 /* shuttle.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576DF1957F01800A24C29 /* shuttle.png */; };
+		848576F21957F01800A24C29 /* stop_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 848576E01957F01800A24C29 /* stop_marker.png */; };
 		84B565E619316AB600B97EE7 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565E519316AB600B97EE7 /* UIImage+ImageEffects.m */; };
 		84B565E9193181A500B97EE7 /* MasterCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565E8193181A500B97EE7 /* MasterCollectionCell.m */; };
 		84B565EC193184D000B97EE7 /* MasterCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B565EB193184D000B97EE7 /* MasterCollectionLayout.m */; };
@@ -187,6 +240,73 @@
 		843816F71931BB4700DA57B7 /* UIImage+Colored.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Colored.m"; sourceTree = "<group>"; };
 		843816F81931BB4700DA57B7 /* UIImage+Colored.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Colored.h"; sourceTree = "<group>"; };
 		84819C0F19354C6E00DE7D1F /* AthleticsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AthleticsStoryboard_iPhone.storyboard; path = Views/AthleticsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		848576791957EC1800A24C29 /* Saturday 6th Ave. and City Station.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday 6th Ave. and City Station.txt"; sourceTree = "<group>"; };
+		8485767A1957EC1800A24C29 /* Saturday 15th and College.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday 15th and College.txt"; sourceTree = "<group>"; };
+		8485767B1957EC1800A24C29 /* Saturday Blitman Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday Blitman Residence Commons.txt"; sourceTree = "<group>"; };
+		8485767C1957EC1800A24C29 /* Saturday Polytechnic Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday Polytechnic Residence Commons.txt"; sourceTree = "<group>"; };
+		8485767D1957EC1800A24C29 /* Saturday Sage.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday Sage.txt"; sourceTree = "<group>"; };
+		8485767E1957EC1800A24C29 /* Saturday Student Union West.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saturday Student Union West.txt"; sourceTree = "<group>"; };
+		848576851957EC2800A24C29 /* STDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDataManager.h; sourceTree = "<group>"; };
+		848576861957EC2800A24C29 /* STDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDataManager.m; sourceTree = "<group>"; };
+		848576871957EC2800A24C29 /* STDataUrls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDataUrls.h; sourceTree = "<group>"; };
+		848576881957EC2800A24C29 /* STETA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STETA.h; sourceTree = "<group>"; };
+		848576891957EC2800A24C29 /* STETA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STETA.m; sourceTree = "<group>"; };
+		8485768A1957EC2800A24C29 /* STEtasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STEtasViewController.h; sourceTree = "<group>"; };
+		8485768B1957EC2800A24C29 /* STEtasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STEtasViewController.m; sourceTree = "<group>"; };
+		8485768C1957EC2800A24C29 /* STExtraEtasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STExtraEtasViewController.h; sourceTree = "<group>"; };
+		8485768D1957EC2800A24C29 /* STExtraEtasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STExtraEtasViewController.m; sourceTree = "<group>"; };
+		8485768E1957EC2800A24C29 /* STFavoriteStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFavoriteStop.h; sourceTree = "<group>"; };
+		8485768F1957EC2800A24C29 /* STFavoriteStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFavoriteStop.m; sourceTree = "<group>"; };
+		848576901957EC2800A24C29 /* STJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STJSONParser.h; sourceTree = "<group>"; };
+		848576911957EC2800A24C29 /* STJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STJSONParser.m; sourceTree = "<group>"; };
+		848576921957EC2800A24C29 /* STMapPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMapPlacemark.h; sourceTree = "<group>"; };
+		848576931957EC2800A24C29 /* STMapPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMapPlacemark.m; sourceTree = "<group>"; };
+		848576941957EC2800A24C29 /* STMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMapViewController.h; sourceTree = "<group>"; };
+		848576951957EC2800A24C29 /* STMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMapViewController.m; sourceTree = "<group>"; };
+		848576961957EC2800A24C29 /* STRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRoute.h; sourceTree = "<group>"; };
+		848576971957EC2800A24C29 /* STRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRoute.m; sourceTree = "<group>"; };
+		848576981957EC2800A24C29 /* STShuttle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STShuttle.h; sourceTree = "<group>"; };
+		848576991957EC2800A24C29 /* STShuttle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STShuttle.m; sourceTree = "<group>"; };
+		8485769A1957EC2800A24C29 /* STSimpleShuttle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimpleShuttle.h; sourceTree = "<group>"; };
+		8485769B1957EC2800A24C29 /* STSimpleShuttle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSimpleShuttle.m; sourceTree = "<group>"; };
+		8485769C1957EC2800A24C29 /* STStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStop.h; sourceTree = "<group>"; };
+		8485769D1957EC2800A24C29 /* STStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStop.m; sourceTree = "<group>"; };
+		848576AA1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shuttle_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		848576AC1957EC3900A24C29 /* Shuttle_Tracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Shuttle_Tracker 2.xcdatamodel"; sourceTree = "<group>"; };
+		848576AD1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shuttle_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		848576AE1957EC3900A24C29 /* Shuttle-Tracker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shuttle-Tracker-Info.plist"; sourceTree = "<group>"; };
+		848576B21957EC4500A24C29 /* Sunday 6th Ave. and City Station.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday 6th Ave. and City Station.txt"; sourceTree = "<group>"; };
+		848576B31957EC4500A24C29 /* Sunday 15th and College.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday 15th and College.txt"; sourceTree = "<group>"; };
+		848576B41957EC4500A24C29 /* Sunday Blitman Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday Blitman Residence Commons.txt"; sourceTree = "<group>"; };
+		848576B51957EC4500A24C29 /* Sunday Polytechnic Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday Polytechnic Residence Commons.txt"; sourceTree = "<group>"; };
+		848576B61957EC4500A24C29 /* Sunday Sage.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday Sage.txt"; sourceTree = "<group>"; };
+		848576B71957EC4500A24C29 /* Sunday Student Union West.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sunday Student Union West.txt"; sourceTree = "<group>"; };
+		848576B81957EC4500A24C29 /* Weekday 6th Ave. and City Station.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday 6th Ave. and City Station.txt"; sourceTree = "<group>"; };
+		848576B91957EC4500A24C29 /* Weekday 15th and College.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday 15th and College.txt"; sourceTree = "<group>"; };
+		848576BA1957EC4500A24C29 /* Weekday Blitman Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday Blitman Residence Commons.txt"; sourceTree = "<group>"; };
+		848576BB1957EC4500A24C29 /* Weekday Polytechnic Residence Commons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday Polytechnic Residence Commons.txt"; sourceTree = "<group>"; };
+		848576BC1957EC4500A24C29 /* Weekday Sage.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday Sage.txt"; sourceTree = "<group>"; };
+		848576BD1957EC4500A24C29 /* Weekday Student Union West.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Weekday Student Union West.txt"; sourceTree = "<group>"; };
+		848576CA1957EC6D00A24C29 /* Union.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Union.gpx; sourceTree = "<group>"; };
+		848576CC1957EC7B00A24C29 /* Blitman.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Blitman.gpx; sourceTree = "<group>"; };
+		848576CF1957F01800A24C29 /* glyphish_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphish_clock.png; sourceTree = "<group>"; };
+		848576D01957F01800A24C29 /* glyphish_clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphish_clock@2x.png"; sourceTree = "<group>"; };
+		848576D11957F01800A24C29 /* glyphish_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphish_gear.png; sourceTree = "<group>"; };
+		848576D21957F01800A24C29 /* glyphish_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphish_gear@2x.png"; sourceTree = "<group>"; };
+		848576D31957F01800A24C29 /* glyphish_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphish_map.png; sourceTree = "<group>"; };
+		848576D41957F01800A24C29 /* glyphish_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphish_map@2x.png"; sourceTree = "<group>"; };
+		848576D51957F01800A24C29 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		848576D61957F01800A24C29 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		848576D71957F01800A24C29 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		848576D81957F01800A24C29 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		848576D91957F01800A24C29 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
+		848576DA1957F01800A24C29 /* shuttle_color_east.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle_color_east.png; sourceTree = "<group>"; };
+		848576DB1957F01800A24C29 /* shuttle_color_north.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle_color_north.png; sourceTree = "<group>"; };
+		848576DC1957F01800A24C29 /* shuttle_color_south.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle_color_south.png; sourceTree = "<group>"; };
+		848576DD1957F01800A24C29 /* shuttle_color_west.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle_color_west.png; sourceTree = "<group>"; };
+		848576DE1957F01800A24C29 /* shuttle_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle_color.png; sourceTree = "<group>"; };
+		848576DF1957F01800A24C29 /* shuttle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttle.png; sourceTree = "<group>"; };
+		848576E01957F01800A24C29 /* stop_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_marker.png; sourceTree = "<group>"; };
 		84B565E419316AB600B97EE7 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		84B565E519316AB600B97EE7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		84B565E7193181A500B97EE7 /* MasterCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionCell.h; sourceTree = "<group>"; };
@@ -405,6 +525,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		848576771957EBE300A24C29 /* Shuttle Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				848576AA1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel */,
+				848576AB1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodeld */,
+				848576AE1957EC3900A24C29 /* Shuttle-Tracker-Info.plist */,
+				848576851957EC2800A24C29 /* STDataManager.h */,
+				848576861957EC2800A24C29 /* STDataManager.m */,
+				848576871957EC2800A24C29 /* STDataUrls.h */,
+				848576881957EC2800A24C29 /* STETA.h */,
+				848576891957EC2800A24C29 /* STETA.m */,
+				8485768A1957EC2800A24C29 /* STEtasViewController.h */,
+				8485768B1957EC2800A24C29 /* STEtasViewController.m */,
+				8485768C1957EC2800A24C29 /* STExtraEtasViewController.h */,
+				8485768D1957EC2800A24C29 /* STExtraEtasViewController.m */,
+				8485768E1957EC2800A24C29 /* STFavoriteStop.h */,
+				8485768F1957EC2800A24C29 /* STFavoriteStop.m */,
+				848576901957EC2800A24C29 /* STJSONParser.h */,
+				848576911957EC2800A24C29 /* STJSONParser.m */,
+				848576921957EC2800A24C29 /* STMapPlacemark.h */,
+				848576931957EC2800A24C29 /* STMapPlacemark.m */,
+				848576941957EC2800A24C29 /* STMapViewController.h */,
+				848576951957EC2800A24C29 /* STMapViewController.m */,
+				848576961957EC2800A24C29 /* STRoute.h */,
+				848576971957EC2800A24C29 /* STRoute.m */,
+				848576981957EC2800A24C29 /* STShuttle.h */,
+				848576991957EC2800A24C29 /* STShuttle.m */,
+				8485769A1957EC2800A24C29 /* STSimpleShuttle.h */,
+				8485769B1957EC2800A24C29 /* STSimpleShuttle.m */,
+				8485769C1957EC2800A24C29 /* STStop.h */,
+				8485769D1957EC2800A24C29 /* STStop.m */,
+				848576CE1957F01100A24C29 /* Images */,
+				848576781957EC1000A24C29 /* Times */,
+			);
+			name = "Shuttle Tracking";
+			sourceTree = "<group>";
+		};
+		848576781957EC1000A24C29 /* Times */ = {
+			isa = PBXGroup;
+			children = (
+				848576B21957EC4500A24C29 /* Sunday 6th Ave. and City Station.txt */,
+				848576B31957EC4500A24C29 /* Sunday 15th and College.txt */,
+				848576B41957EC4500A24C29 /* Sunday Blitman Residence Commons.txt */,
+				848576B51957EC4500A24C29 /* Sunday Polytechnic Residence Commons.txt */,
+				848576B61957EC4500A24C29 /* Sunday Sage.txt */,
+				848576B71957EC4500A24C29 /* Sunday Student Union West.txt */,
+				848576B81957EC4500A24C29 /* Weekday 6th Ave. and City Station.txt */,
+				848576B91957EC4500A24C29 /* Weekday 15th and College.txt */,
+				848576BA1957EC4500A24C29 /* Weekday Blitman Residence Commons.txt */,
+				848576BB1957EC4500A24C29 /* Weekday Polytechnic Residence Commons.txt */,
+				848576BC1957EC4500A24C29 /* Weekday Sage.txt */,
+				848576BD1957EC4500A24C29 /* Weekday Student Union West.txt */,
+				848576791957EC1800A24C29 /* Saturday 6th Ave. and City Station.txt */,
+				8485767A1957EC1800A24C29 /* Saturday 15th and College.txt */,
+				8485767B1957EC1800A24C29 /* Saturday Blitman Residence Commons.txt */,
+				8485767C1957EC1800A24C29 /* Saturday Polytechnic Residence Commons.txt */,
+				8485767D1957EC1800A24C29 /* Saturday Sage.txt */,
+				8485767E1957EC1800A24C29 /* Saturday Student Union West.txt */,
+			);
+			name = Times;
+			sourceTree = "<group>";
+		};
+		848576CE1957F01100A24C29 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				848576CF1957F01800A24C29 /* glyphish_clock.png */,
+				848576D01957F01800A24C29 /* glyphish_clock@2x.png */,
+				848576D11957F01800A24C29 /* glyphish_gear.png */,
+				848576D21957F01800A24C29 /* glyphish_gear@2x.png */,
+				848576D31957F01800A24C29 /* glyphish_map.png */,
+				848576D41957F01800A24C29 /* glyphish_map@2x.png */,
+				848576D51957F01800A24C29 /* Icon-Small-50.png */,
+				848576D61957F01800A24C29 /* Icon-Small.png */,
+				848576D71957F01800A24C29 /* Icon-Small@2x.png */,
+				848576D81957F01800A24C29 /* iTunesArtwork */,
+				848576D91957F01800A24C29 /* iTunesArtwork@2x */,
+				848576DA1957F01800A24C29 /* shuttle_color_east.png */,
+				848576DB1957F01800A24C29 /* shuttle_color_north.png */,
+				848576DC1957F01800A24C29 /* shuttle_color_south.png */,
+				848576DD1957F01800A24C29 /* shuttle_color_west.png */,
+				848576DE1957F01800A24C29 /* shuttle_color.png */,
+				848576DF1957F01800A24C29 /* shuttle.png */,
+				848576E01957F01800A24C29 /* stop_marker.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		84B80E81192F07D100AD02A8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +838,7 @@
 				DCB55108191DDDCB003C363D /* mm_academic@2x.png */,
 				DC53EC431900EB9600AB5F8C /* bg_test.jpg */,
 				DC53EC8B1900F2FE00AB5F8C /* bg_test2.jpg */,
+				848576771957EBE300A24C29 /* Shuttle Tracking */,
 				DC3DCB4E18341A3A001E92DC /* MorningMail */,
 				DCD8C0651832C761002F7D98 /* Directory */,
 				DC4A4423183093EA001A2C5D /* NewsFeed */,
@@ -662,6 +870,8 @@
 				DCA5644118ADF94F00D1102E /* MenuItemCell.m */,
 				DC79405F17F7687500A9D53C /* Images.xcassets */,
 				DC79405C17F7687500A9D53C /* RPIMobile.xcdatamodeld */,
+				848576CC1957EC7B00A24C29 /* Blitman.gpx */,
+				848576CA1957EC6D00A24C29 /* Union.gpx */,
 				DC47503918E1427F008BDE7A /* map_data.json */,
 				DC79405117F7687500A9D53C /* Supporting Files */,
 			);
@@ -789,6 +999,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Stephen Silber";
 				TargetAttributes = {
+					DC79404417F7687500A9D53C = {
+						DevelopmentTeam = 7GFV5Z2W8L;
+					};
 					DC79406417F7687500A9D53C = {
 						TestTargetID = DC79404417F7687500A9D53C;
 					};
@@ -820,57 +1033,84 @@
 			files = (
 				DC3DCB3018340F87001E92DC /* female@2x.png in Resources */,
 				DC3DCAEE18340739001E92DC /* DirectoryStorboard_iPad.storyboard in Resources */,
+				848576EC1957F01800A24C29 /* shuttle_color_east.png in Resources */,
 				DC3DCB3F18340F87001E92DC /* user_female.png in Resources */,
 				DC5B9DFD17F7BE4D00CEBC74 /* womenSportsList.plist in Resources */,
 				DC3DCB3918340F87001E92DC /* shocked.png in Resources */,
 				DC53EC8C1900F2FE00AB5F8C /* bg_test2.jpg in Resources */,
 				DCA7A79018B1967F00BF9810 /* CampusMapViewController.storyboard in Resources */,
 				DC53EC8A1900ED7600AB5F8C /* weather-tstorm@2x.png in Resources */,
+				848576E81957F01800A24C29 /* Icon-Small.png in Resources */,
+				848576BE1957EC4500A24C29 /* Sunday 6th Ave. and City Station.txt in Resources */,
 				DC47503718E13E88008BDE7A /* mm_student_housing@2x.png in Resources */,
 				DC53EC891900ED7600AB5F8C /* weather-tstorm.png in Resources */,
 				DC53EC801900ED7600AB5F8C /* weather-rain-night@2x.png in Resources */,
 				DCA5643D18ADEFF600D1102E /* time@2x.png in Resources */,
 				DC3DCB4018340F87001E92DC /* user_female@2x.png in Resources */,
+				848576841957EC1800A24C29 /* Saturday Student Union West.txt in Resources */,
 				DC47503418E13E88008BDE7A /* mm_student_life@2x.png in Resources */,
+				848576801957EC1800A24C29 /* Saturday 15th and College.txt in Resources */,
 				DC3DCAEF18340739001E92DC /* DirectoryStoryboard_iPhone.storyboard in Resources */,
 				DC53EC811900ED7600AB5F8C /* weather-rain.png in Resources */,
 				DC3DCB2A18340F87001E92DC /* compass@2x.png in Resources */,
+				848576E91957F01800A24C29 /* Icon-Small@2x.png in Resources */,
 				DC53EC881900ED7600AB5F8C /* weather-snow@2x.png in Resources */,
+				848576811957EC1800A24C29 /* Saturday Blitman Residence Commons.txt in Resources */,
 				DCA5642618AC959300D1102E /* male@2x.png in Resources */,
+				848576E41957F01800A24C29 /* glyphish_gear@2x.png in Resources */,
 				DC53EC871900ED7600AB5F8C /* weather-snow.png in Resources */,
+				848576C81957EC4500A24C29 /* Weekday Sage.txt in Resources */,
 				DC53EC441900EB9600AB5F8C /* bg_test.jpg in Resources */,
+				848576E11957F01800A24C29 /* glyphish_clock.png in Resources */,
+				848576C51957EC4500A24C29 /* Weekday 15th and College.txt in Resources */,
 				DC47503518E13E88008BDE7A /* mm_student_life_alt@2x.png in Resources */,
 				DC3DCB2C18340F87001E92DC /* date_placeholder@2x.png in Resources */,
 				DC53EC781900ED7600AB5F8C /* weather-few-night@2x.png in Resources */,
 				DC53EC791900ED7600AB5F8C /* weather-few.png in Resources */,
+				848576CB1957EC6D00A24C29 /* Union.gpx in Resources */,
+				848576C61957EC4500A24C29 /* Weekday Blitman Residence Commons.txt in Resources */,
+				848576F01957F01800A24C29 /* shuttle_color.png in Resources */,
 				DC5B9E3417FC761100CEBC74 /* WebViewController.xib in Resources */,
 				DC3DCB3618340F87001E92DC /* male@2x.png in Resources */,
 				DCA5643E18ADEFF600D1102E /* trophy@2x.png in Resources */,
 				DC47503318E13E88008BDE7A /* mm_academic@2x.png in Resources */,
+				848576E31957F01800A24C29 /* glyphish_gear.png in Resources */,
 				DCA5643F18ADEFF600D1102E /* twitter@2x.png in Resources */,
+				848576EA1957F01800A24C29 /* iTunesArtwork in Resources */,
+				848576F21957F01800A24C29 /* stop_marker.png in Resources */,
 				DCA5643918ADEFF600D1102E /* envelope@2x.png in Resources */,
+				848576C91957EC4500A24C29 /* Weekday Student Union West.txt in Resources */,
+				848576C71957EC4500A24C29 /* Weekday Polytechnic Residence Commons.txt in Resources */,
 				DC3DCB3518340F87001E92DC /* male.png in Resources */,
 				DCA5642818ADEA7300D1102E /* SideMenu.storyboard in Resources */,
 				DC5B9E1717FB997300CEBC74 /* NewsFeedCell.xib in Resources */,
+				848576E61957F01800A24C29 /* glyphish_map@2x.png in Resources */,
 				DC3DCB2F18340F87001E92DC /* female.png in Resources */,
 				DC79405517F7687500A9D53C /* InfoPlist.strings in Resources */,
 				DC53EC7B1900ED7600AB5F8C /* weather-mist.png in Resources */,
+				848576E21957F01800A24C29 /* glyphish_clock@2x.png in Resources */,
 				DC53EC851900ED7600AB5F8C /* weather-shower.png in Resources */,
 				DC02171B183C35BD002F420B /* globe@2x.png in Resources */,
+				848576F11957F01800A24C29 /* shuttle.png in Resources */,
+				848576EF1957F01800A24C29 /* shuttle_color_west.png in Resources */,
 				DC5B9DFC17F7BE4D00CEBC74 /* menSportsList.plist in Resources */,
 				DC3DCB6118353AA1001E92DC /* TwitterStoryboard_iPhone.storyboard in Resources */,
+				848576C11957EC4500A24C29 /* Sunday Polytechnic Residence Commons.txt in Resources */,
 				DC3DCB4B183415AD001E92DC /* LaundryStoryboard_iPhone.storyboard in Resources */,
 				DC53EC761900ED7600AB5F8C /* weather-clear@2x.png in Resources */,
+				848576821957EC1800A24C29 /* Saturday Polytechnic Residence Commons.txt in Resources */,
 				DC47502B18E128E0008BDE7A /* blank_news_image@2x.png in Resources */,
 				DC53EC741900ED7600AB5F8C /* weather-broken@2x.png in Resources */,
 				DC53EC7A1900ED7600AB5F8C /* weather-few@2x.png in Resources */,
 				DCA5643A18ADEFF600D1102E /* group@2x.png in Resources */,
 				DC53EC7F1900ED7600AB5F8C /* weather-rain-night.png in Resources */,
+				848576C31957EC4500A24C29 /* Sunday Student Union West.txt in Resources */,
 				84B80E8D192F09B400AD02A8 /* Navigation.storyboard in Resources */,
 				DC79406017F7687500A9D53C /* Images.xcassets in Resources */,
 				DCA5643818ADEFF600D1102E /* cog@2x.png in Resources */,
 				DC53EC861900ED7600AB5F8C /* weather-shower@2x.png in Resources */,
 				DC53EC731900ED7600AB5F8C /* weather-broken.png in Resources */,
+				848576E51957F01800A24C29 /* glyphish_map.png in Resources */,
 				DCA5642518AC959300D1102E /* female@2x.png in Resources */,
 				DC53EC7D1900ED7600AB5F8C /* weather-moon.png in Resources */,
 				DC3DCB2B18340F87001E92DC /* date_placeholder.png in Resources */,
@@ -879,11 +1119,15 @@
 				DC7D4C73190702540088CD72 /* cloud@2x.png in Resources */,
 				DC3DCB4118340F87001E92DC /* user_male.png in Resources */,
 				DC53EC841900ED7600AB5F8C /* weather-scattered@2x.png in Resources */,
+				848576CD1957EC7B00A24C29 /* Blitman.gpx in Resources */,
+				848576EB1957F01800A24C29 /* iTunesArtwork@2x in Resources */,
 				DC021719183C353F002F420B /* star@2x.png in Resources */,
 				DC3DCB3818340F87001E92DC /* placeholder@2x.png in Resources */,
 				DC3DCB4218340F87001E92DC /* user_male@2x.png in Resources */,
 				DC53EC771900ED7600AB5F8C /* weather-few-night.png in Resources */,
+				848576E71957F01800A24C29 /* Icon-Small-50.png in Resources */,
 				DCB55109191DDDCB003C363D /* mm_academic@2x.png in Resources */,
+				848576EE1957F01800A24C29 /* shuttle_color_south.png in Resources */,
 				DC021718183C353F002F420B /* retweet@2x.png in Resources */,
 				DC764EFE190A03F80031CD65 /* menu@2x.png in Resources */,
 				DC47503618E13E88008BDE7A /* mm_administration@2x.png in Resources */,
@@ -892,14 +1136,22 @@
 				DC3DCB3A18340F87001E92DC /* shocked@2x.png in Resources */,
 				DC3DCB6318353AA5001E92DC /* MorningMailStoryboard_iPhone.storyboard in Resources */,
 				DC47503818E13E88008BDE7A /* mm_academic_alt@2x.png in Resources */,
+				848576BF1957EC4500A24C29 /* Sunday 15th and College.txt in Resources */,
+				848576C21957EC4500A24C29 /* Sunday Sage.txt in Resources */,
+				848576831957EC1800A24C29 /* Saturday Sage.txt in Resources */,
+				848576C01957EC4500A24C29 /* Sunday Blitman Residence Commons.txt in Resources */,
+				848576C41957EC4500A24C29 /* Weekday 6th Ave. and City Station.txt in Resources */,
 				DC47503A18E1427F008BDE7A /* map_data.json in Resources */,
 				DC53EC821900ED7600AB5F8C /* weather-rain@2x.png in Resources */,
 				DCA5643C18ADEFF600D1102E /* mapmarker@2x.png in Resources */,
 				DCA5643B18ADEFF600D1102E /* location@2x.png in Resources */,
 				DC53EC751900ED7600AB5F8C /* weather-clear.png in Resources */,
 				DC3DCB2818340F87001E92DC /* book@2x.png in Resources */,
+				848576ED1957F01800A24C29 /* shuttle_color_north.png in Resources */,
 				DC53EC831900ED7600AB5F8C /* weather-scattered.png in Resources */,
+				848576B11957EC3900A24C29 /* Shuttle-Tracker-Info.plist in Resources */,
 				DC53EC7E1900ED7600AB5F8C /* weather-moon@2x.png in Resources */,
+				8485767F1957EC1800A24C29 /* Saturday 6th Ave. and City Station.txt in Resources */,
 				DC3DCB2918340F87001E92DC /* compass.png in Resources */,
 				DC661BD118C6793B00DE2F79 /* RPI_athletics_sample.jpg in Resources */,
 			);
@@ -966,17 +1218,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848576B01957EC3900A24C29 /* Shuttle_Tracker.xcdatamodeld in Sources */,
 				DC47503D18E14973008BDE7A /* RMDirectionService.m in Sources */,
 				DC5B9E0017FA1E4200CEBC74 /* AthleticsDetailViewController.m in Sources */,
 				DCD8C06C1832C7A6002F7D98 /* DirectoryDetailViewController.m in Sources */,
+				8485769F1957EC2800A24C29 /* STETA.m in Sources */,
+				8485769E1957EC2800A24C29 /* STDataManager.m in Sources */,
 				DC3DCB5318341C19001E92DC /* MorningMailMasterViewController.m in Sources */,
 				84B80E8F192F09B400AD02A8 /* MasterMenuCell.m in Sources */,
+				848576A41957EC2800A24C29 /* STMapPlacemark.m in Sources */,
 				DC5B9E1B17FBC2FF00CEBC74 /* JSONKit.m in Sources */,
 				DCA7A78E18B1966C00BF9810 /* CampusMapViewController.m in Sources */,
 				DCA5644218ADF94F00D1102E /* MenuItemCell.m in Sources */,
 				DC53EC551900ED4600AB5F8C /* WXClient.m in Sources */,
+				848576A91957EC2800A24C29 /* STStop.m in Sources */,
 				DC79405B17F7687500A9D53C /* AppDelegate.m in Sources */,
 				DC53EC421900E7B100AB5F8C /* RMWeatherViewController.m in Sources */,
+				848576A51957EC2800A24C29 /* STMapViewController.m in Sources */,
 				DC53EC561900ED4600AB5F8C /* WXCondition.m in Sources */,
 				DC5B9E2B17FBDB6400CEBC74 /* AthleticsScheduleViewController.m in Sources */,
 				DC88EEC817F76F7A006AB482 /* CRNavigationBar.m in Sources */,
@@ -987,10 +1245,12 @@
 				DC79408C17F7689800A9D53C /* SideMenuViewController.m in Sources */,
 				84B80E8C192F09B400AD02A8 /* MasterViewController.m in Sources */,
 				DCE715A8182F38E400371233 /* TweetCell.m in Sources */,
+				848576A61957EC2800A24C29 /* STRoute.m in Sources */,
 				DC5B9E4E17FE2D1600CEBC74 /* LaundryTableViewCell.m in Sources */,
 				DC3DCB45183410C9001E92DC /* UIImage+Tint.m in Sources */,
 				84B565EC193184D000B97EE7 /* MasterCollectionLayout.m in Sources */,
 				DC5B9DF917F7B96800CEBC74 /* AthleticsMainViewController.m in Sources */,
+				848576AF1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel in Sources */,
 				DC53EC571900ED4600AB5F8C /* WXController.m in Sources */,
 				DCE715A5182D696400371233 /* Base64.m in Sources */,
 				DC5B9E3217FC673200CEBC74 /* WebViewController.m in Sources */,
@@ -1002,16 +1262,22 @@
 				84B80E8E192F09B400AD02A8 /* MasterMenuObject.m in Sources */,
 				DC5B9E4B17FC8EE100CEBC74 /* CRToolBar.m in Sources */,
 				DC47504018E15480008BDE7A /* CampusMapListTableViewController.m in Sources */,
+				848576A21957EC2800A24C29 /* STFavoriteStop.m in Sources */,
 				DC661BD418C67A3900DE2F79 /* AthleticsNewsTableViewCell.m in Sources */,
 				DCD8C06D1832C7A6002F7D98 /* DirectoryMasterViewController.m in Sources */,
 				DC79405E17F7687500A9D53C /* RPIMobile.xcdatamodeld in Sources */,
 				DCD8C06E1832C7A6002F7D98 /* Person.m in Sources */,
 				DC79405717F7687500A9D53C /* main.m in Sources */,
+				848576A11957EC2800A24C29 /* STExtraEtasViewController.m in Sources */,
 				DC5B9E0617FB709400CEBC74 /* AthleticsRosterViewController.m in Sources */,
+				848576A81957EC2800A24C29 /* STSimpleShuttle.m in Sources */,
 				DC53EC591900ED4600AB5F8C /* WXManager.m in Sources */,
 				84B565E9193181A500B97EE7 /* MasterCollectionCell.m in Sources */,
 				DCE7159F182C7A8400371233 /* TwitterFeedViewController.m in Sources */,
+				848576A01957EC2800A24C29 /* STEtasViewController.m in Sources */,
 				DC88EEC917F76F7A006AB482 /* CRNavigationController.m in Sources */,
+				848576A71957EC2800A24C29 /* STShuttle.m in Sources */,
+				848576A31957EC2800A24C29 /* STJSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,6 +1415,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RPIMobile",
@@ -1159,6 +1427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1171,6 +1440,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RPIMobile",
@@ -1181,6 +1452,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1268,6 +1540,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		848576AB1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				848576AC1957EC3900A24C29 /* Shuttle_Tracker 2.xcdatamodel */,
+				848576AD1957EC3900A24C29 /* Shuttle_Tracker.xcdatamodel */,
+			);
+			currentVersion = 848576AC1957EC3900A24C29 /* Shuttle_Tracker 2.xcdatamodel */;
+			path = Shuttle_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		DC79405C17F7687500A9D53C /* RPIMobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -118,6 +118,10 @@
     return self;
 }
 
+- (NSNumber *)defaultTabHeight {
+    return [NSNumber numberWithFloat:kDefaultTabHeight];
+}
+
 #pragma mark - View life cycle
 - (void)viewDidLoad {
     

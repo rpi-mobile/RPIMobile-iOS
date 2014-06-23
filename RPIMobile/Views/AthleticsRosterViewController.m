@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "AFHTTPRequestOperation.h"
 #import "AthleticsRosterViewController.h"
+#import "ViewPagerController.h"
 
 @interface AthleticsRosterViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -68,7 +69,8 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     [super viewDidLoad];
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    ViewPagerController *pageController = (ViewPagerController *)self.parentViewController;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height-44) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView setRowHeight:55.0f];

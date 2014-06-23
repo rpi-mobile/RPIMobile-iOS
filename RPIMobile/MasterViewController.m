@@ -74,7 +74,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    index = [NSNumber numberWithInt:1];
+    index = [NSNumber numberWithInt:0];
     self.view.backgroundColor = [UIColor blackColor];
 	UIImage *screenshot = [self screenshot];
     
@@ -156,7 +156,7 @@
                  _collectionView.alpha = 1;
                 //_layout.itemSize = CGSizeMake(75, 90);
                 //_collectionView.frame = CGRectMake(15, 110, self.view.frame.size.width-30, self.view.frame.size.height-110-40);
-                 [_layout invalidateLayout];
+                //[_layout invalidateLayout];
                 //_layout.minimumLineSpacing = 25;
                 //_layout.minimumInteritemSpacing = 25;
              }];

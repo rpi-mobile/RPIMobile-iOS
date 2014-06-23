@@ -51,7 +51,7 @@
     [self.genderControl setSelectedSegmentIndex:0];
     [self genderChanged:self.genderControl];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-29) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
     self.tableView.contentInset = UIEdgeInsetsMake(0,0,0,0);
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];

@@ -21,34 +21,6 @@
     return self;
 }
 
-/*- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    _titleLabel = [[UILabel alloc] init];
-    [_titleLabel setText:menuObject.title];
-    [_titleLabel sizeToFit];
-    [_titleLabel setFrame:CGRectMake((self.frame.size.width-_titleLabel.frame.size.width)/2, self.frame.size.height-10-_titleLabel.frame.size.height, _titleLabel.frame.size.width, _titleLabel.frame.size.height)];
-    [_titleLabel setTextColor:[UIColor whiteColor]];
-    [_titleLabel setTextAlignment:NSTextAlignmentCenter];
-    //[_titleLabel setFont:[UIFont fontWithName:@"GothamHTF-Black" size:18]];
-    
-    if (menuObject.image != nil) {
-        _imageView = [[UIImageView alloc] initWithImage:[UIImage image:menuObject.image withColor:[UIColor whiteColor]]];
-        _imageView.frame = CGRectMake(0, 0, _imageView.frame.size.width/2, _imageView.frame.size.height/2);
-        [_imageView setFrame:CGRectMake((self.frame.size.width-_imageView.frame.size.width)/2, ((self.frame.size.height-_titleLabel.frame.size.height-_imageView.frame.size.height)/2)-5, _imageView.frame.size.width, _imageView.frame.size.height)];
-        [self addSubview:_imageView];
-    }
-    
-    float size = self.frame.size.height-_titleLabel.frame.size.height-10;
-    _circle = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width-size)/2, 0, size, size)];
-    _circle.layer.cornerRadius = size/2;
-    _circle.backgroundColor = [UIColor clearColor];
-    _circle.layer.borderColor = [UIColor whiteColor].CGColor;
-    _circle.layer.borderWidth = 3.0f;
-    [self addSubview:_circle];
-    [self addSubview:_titleLabel];
-    [self setBackgroundColor:[UIColor clearColor]];
-}*/
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -62,6 +34,9 @@
     
     if (menuObject.image != nil) {
         _imageView = [[UIImageView alloc] initWithImage:[UIImage image:menuObject.image withColor:[UIColor whiteColor]]];
+        /*if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+            _imageView.frame = CGRectMake(0, 0, _imageView.frame.size.width/2, _imageView.frame.size.height/2);
+        }*/
         _imageView.frame = CGRectMake(0, 0, _imageView.frame.size.width/2, _imageView.frame.size.height/2);
         [_imageView setFrame:CGRectMake((self.frame.size.width-_imageView.frame.size.width)/2, ((self.frame.size.height-_titleLabel.frame.size.height-_imageView.frame.size.height)/2)-5, _imageView.frame.size.width, _imageView.frame.size.height)];
         [self addSubview:_imageView];
