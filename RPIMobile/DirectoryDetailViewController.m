@@ -104,8 +104,23 @@
     ABAddressBookRef libroDirec = ABAddressBookCreateWithOptions(NULL, error);
     
     ABRecordRef persona = ABPersonCreate();
+    ABRecordSetValue(persona, kABPersonFirstNameProperty, (__bridge CFTypeRef)([self.person.details[@"first_name"] capitalizedString]), nil);
+    ABRecordSetValue(persona, kABPersonMiddleNameProperty, (__bridge CFTypeRef)([self.person.details[@"middle_name"] capitalizedString]), nil);
+    ABRecordSetValue(persona, kABPersonLastNameProperty, (__bridge CFTypeRef)([self.person.details[@"last_name"] capitalizedString]), nil);
+    ABRecordSetValue(persona, kABPersonOrganizationProperty, @"Rensselaer Polytechnic Institute", nil);
+    ABRecordSetValue(persona, kABPersonDepartmentProperty, (__bridge CFTypeRef)([self.person.details[@"major"] capitalizedString]), nil);
     
-    ABRecordSetValue(persona, kABPersonFirstNameProperty, (__bridge CFTypeRef)(prefName), nil);
+    //const CFStringRef customLabel = CFSTR( "major" );
+    
+    //phone
+    /*ABMutableMultiValueRef multiPhone2 = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(multiPhone2, (__bridge CFTypeRef)([self.person.details[@"major"] capitalizedString]), customLabel, NULL);
+    ABRecordSetValue(persona, kABPerson, multiPhone2,nil);
+    CFRelease(multiPhone2);
+    
+    ABAddressBookAddRecord(libroDirec, persona, error);*/
+    
+    
     
     /*ABMutableMultiValueRef multiHome = ABMultiValueCreateMutable(kABMultiDictionaryPropertyType);
     

@@ -18,6 +18,7 @@
     if (self) {
         details = dictionary;
         self.notes = @"Test Notes";
+        
     }
     return self;
 }
