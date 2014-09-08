@@ -11,6 +11,9 @@
 @interface Person : NSObject
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDictionary *details;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

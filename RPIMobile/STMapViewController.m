@@ -156,6 +156,49 @@ typedef enum {
 
 - (id)init {
     if ( (self = [super init]) ) {
+        // Check if 12 or 24 hour mode
+        BOOL use24Time = NO;
+        
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+        [timeFormatter setTimeStyle:NSDateFormatterMediumStyle];
+        
+        NSMutableArray *dateArray = [[NSMutableArray alloc] init];
+        [dateArray setArray:[[timeFormatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]];
+        
+        if ([dateArray count] == 1) // if no am/pm extension exists
+            use24Time = YES;
+        
+        
+        //  Create an empty array to use for the favorite ETAs
+        NSMutableArray *favoriteEtasArray = [NSMutableArray array];
+        
+        // Set the application defaults
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *appDefaults;
+        appDefaults = @{
+                        @"use24Time" : @(use24Time),
+                        @"findClosestStop" : @(YES),
+                        @"dataUpdateInterval" : @5,
+                        @"useRelativeTimes" : @(NO),
+                        @"favoritesList" : [NSKeyedArchiver archivedDataWithRootObject:favoriteEtasArray]
+                        };
+        [defaults registerDefaults:appDefaults];
+        [defaults synchronize];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(changeDataUpdateRate:)
+                                                     name:@"dataUpdateInterval"
+                                                   object:nil];
+        
+        float updateInterval = [[defaults objectForKey:@"dataUpdateInterval"] floatValue];
+        
+        //  Schedule a timer to make the DataManager pull new data every 5 seconds
+        self.dataUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:updateInterval
+                                                                target:self.dataManager
+                                                              selector:@selector(updateData)
+                                                              userInfo:nil
+                                                               repeats:YES];
+        
         UIImage *magentaShuttleImage, *whiteImage;
         self.vehicles = [[NSMutableDictionary alloc] init];
         
@@ -243,7 +286,7 @@ typedef enum {
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     _locationButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
-    self.navigationController.toolbarHidden = NO;
+    self.navigationController.toolbarHidden = YES;
     self.toolbarItems = @[_locationButton];
     [self.navigationItem setRightBarButtonItem:_locationButton];
     
@@ -345,6 +388,7 @@ typedef enum {
 
 //  The routes and stops were loaded in the dataManager
 - (void)managedRoutesLoaded {
+    NSLog(@"managedRoutesLoaded");
     //  Get all routes
     NSEntityDescription *routeEntityDescription = [NSEntityDescription entityForName:NSStringFromClass([STRoute class])
                                                               inManagedObjectContext:self.managedObjectContext];
@@ -359,6 +403,7 @@ typedef enum {
         // Deal with error...
     } else if ([dbRoutes count] > 0) {
         for (STRoute *route in dbRoutes) {
+            NSLog(@"Adding now");
             [self addRoute:route];
         }
     } else {
@@ -881,6 +926,23 @@ typedef enum {
     // and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - Local notification handler
+
+- (void)changeDataUpdateRate:(NSNotification *)notification {
+    //  Invalidate the timer so another can be made with a different interval.
+    [self.dataUpdateTimer invalidate];
+    
+    NSDictionary *info = [notification userInfo];
+    
+    float updateInterval = [[info objectForKey:@"dataUpdateInterval"] floatValue];
+    
+    //  Schedule a timer to make the DataManager pull new data every 5 seconds
+    self.dataUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:updateInterval target:self.dataManager
+                                                          selector:@selector(updateData)
+                                                          userInfo:nil
+                                                           repeats:YES];
 }
 
 @end

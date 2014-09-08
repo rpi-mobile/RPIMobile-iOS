@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 @class Person;
 
-@interface DirectoryDetailViewController : UITableViewController
+@interface DirectoryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) Person *person;
+
+- (id)initWithPerson:(Person *)newPerson;
 
 @end

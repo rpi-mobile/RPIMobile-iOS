@@ -13,6 +13,7 @@
 
 - (void)configureView;
 
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
 @end
@@ -21,6 +22,16 @@
 
 @synthesize person;
 @synthesize masterPopoverController = _masterPopoverController;
+
+#pragma mark - Initialization
+
+- (id)initWithPerson:(Person *)newPerson {
+    self = [super init];
+    if (self) {
+        person = newPerson;
+    }
+    return self;
+}
 
 #pragma mark - Managing the detail item
 
@@ -38,20 +49,19 @@
     }
 }
 
-- (void)configureView
-{
-    // Update the user interface for the person.
-    
-    if (self.person) {
-        [self.tableView reloadData];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    UIBarButtonItem *addContactButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showContactSheeet)];
+    self.navigationItem.rightBarButtonItem = addContactButton;
+    
+    //Configure TableView
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
+    [self.tableView setDelegate:self];
+    [self.tableView setDataSource:self];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -67,6 +77,141 @@
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {
         return YES;
+    }
+}
+
+#pragma mark - Action
+
+- (void)showContactSheeet {
+    UIActionSheet *addContactSheet = [[UIActionSheet alloc] initWithTitle:person.name delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Create New Contact", @"Add to Existing Contact", nil];
+    [addContactSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheet Delegate
+
+- (void)addNewContact {
+    //NSString * addressString1 = [appDelegate getCurrentSummary];
+    //NSString * addressString2 = [appDelegate getCurrentTubeImage];
+    //NSString * cityName = [appDelegate getCurrentcheckValue];
+    //NSString * stateName = [appDelegate getCurrentTubeUrl];
+    //NSString * postal = [appDelegate getCurrentViews];
+    NSString *emailString = self.person.details[@"email"];
+    NSString *phoneNumber = self.person.details[@"phone"];
+    NSString *prefName = self.person.name;
+    NSString *notes = self.person.notes;
+    
+    CFErrorRef *error = nil;
+    ABAddressBookRef libroDirec = ABAddressBookCreateWithOptions(NULL, error);
+    
+    ABRecordRef persona = ABPersonCreate();
+    
+    ABRecordSetValue(persona, kABPersonFirstNameProperty, (__bridge CFTypeRef)(prefName), nil);
+    
+    /*ABMutableMultiValueRef multiHome = ABMultiValueCreateMutable(kABMultiDictionaryPropertyType);
+    
+    NSMutableDictionary *addressDictionary = [[NSMutableDictionary alloc] init];
+    
+    NSString *homeStreetAddress=[addressString1 stringByAppendingString:addressString2];
+    
+    [addressDictionary setObject:homeStreetAddress forKey:(NSString *) kABPersonAddressStreetKey];
+    
+    [addressDictionary setObject:cityName forKey:(NSString *)kABPersonAddressCityKey];
+    
+    [addressDictionary setObject:stateName forKey:(NSString *)kABPersonAddressStateKey];
+    
+    [addressDictionary setObject:postal forKey:(NSString *)kABPersonAddressZIPKey];*/
+    
+    /*bool didAddHome = ABMultiValueAddValueAndLabel(multiHome, addressDictionary, kABHomeLabel, NULL);
+    
+    if(didAddHome)
+    {
+        ABRecordSetValue(persona, kABPersonAddressProperty, multiHome, NULL);
+        
+        NSLog(@"Address saved.....");
+    }
+    
+    [addressDictionary release];*/
+    
+    //##############################################################################
+    
+    ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    
+    bool didAddPhone = ABMultiValueAddValueAndLabel(multiPhone, (__bridge CFTypeRef)(phoneNumber), kABPersonPhoneMobileLabel, NULL);
+    
+    if (didAddPhone) {
+        
+        ABRecordSetValue(persona, kABPersonPhoneProperty, multiPhone,nil);
+        
+        NSLog(@"Phone Number saved......");
+        
+    }
+    else {
+        NSLog(@"Couldnt add phone");
+    }
+    
+    CFRelease(multiPhone);
+    
+    //##############################################################################
+    
+    ABMutableMultiValueRef emailMultiValue = ABMultiValueCreateMutable(kABPersonEmailProperty);
+    
+    bool didAddEmail = ABMultiValueAddValueAndLabel(emailMultiValue, (__bridge CFTypeRef)(emailString), kABOtherLabel, NULL);
+    
+    if(didAddEmail) {
+        
+        ABRecordSetValue(persona, kABPersonEmailProperty, emailMultiValue, nil);
+        
+        NSLog(@"Email saved......");
+    }
+    
+    CFRelease(emailMultiValue);
+    
+    //##############################################################################
+    
+    ABAddressBookAddRecord(libroDirec, persona, nil);
+    
+    CFRelease(persona);
+    bool good = TRUE;
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(persona, ^(bool granted, CFErrorRef error) {
+            // First time ac cess has been granted, add the contact
+            
+        });
+    }
+    else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        // The user has previously given access, add the contact
+        good = TRUE;
+    }
+    else {
+        good = false;
+    }
+    if (good) {
+        bool addContact = ABAddressBookSave(libroDirec, nil);
+        if (addContact) {
+            NSString * errorString = [NSString stringWithFormat:@"Information are saved into Contact"];
+            
+            UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:@"New Contact Info" message:errorString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [errorAlert show];
+        }
+        else {
+            NSLog(@"Get fucked");
+        }
+    }
+    
+    
+    
+    CFRelease(libroDirec);
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    //Create New Contact
+    if (buttonIndex == 0) {
+        [self addNewContact];
+    }
+    //Add To Existing
+    else if (buttonIndex == 1) {
+        
     }
 }
 

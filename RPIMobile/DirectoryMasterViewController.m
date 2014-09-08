@@ -18,7 +18,9 @@ const NSString *SEARCH_URL = @"http://rpidirectory.appspot.com/api?q=";
 //  0.5 seconds
 const NSTimeInterval SEARCH_INTERVAL = 0.5f;
 
-@interface DirectoryMasterViewController ()
+@interface DirectoryMasterViewController () {
+    NSArray *_searchArray;
+}
 
 - (void)search;
 - (void)searchTimerFunc;
@@ -57,6 +59,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _searchArray = [[NSArray alloc] init];
     
     self.detailViewController = (DirectoryDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
@@ -123,9 +126,11 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
             
             if (results && [results isKindOfClass:[NSDictionary class]]) {
                 NSMutableArray *people = [NSMutableArray array];
+                _searchArray = [results objectForKey:@"data"];
                 
-                for (NSDictionary *personDict in [results objectForKey:@"data"]) {
+                /*for (NSDictionary *personDict in [results objectForKey:@"data"]) {
                     NSMutableDictionary *editDict;
+                    NSLog(@"PersonDict: %@", personDict);
                     Person *person = [[Person alloc] init];
                     person.name = [personDict objectForKey:@"name"];
                     
@@ -138,7 +143,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
                     person.details = editDict;
                     
                     [people addObject:person];
-                }
+                }*/
                 
                 NSNotification *notification = [NSNotification notificationWithName:@"QueryResult"
                                                                              object:people];
@@ -189,7 +194,7 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return m_people.count;
+    return _searchArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -201,17 +206,16 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
                                       reuseIdentifier:@"PersonCell"];
     }
     
-    Person *person = [m_people objectAtIndex:indexPath.row];
-    cell.textLabel.text = [person name];
+    NSDictionary *personDict = _searchArray[indexPath.row];
+    cell.textLabel.text = personDict[@"name"];
     
-    NSString *subtitle = [[person details] objectForKey:@"year"];
-    if (subtitle == nil) {
-        subtitle = [[person details] objectForKey:@"title"];
+    if (personDict[@"year"] == nil) {
+        cell.detailTextLabel.text = personDict[@"title"];
+    }
+    else {
+        cell.detailTextLabel.text = personDict[@"year"];
     }
     
-    if (subtitle != nil) {
-        cell.detailTextLabel.text = subtitle;
-    }
     return cell;
 }
 
@@ -221,24 +225,17 @@ const NSTimeInterval SEARCH_INTERVAL = 0.5f;
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    m_currentTableView = tableView;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    /*m_currentTableView = tableView;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         Person *person = [m_people objectAtIndex:indexPath.row];
         self.detailViewController.person = person;
     } else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self performSegueWithIdentifier:@"showDetail" sender:self];
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [m_currentTableView indexPathForSelectedRow];
-        Person *person = [m_people objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setPerson:person];
-    }
+    }*/
+    Person *newPerson = [[Person alloc] initWithDictionary:_searchArray[indexPath.row]];
+    DirectoryDetailViewController *detailView = [[DirectoryDetailViewController alloc] initWithPerson:newPerson];
+    [self.navigationController pushViewController:detailView animated:YES];
 }
 
 @end

@@ -26,6 +26,6 @@
 @property (nonatomic) MasterViewController *master;
 @property (nonatomic, weak) STDataManager *dataManager;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+@property (strong, nonatomic) NSTimer *dataUpdateTimer;
 
 @end

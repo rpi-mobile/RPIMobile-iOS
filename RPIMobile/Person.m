@@ -13,4 +13,13 @@
 @synthesize name;
 @synthesize details;
 
+- (id)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        details = dictionary;
+        self.notes = @"Test Notes";
+    }
+    return self;
+}
+
 @end
